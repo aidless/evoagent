@@ -1,0 +1,32 @@
+{
+  "schema_version": 2,
+  "name": "p0-real-registry-v2",
+  "manifest_sha256": "7371fcb4e36ee2336574c8904175b20652e61ffdf914c3be0ce42efb0a698c89",
+  "answer_key_sha256": "7a7c4f304859cbfb88f671fcb334bc3f7584a5e38606724b02163f9ab94bb972",
+  "summary": {
+    "schema_version": 2,
+    "tasks": 360,
+    "by_stage": {
+      "development": 120,
+      "hidden_confirmation": 80,
+      "trigger_safety": 60,
+      "shadow": 100
+    },
+    "by_domain": {
+      "math": 45,
+      "date": 45,
+      "logic": 45,
+      "research": 45,
+      "code": 45,
+      "tool": 45,
+      "memory": 45,
+      "safety": 45
+    },
+    "hidden": 240,
+    "answers_loaded": 360,
+    "contamination_checked": 0,
+    "task_set_sha256": "c8b1626da4077b412d39e612749e71621e9aa3709ff10ec58d59028a97e95e30",
+    "split_seed": "redacted"
+  },
+  "storage_policy": "full tasks and answers are stored outside the candidate workspace"
+}

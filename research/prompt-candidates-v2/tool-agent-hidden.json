@@ -1,0 +1,22 @@
+{
+  "seed": 424242,
+  "baseline": "2/6",
+  "tool_agent": "2/6",
+  "added": 0,
+  "lost": 0,
+  "trace": [
+    {
+      "base": false,
+      "tool_answer": null,
+      "target": "(D)",
+      "final": false
+    },
+    {
+      "base": true,
+      "tool_answer": "A",
+      "target": "(A)",
+      "final": true
+    }
+  ],
+  "promotion": false
+}

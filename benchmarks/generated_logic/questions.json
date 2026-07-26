@@ -1,0 +1,1006 @@
+{
+  "version": 1,
+  "seed": 2026072401,
+  "cases": [
+    {
+      "id": "gen-0001",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The elm token is to the left of the birch token. The cedar token is to the left of the amber token. The elm token is to the right of the denim token. The birch token is to the left of the cedar token.\nOptions:\n(A) The amber token is the rightmost\n(B) The denim token is the rightmost\n(C) The elm token is the rightmost\n(D) The cedar token is the rightmost\n(E) The birch token is the rightmost"
+    },
+    {
+      "id": "gen-0002",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished below elm. denim finished above amber. elm finished below amber. denim finished below cedar.\nOptions:\n(A) elm finished second\n(B) denim finished second\n(C) cedar finished second\n(D) amber finished second\n(E) birch finished second"
+    },
+    {
+      "id": "gen-0003",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the left of the birch token. The elm token is to the right of the birch token. The denim token is to the right of the elm token. The amber token is to the right of the cedar token.\nOptions:\n(A) The elm token is the third from the left\n(B) The denim token is the third from the left\n(C) The amber token is the third from the left\n(D) The birch token is the third from the left\n(E) The cedar token is the third from the left"
+    },
+    {
+      "id": "gen-0004",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished below birch. denim finished above elm. cedar finished above amber. amber finished above birch.\nOptions:\n(A) denim finished third\n(B) elm finished third\n(C) birch finished third\n(D) cedar finished third\n(E) amber finished third"
+    },
+    {
+      "id": "gen-0005",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the left of the cedar token. The birch token is to the right of the cedar token. The elm token is to the left of the denim token. The amber token is to the right of the denim token.\nOptions:\n(A) The cedar token is the second from the right\n(B) The denim token is the second from the right\n(C) The amber token is the second from the right\n(D) The elm token is the second from the right\n(E) The birch token is the second from the right"
+    },
+    {
+      "id": "gen-0006",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished below cedar. denim finished below elm. denim finished above amber. amber finished above birch.\nOptions:\n(A) elm finished first\n(B) denim finished first\n(C) cedar finished first\n(D) amber finished first\n(E) birch finished first"
+    },
+    {
+      "id": "gen-0007",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the left of the denim token. The amber token is to the right of the birch token. The elm token is to the right of the denim token. The birch token is to the right of the elm token.\nOptions:\n(A) The cedar token is the leftmost\n(B) The birch token is the leftmost\n(C) The denim token is the leftmost\n(D) The elm token is the leftmost\n(E) The amber token is the leftmost"
+    },
+    {
+      "id": "gen-0008",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. cedar finished above amber. cedar finished below elm. birch finished above denim. denim finished above elm.\nOptions:\n(A) elm finished second\n(B) cedar finished second\n(C) denim finished second\n(D) birch finished second\n(E) amber finished second"
+    },
+    {
+      "id": "gen-0009",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The elm token is to the left of the amber token. The amber token is to the left of the cedar token. The cedar token is to the left of the birch token. The denim token is to the left of the elm token.\nOptions:\n(A) The birch token is the rightmost\n(B) The denim token is the rightmost\n(C) The amber token is the rightmost\n(D) The elm token is the rightmost\n(E) The cedar token is the rightmost"
+    },
+    {
+      "id": "gen-0010",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished above cedar. amber finished above elm. denim finished below elm. birch finished below cedar.\nOptions:\n(A) denim finished fourth\n(B) amber finished fourth\n(C) birch finished fourth\n(D) cedar finished fourth\n(E) elm finished fourth"
+    },
+    {
+      "id": "gen-0011",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the right of the amber token. The denim token is to the right of the elm token. The cedar token is to the right of the denim token. The elm token is to the right of the birch token.\nOptions:\n(A) The cedar token is the second from the right\n(B) The birch token is the second from the right\n(C) The elm token is the second from the right\n(D) The denim token is the second from the right\n(E) The amber token is the second from the right"
+    },
+    {
+      "id": "gen-0012",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. cedar finished above elm. denim finished above amber. birch finished below amber. cedar finished below birch.\nOptions:\n(A) cedar finished fourth\n(B) amber finished fourth\n(C) denim finished fourth\n(D) birch finished fourth\n(E) elm finished fourth"
+    },
+    {
+      "id": "gen-0013",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the left of the cedar token. The cedar token is to the left of the amber token. The amber token is to the left of the elm token. The denim token is to the left of the birch token.\nOptions:\n(A) The birch token is the third from the left\n(B) The amber token is the third from the left\n(C) The elm token is the third from the left\n(D) The denim token is the third from the left\n(E) The cedar token is the third from the left"
+    },
+    {
+      "id": "gen-0014",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished above cedar. denim finished below amber. denim finished above elm. birch finished below elm.\nOptions:\n(A) denim finished first\n(B) elm finished first\n(C) cedar finished first\n(D) birch finished first\n(E) amber finished first"
+    },
+    {
+      "id": "gen-0015",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the left of the denim token. The elm token is to the left of the cedar token. The elm token is to the right of the birch token. The denim token is to the left of the amber token.\nOptions:\n(A) The amber token is the second from the left\n(B) The birch token is the second from the left\n(C) The elm token is the second from the left\n(D) The denim token is the second from the left\n(E) The cedar token is the second from the left"
+    },
+    {
+      "id": "gen-0016",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. amber finished above birch. amber finished below elm. cedar finished above elm. cedar finished below denim.\nOptions:\n(A) amber finished second\n(B) cedar finished second\n(C) denim finished second\n(D) birch finished second\n(E) elm finished second"
+    },
+    {
+      "id": "gen-0017",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the left of the denim token. The birch token is to the right of the elm token. The amber token is to the right of the cedar token. The cedar token is to the right of the birch token.\nOptions:\n(A) The denim token is the second from the left\n(B) The amber token is the second from the left\n(C) The birch token is the second from the left\n(D) The elm token is the second from the left\n(E) The cedar token is the second from the left"
+    },
+    {
+      "id": "gen-0018",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished above denim. amber finished below denim. elm finished below amber. cedar finished below elm.\nOptions:\n(A) elm finished third\n(B) amber finished third\n(C) birch finished third\n(D) cedar finished third\n(E) denim finished third"
+    },
+    {
+      "id": "gen-0019",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the right of the amber token. The elm token is to the right of the cedar token. The amber token is to the right of the denim token. The elm token is to the left of the denim token.\nOptions:\n(A) The cedar token is the second from the left\n(B) The amber token is the second from the left\n(C) The denim token is the second from the left\n(D) The birch token is the second from the left\n(E) The elm token is the second from the left"
+    },
+    {
+      "id": "gen-0020",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. cedar finished below birch. amber finished below cedar. elm finished below denim. amber finished above denim.\nOptions:\n(A) elm finished fourth\n(B) amber finished fourth\n(C) denim finished fourth\n(D) cedar finished fourth\n(E) birch finished fourth"
+    },
+    {
+      "id": "gen-0021",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the right of the elm token. The denim token is to the right of the birch token. The cedar token is to the left of the birch token. The cedar token is to the right of the amber token.\nOptions:\n(A) The elm token is the rightmost\n(B) The cedar token is the rightmost\n(C) The amber token is the rightmost\n(D) The denim token is the rightmost\n(E) The birch token is the rightmost"
+    },
+    {
+      "id": "gen-0022",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished below amber. cedar finished above elm. amber finished below birch. cedar finished below denim.\nOptions:\n(A) birch finished last\n(B) denim finished last\n(C) amber finished last\n(D) cedar finished last\n(E) elm finished last"
+    },
+    {
+      "id": "gen-0023",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The elm token is to the right of the amber token. The cedar token is to the left of the amber token. The denim token is to the right of the elm token. The birch token is to the right of the denim token.\nOptions:\n(A) The cedar token is the rightmost\n(B) The birch token is the rightmost\n(C) The denim token is the rightmost\n(D) The amber token is the rightmost\n(E) The elm token is the rightmost"
+    },
+    {
+      "id": "gen-0024",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished below amber. elm finished above denim. cedar finished above amber. elm finished below birch.\nOptions:\n(A) amber finished last\n(B) birch finished last\n(C) elm finished last\n(D) denim finished last\n(E) cedar finished last"
+    },
+    {
+      "id": "gen-0025",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The elm token is to the left of the birch token. The amber token is to the left of the denim token. The birch token is to the left of the cedar token. The elm token is to the right of the denim token.\nOptions:\n(A) The amber token is the second from the right\n(B) The elm token is the second from the right\n(C) The birch token is the second from the right\n(D) The denim token is the second from the right\n(E) The cedar token is the second from the right"
+    },
+    {
+      "id": "gen-0026",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished above birch. cedar finished above denim. amber finished below denim. cedar finished below birch.\nOptions:\n(A) cedar finished last\n(B) amber finished last\n(C) elm finished last\n(D) birch finished last\n(E) denim finished last"
+    },
+    {
+      "id": "gen-0027",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the left of the elm token. The amber token is to the right of the birch token. The cedar token is to the left of the birch token. The denim token is to the right of the elm token.\nOptions:\n(A) The denim token is the second from the left\n(B) The birch token is the second from the left\n(C) The cedar token is the second from the left\n(D) The elm token is the second from the left\n(E) The amber token is the second from the left"
+    },
+    {
+      "id": "gen-0028",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished below denim. elm finished below birch. cedar finished below amber. denim finished below cedar.\nOptions:\n(A) birch finished last\n(B) cedar finished last\n(C) denim finished last\n(D) elm finished last\n(E) amber finished last"
+    },
+    {
+      "id": "gen-0029",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the left of the amber token. The birch token is to the left of the denim token. The amber token is to the left of the elm token. The elm token is to the left of the birch token.\nOptions:\n(A) The denim token is the rightmost\n(B) The amber token is the rightmost\n(C) The birch token is the rightmost\n(D) The elm token is the rightmost\n(E) The cedar token is the rightmost"
+    },
+    {
+      "id": "gen-0030",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished above cedar. elm finished below denim. denim finished below amber. birch finished above amber.\nOptions:\n(A) amber finished fourth\n(B) birch finished fourth\n(C) cedar finished fourth\n(D) elm finished fourth\n(E) denim finished fourth"
+    },
+    {
+      "id": "gen-0031",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the left of the birch token. The denim token is to the left of the amber token. The elm token is to the left of the cedar token. The birch token is to the left of the denim token.\nOptions:\n(A) The elm token is the second from the left\n(B) The amber token is the second from the left\n(C) The denim token is the second from the left\n(D) The cedar token is the second from the left\n(E) The birch token is the second from the left"
+    },
+    {
+      "id": "gen-0032",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished above denim. birch finished above cedar. denim finished above birch. amber finished above elm.\nOptions:\n(A) denim finished fourth\n(B) amber finished fourth\n(C) cedar finished fourth\n(D) elm finished fourth\n(E) birch finished fourth"
+    },
+    {
+      "id": "gen-0033",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the left of the denim token. The cedar token is to the right of the birch token. The denim token is to the left of the elm token. The amber token is to the right of the elm token.\nOptions:\n(A) The amber token is the second from the left\n(B) The cedar token is the second from the left\n(C) The birch token is the second from the left\n(D) The elm token is the second from the left\n(E) The denim token is the second from the left"
+    },
+    {
+      "id": "gen-0034",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished below amber. birch finished above cedar. amber finished below elm. elm finished below denim.\nOptions:\n(A) denim finished second\n(B) cedar finished second\n(C) elm finished second\n(D) birch finished second\n(E) amber finished second"
+    },
+    {
+      "id": "gen-0035",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the right of the cedar token. The birch token is to the left of the amber token. The birch token is to the right of the elm token. The amber token is to the left of the cedar token.\nOptions:\n(A) The amber token is the leftmost\n(B) The birch token is the leftmost\n(C) The denim token is the leftmost\n(D) The cedar token is the leftmost\n(E) The elm token is the leftmost"
+    },
+    {
+      "id": "gen-0036",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished above amber. elm finished above denim. cedar finished below amber. elm finished below cedar.\nOptions:\n(A) denim finished first\n(B) elm finished first\n(C) cedar finished first\n(D) birch finished first\n(E) amber finished first"
+    },
+    {
+      "id": "gen-0037",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the right of the denim token. The elm token is to the left of the cedar token. The amber token is to the left of the birch token. The birch token is to the left of the elm token.\nOptions:\n(A) The cedar token is the leftmost\n(B) The elm token is the leftmost\n(C) The denim token is the leftmost\n(D) The birch token is the leftmost\n(E) The amber token is the leftmost"
+    },
+    {
+      "id": "gen-0038",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished below denim. amber finished below elm. denim finished below cedar. birch finished above cedar.\nOptions:\n(A) birch finished third\n(B) denim finished third\n(C) amber finished third\n(D) cedar finished third\n(E) elm finished third"
+    },
+    {
+      "id": "gen-0039",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the right of the birch token. The elm token is to the left of the amber token. The elm token is to the right of the denim token. The cedar token is to the left of the denim token.\nOptions:\n(A) The amber token is the rightmost\n(B) The elm token is the rightmost\n(C) The cedar token is the rightmost\n(D) The birch token is the rightmost\n(E) The denim token is the rightmost"
+    },
+    {
+      "id": "gen-0040",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished below denim. amber finished above denim. cedar finished below elm. birch finished above amber.\nOptions:\n(A) elm finished fourth\n(B) amber finished fourth\n(C) birch finished fourth\n(D) denim finished fourth\n(E) cedar finished fourth"
+    },
+    {
+      "id": "gen-0041",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the left of the elm token. The denim token is to the left of the birch token. The amber token is to the right of the elm token. The amber token is to the left of the cedar token.\nOptions:\n(A) The cedar token is the second from the left\n(B) The birch token is the second from the left\n(C) The denim token is the second from the left\n(D) The elm token is the second from the left\n(E) The amber token is the second from the left"
+    },
+    {
+      "id": "gen-0042",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished below birch. amber finished below elm. denim finished above birch. cedar finished above denim.\nOptions:\n(A) elm finished second\n(B) cedar finished second\n(C) denim finished second\n(D) amber finished second\n(E) birch finished second"
+    },
+    {
+      "id": "gen-0043",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the right of the birch token. The denim token is to the left of the amber token. The elm token is to the left of the birch token. The cedar token is to the right of the amber token.\nOptions:\n(A) The cedar token is the rightmost\n(B) The amber token is the rightmost\n(C) The birch token is the rightmost\n(D) The denim token is the rightmost\n(E) The elm token is the rightmost"
+    },
+    {
+      "id": "gen-0044",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. amber finished above elm. amber finished below denim. cedar finished above birch. birch finished above denim.\nOptions:\n(A) amber finished second\n(B) birch finished second\n(C) denim finished second\n(D) cedar finished second\n(E) elm finished second"
+    },
+    {
+      "id": "gen-0045",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the left of the elm token. The birch token is to the left of the amber token. The denim token is to the right of the cedar token. The birch token is to the right of the elm token.\nOptions:\n(A) The amber token is the rightmost\n(B) The birch token is the rightmost\n(C) The elm token is the rightmost\n(D) The cedar token is the rightmost\n(E) The denim token is the rightmost"
+    },
+    {
+      "id": "gen-0046",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished below amber. amber finished below birch. birch finished below denim. elm finished above cedar.\nOptions:\n(A) elm finished last\n(B) birch finished last\n(C) amber finished last\n(D) denim finished last\n(E) cedar finished last"
+    },
+    {
+      "id": "gen-0047",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the right of the cedar token. The elm token is to the left of the cedar token. The elm token is to the right of the denim token. The birch token is to the left of the denim token.\nOptions:\n(A) The elm token is the second from the right\n(B) The cedar token is the second from the right\n(C) The birch token is the second from the right\n(D) The denim token is the second from the right\n(E) The amber token is the second from the right"
+    },
+    {
+      "id": "gen-0048",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished below amber. cedar finished below denim. elm finished above birch. elm finished below cedar.\nOptions:\n(A) birch finished second\n(B) amber finished second\n(C) denim finished second\n(D) elm finished second\n(E) cedar finished second"
+    },
+    {
+      "id": "gen-0049",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the right of the denim token. The birch token is to the left of the denim token. The elm token is to the right of the amber token. The elm token is to the left of the cedar token.\nOptions:\n(A) The denim token is the second from the left\n(B) The birch token is the second from the left\n(C) The amber token is the second from the left\n(D) The elm token is the second from the left\n(E) The cedar token is the second from the left"
+    },
+    {
+      "id": "gen-0050",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. cedar finished above denim. birch finished below elm. cedar finished below birch. elm finished below amber.\nOptions:\n(A) cedar finished fourth\n(B) birch finished fourth\n(C) denim finished fourth\n(D) amber finished fourth\n(E) elm finished fourth"
+    },
+    {
+      "id": "gen-0051",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the right of the denim token. The cedar token is to the right of the amber token. The denim token is to the right of the elm token. The amber token is to the right of the birch token.\nOptions:\n(A) The amber token is the leftmost\n(B) The denim token is the leftmost\n(C) The birch token is the leftmost\n(D) The cedar token is the leftmost\n(E) The elm token is the leftmost"
+    },
+    {
+      "id": "gen-0052",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished above amber. denim finished below birch. cedar finished above elm. elm finished above birch.\nOptions:\n(A) birch finished last\n(B) denim finished last\n(C) elm finished last\n(D) cedar finished last\n(E) amber finished last"
+    },
+    {
+      "id": "gen-0053",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the left of the elm token. The cedar token is to the left of the amber token. The birch token is to the left of the denim token. The denim token is to the left of the cedar token.\nOptions:\n(A) The denim token is the leftmost\n(B) The cedar token is the leftmost\n(C) The amber token is the leftmost\n(D) The elm token is the leftmost\n(E) The birch token is the leftmost"
+    },
+    {
+      "id": "gen-0054",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. amber finished above denim. amber finished below elm. elm finished below cedar. denim finished above birch.\nOptions:\n(A) elm finished second\n(B) amber finished second\n(C) denim finished second\n(D) birch finished second\n(E) cedar finished second"
+    },
+    {
+      "id": "gen-0055",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the right of the cedar token. The amber token is to the left of the cedar token. The denim token is to the right of the birch token. The denim token is to the left of the elm token.\nOptions:\n(A) The birch token is the leftmost\n(B) The amber token is the leftmost\n(C) The elm token is the leftmost\n(D) The denim token is the leftmost\n(E) The cedar token is the leftmost"
+    },
+    {
+      "id": "gen-0056",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished above birch. amber finished below birch. denim finished above cedar. amber finished above denim.\nOptions:\n(A) cedar finished first\n(B) birch finished first\n(C) elm finished first\n(D) denim finished first\n(E) amber finished first"
+    },
+    {
+      "id": "gen-0057",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the right of the elm token. The elm token is to the right of the birch token. The amber token is to the right of the cedar token. The denim token is to the right of the amber token.\nOptions:\n(A) The cedar token is the second from the right\n(B) The birch token is the second from the right\n(C) The denim token is the second from the right\n(D) The amber token is the second from the right\n(E) The elm token is the second from the right"
+    },
+    {
+      "id": "gen-0058",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. cedar finished below amber. elm finished below cedar. amber finished below birch. denim finished below elm.\nOptions:\n(A) birch finished third\n(B) elm finished third\n(C) denim finished third\n(D) amber finished third\n(E) cedar finished third"
+    },
+    {
+      "id": "gen-0059",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the right of the amber token. The elm token is to the right of the birch token. The denim token is to the left of the birch token. The cedar token is to the left of the denim token.\nOptions:\n(A) The elm token is the third from the left\n(B) The birch token is the third from the left\n(C) The amber token is the third from the left\n(D) The cedar token is the third from the left\n(E) The denim token is the third from the left"
+    },
+    {
+      "id": "gen-0060",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished below denim. elm finished above amber. denim finished below amber. birch finished above cedar.\nOptions:\n(A) amber finished last\n(B) birch finished last\n(C) cedar finished last\n(D) denim finished last\n(E) elm finished last"
+    },
+    {
+      "id": "gen-0061",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the right of the elm token. The elm token is to the right of the denim token. The denim token is to the right of the cedar token. The cedar token is to the right of the amber token.\nOptions:\n(A) The amber token is the third from the left\n(B) The birch token is the third from the left\n(C) The denim token is the third from the left\n(D) The elm token is the third from the left\n(E) The cedar token is the third from the left"
+    },
+    {
+      "id": "gen-0062",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished above denim. amber finished above elm. elm finished above birch. cedar finished below denim.\nOptions:\n(A) cedar finished third\n(B) amber finished third\n(C) elm finished third\n(D) denim finished third\n(E) birch finished third"
+    },
+    {
+      "id": "gen-0063",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The elm token is to the right of the birch token. The denim token is to the left of the birch token. The amber token is to the left of the denim token. The cedar token is to the right of the elm token.\nOptions:\n(A) The amber token is the leftmost\n(B) The elm token is the leftmost\n(C) The birch token is the leftmost\n(D) The cedar token is the leftmost\n(E) The denim token is the leftmost"
+    },
+    {
+      "id": "gen-0064",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished above denim. cedar finished below denim. elm finished above birch. cedar finished above amber.\nOptions:\n(A) cedar finished fourth\n(B) amber finished fourth\n(C) denim finished fourth\n(D) birch finished fourth\n(E) elm finished fourth"
+    },
+    {
+      "id": "gen-0065",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the right of the elm token. The denim token is to the right of the birch token. The cedar token is to the right of the amber token. The denim token is to the left of the amber token.\nOptions:\n(A) The elm token is the second from the right\n(B) The denim token is the second from the right\n(C) The amber token is the second from the right\n(D) The birch token is the second from the right\n(E) The cedar token is the second from the right"
+    },
+    {
+      "id": "gen-0066",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished above amber. birch finished above cedar. amber finished above denim. birch finished below denim.\nOptions:\n(A) denim finished second\n(B) elm finished second\n(C) amber finished second\n(D) cedar finished second\n(E) birch finished second"
+    },
+    {
+      "id": "gen-0067",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the right of the amber token. The birch token is to the left of the amber token. The elm token is to the left of the denim token. The cedar token is to the left of the elm token.\nOptions:\n(A) The cedar token is the second from the right\n(B) The denim token is the second from the right\n(C) The amber token is the second from the right\n(D) The elm token is the second from the right\n(E) The birch token is the second from the right"
+    },
+    {
+      "id": "gen-0068",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. amber finished below denim. elm finished above cedar. birch finished below cedar. amber finished above elm.\nOptions:\n(A) denim finished second\n(B) elm finished second\n(C) amber finished second\n(D) birch finished second\n(E) cedar finished second"
+    },
+    {
+      "id": "gen-0069",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the left of the birch token. The amber token is to the right of the denim token. The cedar token is to the left of the denim token. The cedar token is to the right of the elm token.\nOptions:\n(A) The birch token is the second from the left\n(B) The amber token is the second from the left\n(C) The elm token is the second from the left\n(D) The denim token is the second from the left\n(E) The cedar token is the second from the left"
+    },
+    {
+      "id": "gen-0070",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. cedar finished below denim. denim finished below birch. birch finished below elm. cedar finished above amber.\nOptions:\n(A) cedar finished first\n(B) elm finished first\n(C) amber finished first\n(D) denim finished first\n(E) birch finished first"
+    },
+    {
+      "id": "gen-0071",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the left of the denim token. The cedar token is to the left of the birch token. The elm token is to the right of the denim token. The cedar token is to the right of the elm token.\nOptions:\n(A) The cedar token is the second from the right\n(B) The amber token is the second from the right\n(C) The elm token is the second from the right\n(D) The birch token is the second from the right\n(E) The denim token is the second from the right"
+    },
+    {
+      "id": "gen-0072",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished below elm. birch finished above denim. cedar finished above amber. amber finished above elm.\nOptions:\n(A) amber finished first\n(B) birch finished first\n(C) denim finished first\n(D) cedar finished first\n(E) elm finished first"
+    },
+    {
+      "id": "gen-0073",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the right of the cedar token. The amber token is to the left of the elm token. The birch token is to the left of the cedar token. The birch token is to the right of the elm token.\nOptions:\n(A) The elm token is the rightmost\n(B) The denim token is the rightmost\n(C) The cedar token is the rightmost\n(D) The amber token is the rightmost\n(E) The birch token is the rightmost"
+    },
+    {
+      "id": "gen-0074",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished above amber. elm finished below birch. birch finished below cedar. elm finished above denim.\nOptions:\n(A) elm finished last\n(B) denim finished last\n(C) birch finished last\n(D) cedar finished last\n(E) amber finished last"
+    },
+    {
+      "id": "gen-0075",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the left of the denim token. The cedar token is to the right of the birch token. The elm token is to the left of the birch token. The amber token is to the right of the cedar token.\nOptions:\n(A) The elm token is the second from the left\n(B) The cedar token is the second from the left\n(C) The denim token is the second from the left\n(D) The amber token is the second from the left\n(E) The birch token is the second from the left"
+    },
+    {
+      "id": "gen-0076",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. cedar finished below elm. birch finished above elm. birch finished below amber. denim finished below cedar.\nOptions:\n(A) denim finished third\n(B) elm finished third\n(C) amber finished third\n(D) birch finished third\n(E) cedar finished third"
+    },
+    {
+      "id": "gen-0077",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the right of the cedar token. The cedar token is to the right of the birch token. The birch token is to the right of the denim token. The denim token is to the right of the elm token.\nOptions:\n(A) The amber token is the rightmost\n(B) The denim token is the rightmost\n(C) The cedar token is the rightmost\n(D) The birch token is the rightmost\n(E) The elm token is the rightmost"
+    },
+    {
+      "id": "gen-0078",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. amber finished above birch. cedar finished below birch. elm finished above amber. elm finished below denim.\nOptions:\n(A) cedar finished last\n(B) elm finished last\n(C) denim finished last\n(D) amber finished last\n(E) birch finished last"
+    },
+    {
+      "id": "gen-0079",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the left of the denim token. The birch token is to the right of the amber token. The elm token is to the left of the amber token. The cedar token is to the left of the elm token.\nOptions:\n(A) The birch token is the second from the right\n(B) The cedar token is the second from the right\n(C) The elm token is the second from the right\n(D) The denim token is the second from the right\n(E) The amber token is the second from the right"
+    },
+    {
+      "id": "gen-0080",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. amber finished below elm. birch finished below denim. birch finished above elm. cedar finished below amber.\nOptions:\n(A) cedar finished first\n(B) elm finished first\n(C) birch finished first\n(D) amber finished first\n(E) denim finished first"
+    },
+    {
+      "id": "gen-0081",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the right of the elm token. The denim token is to the left of the cedar token. The cedar token is to the left of the elm token. The denim token is to the right of the amber token.\nOptions:\n(A) The denim token is the rightmost\n(B) The birch token is the rightmost\n(C) The elm token is the rightmost\n(D) The cedar token is the rightmost\n(E) The amber token is the rightmost"
+    },
+    {
+      "id": "gen-0082",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. amber finished above birch. cedar finished below denim. denim finished below elm. cedar finished above amber.\nOptions:\n(A) amber finished second\n(B) elm finished second\n(C) birch finished second\n(D) denim finished second\n(E) cedar finished second"
+    },
+    {
+      "id": "gen-0083",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the left of the cedar token. The elm token is to the left of the denim token. The elm token is to the right of the cedar token. The birch token is to the right of the amber token.\nOptions:\n(A) The cedar token is the leftmost\n(B) The birch token is the leftmost\n(C) The denim token is the leftmost\n(D) The elm token is the leftmost\n(E) The amber token is the leftmost"
+    },
+    {
+      "id": "gen-0084",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. cedar finished below amber. birch finished below elm. elm finished below cedar. denim finished above amber.\nOptions:\n(A) birch finished third\n(B) elm finished third\n(C) denim finished third\n(D) cedar finished third\n(E) amber finished third"
+    },
+    {
+      "id": "gen-0085",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the left of the cedar token. The denim token is to the left of the amber token. The elm token is to the right of the cedar token. The birch token is to the right of the amber token.\nOptions:\n(A) The amber token is the second from the right\n(B) The birch token is the second from the right\n(C) The cedar token is the second from the right\n(D) The elm token is the second from the right\n(E) The denim token is the second from the right"
+    },
+    {
+      "id": "gen-0086",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished above elm. cedar finished below birch. birch finished below elm. amber finished below cedar.\nOptions:\n(A) elm finished first\n(B) denim finished first\n(C) cedar finished first\n(D) amber finished first\n(E) birch finished first"
+    },
+    {
+      "id": "gen-0087",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The elm token is to the right of the amber token. The amber token is to the right of the birch token. The cedar token is to the left of the birch token. The cedar token is to the right of the denim token.\nOptions:\n(A) The birch token is the rightmost\n(B) The amber token is the rightmost\n(C) The cedar token is the rightmost\n(D) The elm token is the rightmost\n(E) The denim token is the rightmost"
+    },
+    {
+      "id": "gen-0088",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished below cedar. denim finished above birch. birch finished above amber. cedar finished below elm.\nOptions:\n(A) elm finished third\n(B) denim finished third\n(C) amber finished third\n(D) cedar finished third\n(E) birch finished third"
+    },
+    {
+      "id": "gen-0089",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The elm token is to the right of the birch token. The elm token is to the left of the denim token. The cedar token is to the right of the denim token. The amber token is to the right of the cedar token.\nOptions:\n(A) The denim token is the second from the left\n(B) The elm token is the second from the left\n(C) The birch token is the second from the left\n(D) The cedar token is the second from the left\n(E) The amber token is the second from the left"
+    },
+    {
+      "id": "gen-0090",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. cedar finished above birch. amber finished below elm. birch finished above denim. amber finished above cedar.\nOptions:\n(A) cedar finished fourth\n(B) elm finished fourth\n(C) amber finished fourth\n(D) denim finished fourth\n(E) birch finished fourth"
+    },
+    {
+      "id": "gen-0091",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the left of the amber token. The denim token is to the left of the elm token. The elm token is to the left of the birch token. The denim token is to the right of the cedar token.\nOptions:\n(A) The denim token is the rightmost\n(B) The cedar token is the rightmost\n(C) The elm token is the rightmost\n(D) The amber token is the rightmost\n(E) The birch token is the rightmost"
+    },
+    {
+      "id": "gen-0092",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished below cedar. denim finished above amber. denim finished below elm. amber finished above birch.\nOptions:\n(A) elm finished last\n(B) birch finished last\n(C) denim finished last\n(D) cedar finished last\n(E) amber finished last"
+    },
+    {
+      "id": "gen-0093",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the left of the denim token. The cedar token is to the right of the amber token. The birch token is to the left of the elm token. The elm token is to the left of the amber token.\nOptions:\n(A) The elm token is the second from the left\n(B) The amber token is the second from the left\n(C) The denim token is the second from the left\n(D) The birch token is the second from the left\n(E) The cedar token is the second from the left"
+    },
+    {
+      "id": "gen-0094",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished above elm. cedar finished above birch. amber finished below elm. denim finished below birch.\nOptions:\n(A) cedar finished fourth\n(B) amber finished fourth\n(C) birch finished fourth\n(D) elm finished fourth\n(E) denim finished fourth"
+    },
+    {
+      "id": "gen-0095",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the left of the elm token. The birch token is to the left of the cedar token. The denim token is to the right of the elm token. The denim token is to the left of the birch token.\nOptions:\n(A) The elm token is the third from the left\n(B) The denim token is the third from the left\n(C) The cedar token is the third from the left\n(D) The birch token is the third from the left\n(E) The amber token is the third from the left"
+    },
+    {
+      "id": "gen-0096",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished below cedar. amber finished below birch. birch finished below elm. denim finished below amber.\nOptions:\n(A) amber finished third\n(B) denim finished third\n(C) cedar finished third\n(D) birch finished third\n(E) elm finished third"
+    },
+    {
+      "id": "gen-0097",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the left of the cedar token. The denim token is to the right of the elm token. The cedar token is to the left of the birch token. The amber token is to the left of the elm token.\nOptions:\n(A) The amber token is the second from the left\n(B) The denim token is the second from the left\n(C) The cedar token is the second from the left\n(D) The elm token is the second from the left\n(E) The birch token is the second from the left"
+    },
+    {
+      "id": "gen-0098",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished above cedar. birch finished above denim. elm finished below denim. birch finished below amber.\nOptions:\n(A) amber finished first\n(B) denim finished first\n(C) cedar finished first\n(D) birch finished first\n(E) elm finished first"
+    },
+    {
+      "id": "gen-0099",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the left of the amber token. The denim token is to the right of the elm token. The amber token is to the left of the cedar token. The birch token is to the left of the elm token.\nOptions:\n(A) The birch token is the rightmost\n(B) The cedar token is the rightmost\n(C) The elm token is the rightmost\n(D) The denim token is the rightmost\n(E) The amber token is the rightmost"
+    },
+    {
+      "id": "gen-0100",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished below cedar. elm finished below denim. elm finished above amber. birch finished below amber.\nOptions:\n(A) elm finished second\n(B) denim finished second\n(C) birch finished second\n(D) cedar finished second\n(E) amber finished second"
+    },
+    {
+      "id": "gen-0101",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the left of the elm token. The elm token is to the left of the amber token. The birch token is to the right of the amber token. The cedar token is to the right of the denim token.\nOptions:\n(A) The birch token is the second from the right\n(B) The amber token is the second from the right\n(C) The cedar token is the second from the right\n(D) The elm token is the second from the right\n(E) The denim token is the second from the right"
+    },
+    {
+      "id": "gen-0102",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished below denim. denim finished below amber. amber finished below elm. birch finished above cedar.\nOptions:\n(A) birch finished first\n(B) elm finished first\n(C) denim finished first\n(D) cedar finished first\n(E) amber finished first"
+    },
+    {
+      "id": "gen-0103",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the right of the amber token. The elm token is to the right of the birch token. The birch token is to the right of the denim token. The amber token is to the right of the elm token.\nOptions:\n(A) The amber token is the third from the left\n(B) The elm token is the third from the left\n(C) The denim token is the third from the left\n(D) The cedar token is the third from the left\n(E) The birch token is the third from the left"
+    },
+    {
+      "id": "gen-0104",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. cedar finished below denim. birch finished below cedar. amber finished above denim. elm finished above amber.\nOptions:\n(A) cedar finished fourth\n(B) denim finished fourth\n(C) birch finished fourth\n(D) amber finished fourth\n(E) elm finished fourth"
+    },
+    {
+      "id": "gen-0105",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the left of the denim token. The cedar token is to the right of the denim token. The amber token is to the right of the elm token. The birch token is to the left of the elm token.\nOptions:\n(A) The birch token is the rightmost\n(B) The amber token is the rightmost\n(C) The denim token is the rightmost\n(D) The elm token is the rightmost\n(E) The cedar token is the rightmost"
+    },
+    {
+      "id": "gen-0106",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. amber finished below denim. elm finished below amber. cedar finished below elm. birch finished below cedar.\nOptions:\n(A) cedar finished second\n(B) denim finished second\n(C) birch finished second\n(D) amber finished second\n(E) elm finished second"
+    },
+    {
+      "id": "gen-0107",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the right of the elm token. The elm token is to the right of the cedar token. The cedar token is to the right of the denim token. The birch token is to the right of the amber token.\nOptions:\n(A) The cedar token is the second from the left\n(B) The denim token is the second from the left\n(C) The amber token is the second from the left\n(D) The elm token is the second from the left\n(E) The birch token is the second from the left"
+    },
+    {
+      "id": "gen-0108",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. amber finished below denim. birch finished below elm. denim finished below cedar. cedar finished below birch.\nOptions:\n(A) denim finished second\n(B) cedar finished second\n(C) amber finished second\n(D) elm finished second\n(E) birch finished second"
+    },
+    {
+      "id": "gen-0109",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the right of the elm token. The birch token is to the right of the denim token. The birch token is to the left of the amber token. The cedar token is to the left of the elm token.\nOptions:\n(A) The cedar token is the second from the left\n(B) The amber token is the second from the left\n(C) The birch token is the second from the left\n(D) The elm token is the second from the left\n(E) The denim token is the second from the left"
+    },
+    {
+      "id": "gen-0110",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. amber finished above elm. denim finished below elm. cedar finished below birch. denim finished above birch.\nOptions:\n(A) elm finished last\n(B) amber finished last\n(C) birch finished last\n(D) denim finished last\n(E) cedar finished last"
+    },
+    {
+      "id": "gen-0111",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the right of the cedar token. The elm token is to the right of the birch token. The denim token is to the left of the cedar token. The denim token is to the right of the amber token.\nOptions:\n(A) The amber token is the second from the left\n(B) The denim token is the second from the left\n(C) The elm token is the second from the left\n(D) The birch token is the second from the left\n(E) The cedar token is the second from the left"
+    },
+    {
+      "id": "gen-0112",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished above amber. amber finished above cedar. cedar finished above elm. denim finished above birch.\nOptions:\n(A) denim finished second\n(B) elm finished second\n(C) birch finished second\n(D) cedar finished second\n(E) amber finished second"
+    },
+    {
+      "id": "gen-0113",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the right of the denim token. The amber token is to the left of the elm token. The birch token is to the left of the amber token. The cedar token is to the left of the birch token.\nOptions:\n(A) The amber token is the third from the left\n(B) The elm token is the third from the left\n(C) The cedar token is the third from the left\n(D) The birch token is the third from the left\n(E) The denim token is the third from the left"
+    },
+    {
+      "id": "gen-0114",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished below birch. elm finished above amber. amber finished above denim. birch finished below cedar.\nOptions:\n(A) denim finished first\n(B) birch finished first\n(C) cedar finished first\n(D) amber finished first\n(E) elm finished first"
+    },
+    {
+      "id": "gen-0115",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the right of the elm token. The amber token is to the left of the cedar token. The birch token is to the left of the amber token. The elm token is to the right of the cedar token.\nOptions:\n(A) The elm token is the second from the right\n(B) The denim token is the second from the right\n(C) The birch token is the second from the right\n(D) The cedar token is the second from the right\n(E) The amber token is the second from the right"
+    },
+    {
+      "id": "gen-0116",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished below birch. amber finished above elm. denim finished above cedar. elm finished above birch.\nOptions:\n(A) elm finished third\n(B) birch finished third\n(C) amber finished third\n(D) cedar finished third\n(E) denim finished third"
+    },
+    {
+      "id": "gen-0117",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the right of the birch token. The elm token is to the right of the cedar token. The denim token is to the left of the amber token. The elm token is to the left of the denim token.\nOptions:\n(A) The elm token is the second from the right\n(B) The denim token is the second from the right\n(C) The birch token is the second from the right\n(D) The cedar token is the second from the right\n(E) The amber token is the second from the right"
+    },
+    {
+      "id": "gen-0118",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. cedar finished above elm. elm finished above amber. cedar finished below denim. denim finished below birch.\nOptions:\n(A) cedar finished third\n(B) birch finished third\n(C) denim finished third\n(D) elm finished third\n(E) amber finished third"
+    },
+    {
+      "id": "gen-0119",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The elm token is to the left of the birch token. The elm token is to the right of the cedar token. The cedar token is to the right of the denim token. The denim token is to the right of the amber token.\nOptions:\n(A) The amber token is the second from the right\n(B) The birch token is the second from the right\n(C) The cedar token is the second from the right\n(D) The denim token is the second from the right\n(E) The elm token is the second from the right"
+    },
+    {
+      "id": "gen-0120",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished below amber. birch finished above amber. birch finished below cedar. elm finished above cedar.\nOptions:\n(A) amber finished second\n(B) birch finished second\n(C) denim finished second\n(D) elm finished second\n(E) cedar finished second"
+    },
+    {
+      "id": "gen-0121",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the right of the cedar token. The amber token is to the left of the birch token. The elm token is to the right of the denim token. The birch token is to the left of the cedar token.\nOptions:\n(A) The amber token is the rightmost\n(B) The cedar token is the rightmost\n(C) The birch token is the rightmost\n(D) The elm token is the rightmost\n(E) The denim token is the rightmost"
+    },
+    {
+      "id": "gen-0122",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished below elm. cedar finished below amber. birch finished above amber. cedar finished above denim.\nOptions:\n(A) elm finished third\n(B) amber finished third\n(C) denim finished third\n(D) birch finished third\n(E) cedar finished third"
+    },
+    {
+      "id": "gen-0123",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the left of the amber token. The birch token is to the left of the denim token. The elm token is to the left of the cedar token. The elm token is to the right of the amber token.\nOptions:\n(A) The amber token is the second from the right\n(B) The birch token is the second from the right\n(C) The elm token is the second from the right\n(D) The cedar token is the second from the right\n(E) The denim token is the second from the right"
+    },
+    {
+      "id": "gen-0124",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished below birch. denim finished above birch. elm finished above cedar. denim finished below amber.\nOptions:\n(A) birch finished fourth\n(B) elm finished fourth\n(C) cedar finished fourth\n(D) denim finished fourth\n(E) amber finished fourth"
+    },
+    {
+      "id": "gen-0125",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the right of the elm token. The denim token is to the right of the amber token. The elm token is to the right of the denim token. The birch token is to the left of the amber token.\nOptions:\n(A) The birch token is the second from the left\n(B) The amber token is the second from the left\n(C) The denim token is the second from the left\n(D) The elm token is the second from the left\n(E) The cedar token is the second from the left"
+    },
+    {
+      "id": "gen-0126",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished above elm. cedar finished above denim. birch finished above amber. birch finished below elm.\nOptions:\n(A) amber finished first\n(B) cedar finished first\n(C) birch finished first\n(D) denim finished first\n(E) elm finished first"
+    },
+    {
+      "id": "gen-0127",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the left of the amber token. The amber token is to the left of the birch token. The birch token is to the left of the denim token. The elm token is to the left of the cedar token.\nOptions:\n(A) The birch token is the second from the left\n(B) The cedar token is the second from the left\n(C) The amber token is the second from the left\n(D) The elm token is the second from the left\n(E) The denim token is the second from the left"
+    },
+    {
+      "id": "gen-0128",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished above cedar. amber finished below cedar. elm finished below amber. denim finished below birch.\nOptions:\n(A) amber finished second\n(B) cedar finished second\n(C) elm finished second\n(D) birch finished second\n(E) denim finished second"
+    },
+    {
+      "id": "gen-0129",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the left of the amber token. The birch token is to the right of the denim token. The denim token is to the right of the cedar token. The cedar token is to the right of the elm token.\nOptions:\n(A) The elm token is the second from the right\n(B) The denim token is the second from the right\n(C) The amber token is the second from the right\n(D) The birch token is the second from the right\n(E) The cedar token is the second from the right"
+    },
+    {
+      "id": "gen-0130",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished below denim. cedar finished above amber. birch finished above cedar. elm finished above birch.\nOptions:\n(A) birch finished fourth\n(B) amber finished fourth\n(C) cedar finished fourth\n(D) elm finished fourth\n(E) denim finished fourth"
+    },
+    {
+      "id": "gen-0131",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the right of the birch token. The denim token is to the left of the amber token. The cedar token is to the left of the elm token. The elm token is to the left of the denim token.\nOptions:\n(A) The cedar token is the second from the left\n(B) The amber token is the second from the left\n(C) The denim token is the second from the left\n(D) The elm token is the second from the left\n(E) The birch token is the second from the left"
+    },
+    {
+      "id": "gen-0132",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished above cedar. birch finished above elm. amber finished above birch. denim finished above amber.\nOptions:\n(A) birch finished second\n(B) denim finished second\n(C) elm finished second\n(D) cedar finished second\n(E) amber finished second"
+    },
+    {
+      "id": "gen-0133",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the right of the birch token. The elm token is to the right of the amber token. The denim token is to the right of the elm token. The denim token is to the left of the birch token.\nOptions:\n(A) The elm token is the second from the right\n(B) The cedar token is the second from the right\n(C) The denim token is the second from the right\n(D) The birch token is the second from the right\n(E) The amber token is the second from the right"
+    },
+    {
+      "id": "gen-0134",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished above elm. elm finished above denim. denim finished above amber. cedar finished below amber.\nOptions:\n(A) elm finished second\n(B) birch finished second\n(C) cedar finished second\n(D) amber finished second\n(E) denim finished second"
+    },
+    {
+      "id": "gen-0135",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the right of the amber token. The cedar token is to the left of the elm token. The birch token is to the left of the denim token. The denim token is to the left of the amber token.\nOptions:\n(A) The elm token is the leftmost\n(B) The birch token is the leftmost\n(C) The amber token is the leftmost\n(D) The denim token is the leftmost\n(E) The cedar token is the leftmost"
+    },
+    {
+      "id": "gen-0136",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished below amber. cedar finished above birch. cedar finished below denim. birch finished above amber.\nOptions:\n(A) cedar finished third\n(B) birch finished third\n(C) denim finished third\n(D) amber finished third\n(E) elm finished third"
+    },
+    {
+      "id": "gen-0137",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the left of the elm token. The elm token is to the left of the cedar token. The denim token is to the right of the birch token. The amber token is to the right of the cedar token.\nOptions:\n(A) The amber token is the second from the left\n(B) The elm token is the second from the left\n(C) The birch token is the second from the left\n(D) The cedar token is the second from the left\n(E) The denim token is the second from the left"
+    },
+    {
+      "id": "gen-0138",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished above amber. denim finished above cedar. elm finished below birch. birch finished below cedar.\nOptions:\n(A) cedar finished last\n(B) elm finished last\n(C) birch finished last\n(D) amber finished last\n(E) denim finished last"
+    },
+    {
+      "id": "gen-0139",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the right of the elm token. The cedar token is to the left of the birch token. The cedar token is to the right of the denim token. The elm token is to the right of the amber token.\nOptions:\n(A) The elm token is the leftmost\n(B) The cedar token is the leftmost\n(C) The denim token is the leftmost\n(D) The birch token is the leftmost\n(E) The amber token is the leftmost"
+    },
+    {
+      "id": "gen-0140",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished below amber. elm finished below cedar. elm finished above amber. denim finished above birch.\nOptions:\n(A) birch finished first\n(B) denim finished first\n(C) cedar finished first\n(D) amber finished first\n(E) elm finished first"
+    },
+    {
+      "id": "gen-0141",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the right of the cedar token. The birch token is to the right of the elm token. The cedar token is to the right of the birch token. The denim token is to the left of the amber token.\nOptions:\n(A) The cedar token is the second from the left\n(B) The denim token is the second from the left\n(C) The elm token is the second from the left\n(D) The amber token is the second from the left\n(E) The birch token is the second from the left"
+    },
+    {
+      "id": "gen-0142",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. cedar finished above amber. birch finished above denim. amber finished above elm. cedar finished below denim.\nOptions:\n(A) elm finished second\n(B) denim finished second\n(C) birch finished second\n(D) cedar finished second\n(E) amber finished second"
+    },
+    {
+      "id": "gen-0143",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The elm token is to the left of the amber token. The amber token is to the left of the birch token. The denim token is to the left of the cedar token. The elm token is to the right of the cedar token.\nOptions:\n(A) The birch token is the second from the left\n(B) The cedar token is the second from the left\n(C) The amber token is the second from the left\n(D) The elm token is the second from the left\n(E) The denim token is the second from the left"
+    },
+    {
+      "id": "gen-0144",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished above birch. amber finished below birch. denim finished below amber. denim finished above cedar.\nOptions:\n(A) elm finished first\n(B) denim finished first\n(C) amber finished first\n(D) birch finished first\n(E) cedar finished first"
+    },
+    {
+      "id": "gen-0145",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the left of the amber token. The elm token is to the right of the amber token. The cedar token is to the left of the birch token. The cedar token is to the right of the denim token.\nOptions:\n(A) The birch token is the rightmost\n(B) The denim token is the rightmost\n(C) The elm token is the rightmost\n(D) The cedar token is the rightmost\n(E) The amber token is the rightmost"
+    },
+    {
+      "id": "gen-0146",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished below birch. cedar finished above birch. elm finished above amber. denim finished above elm.\nOptions:\n(A) denim finished last\n(B) elm finished last\n(C) amber finished last\n(D) birch finished last\n(E) cedar finished last"
+    },
+    {
+      "id": "gen-0147",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the right of the amber token. The denim token is to the left of the amber token. The birch token is to the right of the elm token. The cedar token is to the left of the elm token.\nOptions:\n(A) The denim token is the third from the left\n(B) The elm token is the third from the left\n(C) The amber token is the third from the left\n(D) The birch token is the third from the left\n(E) The cedar token is the third from the left"
+    },
+    {
+      "id": "gen-0148",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished below elm. birch finished above cedar. cedar finished above denim. amber finished below denim.\nOptions:\n(A) cedar finished last\n(B) denim finished last\n(C) birch finished last\n(D) amber finished last\n(E) elm finished last"
+    },
+    {
+      "id": "gen-0149",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the left of the birch token. The cedar token is to the right of the amber token. The denim token is to the left of the amber token. The denim token is to the right of the elm token.\nOptions:\n(A) The amber token is the second from the right\n(B) The denim token is the second from the right\n(C) The elm token is the second from the right\n(D) The cedar token is the second from the right\n(E) The birch token is the second from the right"
+    },
+    {
+      "id": "gen-0150",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished below denim. denim finished below cedar. birch finished below elm. amber finished above cedar.\nOptions:\n(A) elm finished fourth\n(B) birch finished fourth\n(C) denim finished fourth\n(D) amber finished fourth\n(E) cedar finished fourth"
+    },
+    {
+      "id": "gen-0151",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the right of the birch token. The denim token is to the left of the birch token. The denim token is to the right of the amber token. The amber token is to the right of the elm token.\nOptions:\n(A) The birch token is the rightmost\n(B) The elm token is the rightmost\n(C) The cedar token is the rightmost\n(D) The denim token is the rightmost\n(E) The amber token is the rightmost"
+    },
+    {
+      "id": "gen-0152",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. cedar finished below birch. cedar finished above amber. elm finished below denim. amber finished above denim.\nOptions:\n(A) cedar finished third\n(B) birch finished third\n(C) amber finished third\n(D) elm finished third\n(E) denim finished third"
+    },
+    {
+      "id": "gen-0153",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the right of the amber token. The elm token is to the left of the birch token. The birch token is to the left of the amber token. The elm token is to the right of the denim token.\nOptions:\n(A) The denim token is the second from the right\n(B) The cedar token is the second from the right\n(C) The birch token is the second from the right\n(D) The amber token is the second from the right\n(E) The elm token is the second from the right"
+    },
+    {
+      "id": "gen-0154",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished below elm. birch finished below amber. elm finished below birch. denim finished above cedar.\nOptions:\n(A) cedar finished fourth\n(B) denim finished fourth\n(C) elm finished fourth\n(D) birch finished fourth\n(E) amber finished fourth"
+    },
+    {
+      "id": "gen-0155",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the right of the denim token. The elm token is to the left of the cedar token. The amber token is to the left of the denim token. The elm token is to the right of the birch token.\nOptions:\n(A) The amber token is the second from the left\n(B) The birch token is the second from the left\n(C) The denim token is the second from the left\n(D) The elm token is the second from the left\n(E) The cedar token is the second from the left"
+    },
+    {
+      "id": "gen-0156",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished above cedar. denim finished below birch. denim finished above elm. amber finished above birch.\nOptions:\n(A) amber finished fourth\n(B) birch finished fourth\n(C) elm finished fourth\n(D) cedar finished fourth\n(E) denim finished fourth"
+    },
+    {
+      "id": "gen-0157",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the left of the birch token. The cedar token is to the right of the birch token. The elm token is to the right of the cedar token. The denim token is to the right of the amber token.\nOptions:\n(A) The elm token is the third from the left\n(B) The birch token is the third from the left\n(C) The amber token is the third from the left\n(D) The denim token is the third from the left\n(E) The cedar token is the third from the left"
+    },
+    {
+      "id": "gen-0158",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished below elm. birch finished below denim. elm finished below cedar. birch finished above amber.\nOptions:\n(A) cedar finished third\n(B) denim finished third\n(C) birch finished third\n(D) amber finished third\n(E) elm finished third"
+    },
+    {
+      "id": "gen-0159",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The elm token is to the left of the cedar token. The cedar token is to the left of the denim token. The amber token is to the right of the denim token. The birch token is to the right of the amber token.\nOptions:\n(A) The birch token is the second from the left\n(B) The amber token is the second from the left\n(C) The denim token is the second from the left\n(D) The elm token is the second from the left\n(E) The cedar token is the second from the left"
+    },
+    {
+      "id": "gen-0160",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished above amber. denim finished above elm. birch finished below cedar. cedar finished below elm.\nOptions:\n(A) amber finished first\n(B) birch finished first\n(C) cedar finished first\n(D) denim finished first\n(E) elm finished first"
+    },
+    {
+      "id": "gen-0161",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the right of the amber token. The cedar token is to the left of the elm token. The elm token is to the left of the birch token. The denim token is to the right of the birch token.\nOptions:\n(A) The birch token is the second from the left\n(B) The denim token is the second from the left\n(C) The elm token is the second from the left\n(D) The amber token is the second from the left\n(E) The cedar token is the second from the left"
+    },
+    {
+      "id": "gen-0162",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. cedar finished above denim. elm finished below denim. amber finished below birch. elm finished above birch.\nOptions:\n(A) elm finished third\n(B) amber finished third\n(C) birch finished third\n(D) denim finished third\n(E) cedar finished third"
+    },
+    {
+      "id": "gen-0163",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the left of the elm token. The amber token is to the right of the elm token. The cedar token is to the right of the birch token. The denim token is to the right of the cedar token.\nOptions:\n(A) The denim token is the leftmost\n(B) The cedar token is the leftmost\n(C) The birch token is the leftmost\n(D) The elm token is the leftmost\n(E) The amber token is the leftmost"
+    },
+    {
+      "id": "gen-0164",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished above cedar. denim finished below birch. elm finished above birch. amber finished below cedar.\nOptions:\n(A) amber finished fourth\n(B) elm finished fourth\n(C) denim finished fourth\n(D) cedar finished fourth\n(E) birch finished fourth"
+    },
+    {
+      "id": "gen-0165",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the right of the denim token. The denim token is to the right of the amber token. The birch token is to the left of the amber token. The birch token is to the right of the elm token.\nOptions:\n(A) The birch token is the rightmost\n(B) The elm token is the rightmost\n(C) The amber token is the rightmost\n(D) The cedar token is the rightmost\n(E) The denim token is the rightmost"
+    },
+    {
+      "id": "gen-0166",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. amber finished below denim. denim finished below birch. elm finished above cedar. birch finished below cedar.\nOptions:\n(A) amber finished fourth\n(B) elm finished fourth\n(C) birch finished fourth\n(D) cedar finished fourth\n(E) denim finished fourth"
+    },
+    {
+      "id": "gen-0167",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the right of the elm token. The elm token is to the right of the birch token. The amber token is to the right of the cedar token. The birch token is to the right of the denim token.\nOptions:\n(A) The amber token is the second from the right\n(B) The elm token is the second from the right\n(C) The cedar token is the second from the right\n(D) The birch token is the second from the right\n(E) The denim token is the second from the right"
+    },
+    {
+      "id": "gen-0168",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. cedar finished above elm. amber finished below denim. birch finished below elm. birch finished above denim.\nOptions:\n(A) elm finished first\n(B) birch finished first\n(C) cedar finished first\n(D) amber finished first\n(E) denim finished first"
+    },
+    {
+      "id": "gen-0169",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The elm token is to the left of the birch token. The denim token is to the right of the birch token. The denim token is to the left of the amber token. The cedar token is to the left of the elm token.\nOptions:\n(A) The denim token is the rightmost\n(B) The birch token is the rightmost\n(C) The cedar token is the rightmost\n(D) The amber token is the rightmost\n(E) The elm token is the rightmost"
+    },
+    {
+      "id": "gen-0170",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished below amber. birch finished below cedar. cedar finished below elm. elm finished below denim.\nOptions:\n(A) cedar finished first\n(B) birch finished first\n(C) amber finished first\n(D) elm finished first\n(E) denim finished first"
+    },
+    {
+      "id": "gen-0171",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the right of the elm token. The amber token is to the right of the cedar token. The birch token is to the right of the amber token. The cedar token is to the right of the denim token.\nOptions:\n(A) The elm token is the third from the left\n(B) The cedar token is the third from the left\n(C) The denim token is the third from the left\n(D) The amber token is the third from the left\n(E) The birch token is the third from the left"
+    },
+    {
+      "id": "gen-0172",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. amber finished below birch. elm finished above cedar. cedar finished above birch. elm finished below denim.\nOptions:\n(A) amber finished fourth\n(B) denim finished fourth\n(C) elm finished fourth\n(D) cedar finished fourth\n(E) birch finished fourth"
+    },
+    {
+      "id": "gen-0173",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the left of the elm token. The denim token is to the right of the amber token. The cedar token is to the right of the birch token. The denim token is to the left of the birch token.\nOptions:\n(A) The denim token is the second from the right\n(B) The cedar token is the second from the right\n(C) The elm token is the second from the right\n(D) The amber token is the second from the right\n(E) The birch token is the second from the right"
+    },
+    {
+      "id": "gen-0174",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished below birch. cedar finished above amber. denim finished above cedar. elm finished below amber.\nOptions:\n(A) denim finished third\n(B) cedar finished third\n(C) amber finished third\n(D) elm finished third\n(E) birch finished third"
+    },
+    {
+      "id": "gen-0175",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the left of the elm token. The birch token is to the right of the amber token. The elm token is to the left of the amber token. The denim token is to the left of the cedar token.\nOptions:\n(A) The denim token is the leftmost\n(B) The cedar token is the leftmost\n(C) The amber token is the leftmost\n(D) The elm token is the leftmost\n(E) The birch token is the leftmost"
+    },
+    {
+      "id": "gen-0176",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished below denim. birch finished above cedar. cedar finished above amber. elm finished above denim.\nOptions:\n(A) denim finished fourth\n(B) elm finished fourth\n(C) birch finished fourth\n(D) amber finished fourth\n(E) cedar finished fourth"
+    },
+    {
+      "id": "gen-0177",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the left of the amber token. The denim token is to the right of the elm token. The birch token is to the right of the amber token. The cedar token is to the left of the elm token.\nOptions:\n(A) The cedar token is the third from the left\n(B) The amber token is the third from the left\n(C) The elm token is the third from the left\n(D) The denim token is the third from the left\n(E) The birch token is the third from the left"
+    },
+    {
+      "id": "gen-0178",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished below cedar. cedar finished below elm. amber finished below denim. amber finished above birch.\nOptions:\n(A) amber finished first\n(B) elm finished first\n(C) cedar finished first\n(D) denim finished first\n(E) birch finished first"
+    },
+    {
+      "id": "gen-0179",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the left of the elm token. The cedar token is to the left of the birch token. The amber token is to the right of the birch token. The cedar token is to the right of the denim token.\nOptions:\n(A) The elm token is the second from the right\n(B) The amber token is the second from the right\n(C) The birch token is the second from the right\n(D) The denim token is the second from the right\n(E) The cedar token is the second from the right"
+    },
+    {
+      "id": "gen-0180",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished below birch. elm finished below amber. denim finished above cedar. birch finished below elm.\nOptions:\n(A) birch finished last\n(B) elm finished last\n(C) cedar finished last\n(D) denim finished last\n(E) amber finished last"
+    },
+    {
+      "id": "gen-0181",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the left of the amber token. The elm token is to the right of the birch token. The amber token is to the left of the birch token. The elm token is to the left of the denim token.\nOptions:\n(A) The birch token is the second from the right\n(B) The elm token is the second from the right\n(C) The denim token is the second from the right\n(D) The cedar token is the second from the right\n(E) The amber token is the second from the right"
+    },
+    {
+      "id": "gen-0182",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. amber finished below denim. birch finished above cedar. birch finished below amber. cedar finished above elm.\nOptions:\n(A) birch finished second\n(B) elm finished second\n(C) cedar finished second\n(D) denim finished second\n(E) amber finished second"
+    },
+    {
+      "id": "gen-0183",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The elm token is to the left of the birch token. The cedar token is to the left of the elm token. The birch token is to the left of the denim token. The amber token is to the left of the cedar token.\nOptions:\n(A) The birch token is the rightmost\n(B) The denim token is the rightmost\n(C) The elm token is the rightmost\n(D) The cedar token is the rightmost\n(E) The amber token is the rightmost"
+    },
+    {
+      "id": "gen-0184",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished above birch. elm finished below cedar. elm finished above amber. birch finished above cedar.\nOptions:\n(A) amber finished third\n(B) elm finished third\n(C) birch finished third\n(D) denim finished third\n(E) cedar finished third"
+    },
+    {
+      "id": "gen-0185",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the right of the elm token. The birch token is to the right of the denim token. The elm token is to the right of the cedar token. The amber token is to the left of the denim token.\nOptions:\n(A) The cedar token is the leftmost\n(B) The amber token is the leftmost\n(C) The elm token is the leftmost\n(D) The denim token is the leftmost\n(E) The birch token is the leftmost"
+    },
+    {
+      "id": "gen-0186",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished below birch. amber finished below cedar. birch finished below elm. elm finished below amber.\nOptions:\n(A) birch finished fourth\n(B) cedar finished fourth\n(C) denim finished fourth\n(D) elm finished fourth\n(E) amber finished fourth"
+    },
+    {
+      "id": "gen-0187",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The denim token is to the right of the elm token. The birch token is to the right of the denim token. The cedar token is to the left of the amber token. The elm token is to the right of the amber token.\nOptions:\n(A) The birch token is the second from the left\n(B) The denim token is the second from the left\n(C) The cedar token is the second from the left\n(D) The amber token is the second from the left\n(E) The elm token is the second from the left"
+    },
+    {
+      "id": "gen-0188",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. amber finished above denim. elm finished above cedar. denim finished above birch. amber finished below cedar.\nOptions:\n(A) elm finished fourth\n(B) cedar finished fourth\n(C) birch finished fourth\n(D) amber finished fourth\n(E) denim finished fourth"
+    },
+    {
+      "id": "gen-0189",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The elm token is to the right of the birch token. The denim token is to the left of the amber token. The elm token is to the left of the cedar token. The amber token is to the left of the birch token.\nOptions:\n(A) The amber token is the second from the left\n(B) The birch token is the second from the left\n(C) The denim token is the second from the left\n(D) The cedar token is the second from the left\n(E) The elm token is the second from the left"
+    },
+    {
+      "id": "gen-0190",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished above amber. cedar finished below elm. denim finished above elm. birch finished below cedar.\nOptions:\n(A) birch finished first\n(B) elm finished first\n(C) cedar finished first\n(D) amber finished first\n(E) denim finished first"
+    },
+    {
+      "id": "gen-0191",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The birch token is to the right of the denim token. The elm token is to the right of the amber token. The elm token is to the left of the denim token. The cedar token is to the left of the amber token.\nOptions:\n(A) The birch token is the third from the left\n(B) The elm token is the third from the left\n(C) The cedar token is the third from the left\n(D) The denim token is the third from the left\n(E) The amber token is the third from the left"
+    },
+    {
+      "id": "gen-0192",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished below cedar. amber finished below elm. elm finished below birch. cedar finished below amber.\nOptions:\n(A) amber finished third\n(B) cedar finished third\n(C) birch finished third\n(D) elm finished third\n(E) denim finished third"
+    },
+    {
+      "id": "gen-0193",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The elm token is to the right of the amber token. The elm token is to the left of the cedar token. The birch token is to the right of the cedar token. The denim token is to the left of the amber token.\nOptions:\n(A) The cedar token is the second from the left\n(B) The denim token is the second from the left\n(C) The elm token is the second from the left\n(D) The birch token is the second from the left\n(E) The amber token is the second from the left"
+    },
+    {
+      "id": "gen-0194",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. cedar finished above denim. amber finished above birch. denim finished above elm. cedar finished below birch.\nOptions:\n(A) birch finished third\n(B) cedar finished third\n(C) amber finished third\n(D) denim finished third\n(E) elm finished third"
+    },
+    {
+      "id": "gen-0195",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the right of the denim token. The birch token is to the left of the cedar token. The amber token is to the left of the birch token. The cedar token is to the left of the elm token.\nOptions:\n(A) The denim token is the third from the left\n(B) The elm token is the third from the left\n(C) The amber token is the third from the left\n(D) The birch token is the third from the left\n(E) The cedar token is the third from the left"
+    },
+    {
+      "id": "gen-0196",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. birch finished above elm. birch finished below denim. amber finished above cedar. denim finished below cedar.\nOptions:\n(A) birch finished second\n(B) denim finished second\n(C) amber finished second\n(D) cedar finished second\n(E) elm finished second"
+    },
+    {
+      "id": "gen-0197",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The cedar token is to the left of the birch token. The birch token is to the left of the elm token. The amber token is to the right of the elm token. The denim token is to the right of the amber token.\nOptions:\n(A) The denim token is the rightmost\n(B) The birch token is the rightmost\n(C) The amber token is the rightmost\n(D) The elm token is the rightmost\n(E) The cedar token is the rightmost"
+    },
+    {
+      "id": "gen-0198",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. denim finished above amber. cedar finished below birch. birch finished below amber. cedar finished above elm.\nOptions:\n(A) denim finished third\n(B) elm finished third\n(C) birch finished third\n(D) cedar finished third\n(E) amber finished third"
+    },
+    {
+      "id": "gen-0199",
+      "kind": "spatial",
+      "input": "Five tokens are arranged in a fixed order. The amber token is to the left of the cedar token. The birch token is to the right of the denim token. The amber token is to the right of the elm token. The denim token is to the right of the cedar token.\nOptions:\n(A) The amber token is the leftmost\n(B) The birch token is the leftmost\n(C) The denim token is the leftmost\n(D) The cedar token is the leftmost\n(E) The elm token is the leftmost"
+    },
+    {
+      "id": "gen-0200",
+      "kind": "tournament",
+      "input": "Five competitors have distinct finishing ranks. elm finished below denim. birch finished above amber. cedar finished above denim. birch finished below elm.\nOptions:\n(A) amber finished first\n(B) elm finished first\n(C) birch finished first\n(D) cedar finished first\n(E) denim finished first"
+    }
+  ]
+}

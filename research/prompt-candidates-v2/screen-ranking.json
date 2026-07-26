@@ -1,0 +1,20 @@
+﻿[
+    {
+        "candidate":  "verification_first",
+        "score":  1.0,
+        "passed":  3,
+        "total":  3
+    },
+    {
+        "candidate":  "current",
+        "score":  1.0,
+        "passed":  3,
+        "total":  3
+    },
+    {
+        "candidate":  "conditional_verify",
+        "score":  0.6666666666666666,
+        "passed":  2,
+        "total":  3
+    }
+]

@@ -1,0 +1,4 @@
+{
+  "name": "adaptive",
+  "system_prompt": "Classify the task silently. For arithmetic, write equations and recompute the final number. For dates, establish the reference date and apply offsets exactly. For logic ordering, build a complete ordered list satisfying every constraint. Check the chosen result, then return the exact requested number or option."
+}

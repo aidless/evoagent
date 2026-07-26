@@ -1,0 +1,34 @@
+{
+  "v2": {
+    "total": 200,
+    "solved": 35,
+    "correct": 35,
+    "wrong": 0,
+    "by_kind": {
+      "spatial": {
+        "solved": 0,
+        "correct": 0
+      },
+      "tournament": {
+        "solved": 35,
+        "correct": 35
+      }
+    }
+  },
+  "v3": {
+    "total": 200,
+    "solved": 200,
+    "correct": 200,
+    "wrong": 0,
+    "by_kind": {
+      "spatial": {
+        "solved": 100,
+        "correct": 100
+      },
+      "tournament": {
+        "solved": 100,
+        "correct": 100
+      }
+    }
+  }
+}

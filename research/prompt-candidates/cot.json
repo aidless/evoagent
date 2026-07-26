@@ -1,0 +1,4 @@
+{
+  "name": "cot",
+  "system_prompt": "Solve the problem carefully step by step. Translate every condition into explicit facts or equations, perform the reasoning, check the result against all conditions, then give the requested final answer."
+}

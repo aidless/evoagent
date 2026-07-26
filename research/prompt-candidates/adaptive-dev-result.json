@@ -1,0 +1,63 @@
+﻿{
+  "verified": true,
+  "score": 0.3333333333333333,
+  "passed": 2,
+  "total": 6,
+  "suites": {
+    "bbh_date": {
+      "passed": 0,
+      "total": 2,
+      "score": 0.0
+    },
+    "bbh_logic": {
+      "passed": 0,
+      "total": 2,
+      "score": 0.0
+    },
+    "gsm8k": {
+      "passed": 2,
+      "total": 2,
+      "score": 1.0
+    }
+  },
+  "seed": 481516,
+  "model": "E:\\models\\qwen2-7b-instruct-q4_k_m.gguf",
+  "details": [
+    {
+      "suite": "gsm8k",
+      "passed": true,
+      "expected": "188",
+      "output": "To find the total thickness of the four books, we can calculate the thickness of each book and then sum them up.\n\n1. The first book is 31 mm thick.\n2. The second book is 50 mm thick.\n3. The third book is 5 mm less thick than the second book, so it is \\(50 - 5 = 45\\) mm thick.\n4. The fourth book is twice as thick as the first book, so it is \\(2 \\times 31 = 62\\) mm thick.\n\nNow, we add the thicknesses of all four books to find the total thickness:\n\n\\[31 + 50 + 45 + 62 = 188\\]\n\nTherefore, the total thickness of the four books is 188 mm."
+    },
+    {
+      "suite": "gsm8k",
+      "passed": true,
+      "expected": "280",
+      "output": "To find the number of students who went out through exit C, we can follow these steps:\n\n1. Calculate the number of students who went out through exit A.\n2. Calculate the number of students remaining after exit A.\n3. Calculate the number of students who went out through exit B from the remaining students.\n4. Calculate the number of students remaining after exit B.\n5. Calculate the number of students who went out through exit C.\n\nLet's start with the initial number of students, which is 1000.\n\n1. **Number of students who went out through exit A:**\n\\[30\\% \\text{ of } 1000 = 0.30 \\times 1000 = 300\\]\n\n2. **Number of students remaining after exit A:**\n\\[1000 - 300 = 700\\]\n\n3. **Number of students who went out through exit B:**\n\\[3/5 \\text{ of } 700 = \\frac{3}{5} \\times 700 = 420\\]\n\n4. **Number of students remaining after exit B:**\n\\[700 - 420 = 280\\]\n\n5. **Number of students who went out through exit C:**\n\\[280\\]\n\nTherefore, the number of students who went out through exit C is **280**."
+    },
+    {
+      "suite": "bbh_date",
+      "passed": false,
+      "expected": "(E)",
+      "output": "02/16/2020"
+    },
+    {
+      "suite": "bbh_date",
+      "passed": false,
+      "expected": "(F)",
+      "output": "05/29/2021"
+    },
+    {
+      "suite": "bbh_logic",
+      "passed": false,
+      "expected": "(E)",
+      "output": "B"
+    },
+    {
+      "suite": "bbh_logic",
+      "passed": false,
+      "expected": "(D)",
+      "output": "(A) Amy finished second"
+    }
+  ]
+}

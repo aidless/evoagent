@@ -1,0 +1,14 @@
+﻿[
+    {
+        "candidate":  "current",
+        "score":  0.6666666666666666,
+        "passed":  4,
+        "total":  6
+    },
+    {
+        "candidate":  "verification_first",
+        "score":  0.6666666666666666,
+        "passed":  4,
+        "total":  6
+    }
+]

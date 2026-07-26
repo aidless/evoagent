@@ -1,0 +1,28 @@
+{
+  "baseline": "2/6",
+  "tool_agent_v2": "3/6",
+  "added": 1,
+  "lost": 0,
+  "corpus": {
+    "total": 250,
+    "solved": 147,
+    "correct": 147,
+    "conditional_precision": 1.0,
+    "coverage": 0.588
+  },
+  "trace": [
+    {
+      "base": false,
+      "tool": "D",
+      "target": "(D)",
+      "final": true
+    },
+    {
+      "base": true,
+      "tool": "A",
+      "target": "(A)",
+      "final": true
+    }
+  ],
+  "promotion": true
+}

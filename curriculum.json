@@ -1,0 +1,13 @@
+﻿{
+  "version": 1,
+  "topics": [
+    {"id":"agent_evolution","query":"self improving machine learning agents evaluation", "year_min":2024},
+    {"id":"test_time_scaling","query":"test-time scaling verifier self correction language models", "year_min":2024},
+    {"id":"llm_evaluation","query":"large language model agent evaluation benchmarks reliability", "year_min":2024},
+    {"id":"reasoning_rl","query":"reinforcement learning language model reasoning GRPO verifiable rewards", "year_min":2024},
+    {"id":"rag_retrieval","query":"retrieval augmented generation evaluation hybrid retrieval reranking", "year_min":2024},
+    {"id":"uncertainty","query":"language model uncertainty calibration conformal prediction", "year_min":2024},
+    {"id":"ml_reproducibility","query":"machine learning reproducibility evaluation data contamination", "year_min":2024},
+    {"id":"code_agents","query":"software engineering coding agents SWE-bench evaluation", "year_min":2024}
+  ]
+}

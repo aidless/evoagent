@@ -1,0 +1,30 @@
+﻿[
+    {
+        "file":  "gsm8k-test.jsonl",
+        "status":  "ok",
+        "bytes":  749738,
+        "sha256":  "3730D312F6E3440559ACE48831E51066ACACA737F6EABEC99BCCB9E4B3C39D14",
+        "source":  "https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/test.jsonl"
+    },
+    {
+        "file":  "humaneval.jsonl.gz",
+        "status":  "ok",
+        "bytes":  44877,
+        "sha256":  "B796127E635A67F93FB35C04F4CB03CF06F38C8072EE7CEE8833D7BEE06979EF",
+        "source":  "https://raw.githubusercontent.com/openai/human-eval/master/data/HumanEval.jsonl.gz"
+    },
+    {
+        "file":  "bbh-date-understanding.json",
+        "status":  "ok",
+        "bytes":  61760,
+        "sha256":  "0148D4AC5FCA05B2F82373E5FEF7208E15363B9C6079493034D77B3DAB496BF5",
+        "source":  "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/main/bbh/date_understanding.json"
+    },
+    {
+        "file":  "bbh-logical-deduction-five.json",
+        "status":  "ok",
+        "bytes":  155477,
+        "sha256":  "D2DF31394B903B7F0E085D42A69572A092987856EAC076799017D70EF266FA8F",
+        "source":  "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/main/bbh/logical_deduction_five_objects.json"
+    }
+]

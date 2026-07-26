@@ -1,0 +1,25 @@
+# Local evolution state, private evidence, credentials and generated reports
+.evo/
+.deepeval/
+.tmp_promote_test/
+.tmp_test/
+
+# Secrets and private signing material
+*.priv
+.env
+.env.*
+**/private-keys/
+**/trusted-keys/*.priv
+
+# Downloaded/runtime corpora and binaries
+benchmarks/raw/
+benchmarks/learning/hidden/
+benchmarks/generated_date/hidden-key.json
+benchmarks/generated_logic/hidden-key.json
+runtime/
+
+# Python/build/editor artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.tmp

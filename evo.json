@@ -1,0 +1,50 @@
+{
+    "benchmark":  "examples/benchmark.json",
+    "evaluator_command":  "python examples/evaluator.py",
+    "timeout_seconds":  5,
+    "min_gain":  0.01,
+    "max_candidate_bytes":  65536,
+    "forbidden_tokens":  [
+                             "rm -rf",
+                             "format c:",
+                             "shutdown /s"
+                         ],
+    "mutations":  [
+                      {
+                          "normalize_case":  true
+                      },
+                      {
+                          "trim_whitespace":  true
+                      },
+                      {
+                          "normalize_case":  true,
+                          "trim_whitespace":  true
+                      }
+                  ],
+    "post_evolution_intelligence_command":  "python -m evoagent.intelligence --root . --candidate .evo/active.json --per-suite 20",
+    "intelligence_timeout_seconds":  1800,
+    "statistical_gate":  {
+                             "enabled":  true,
+                             "min_gain":  0.02,
+                             "alpha":  0.05,
+                             "max_cost_increase":  0.15,
+                             "max_latency_increase":  0.2,
+                             "max_capability_drop":  0.01,
+                             "bootstrap_iterations":  5000
+                         },
+    "autonomy":  {
+                     "max_rounds":  3,
+                     "max_candidates_per_round":  12,
+                     "patience":  1,
+                     "min_gain":  0.01,
+                     "require_statistical_gate":  true,
+                     "allow_revisit":  false
+                 },
+    "adaptive_proposer":  {
+                              "memory_candidates":  5,
+                              "min_trials":  1,
+                              "failure_mutations":  {
+
+                                                    }
+                          }
+}

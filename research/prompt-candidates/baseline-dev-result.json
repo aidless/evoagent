@@ -1,0 +1,63 @@
+﻿{
+  "verified": true,
+  "score": 0.3333333333333333,
+  "passed": 2,
+  "total": 6,
+  "suites": {
+    "bbh_date": {
+      "passed": 1,
+      "total": 2,
+      "score": 0.5
+    },
+    "bbh_logic": {
+      "passed": 0,
+      "total": 2,
+      "score": 0.0
+    },
+    "gsm8k": {
+      "passed": 1,
+      "total": 2,
+      "score": 0.5
+    }
+  },
+  "seed": 481516,
+  "model": "E:\\models\\qwen2-7b-instruct-q4_k_m.gguf",
+  "details": [
+    {
+      "suite": "gsm8k",
+      "passed": false,
+      "expected": "188",
+      "output": "242 mm"
+    },
+    {
+      "suite": "gsm8k",
+      "passed": true,
+      "expected": "280",
+      "output": "To find the number of students who went out through exit C, we can follow these steps:\n\n1. **Calculate the number of students who went out through exit A:**\n   - 30% of 1000 students went out through exit A.\n   - \\(30\\% \\times 1000 = 0.30 \\times 1000 = 300\\) students.\n\n2. **Calculate the number of students remaining after exit A:**\n   - \\(1000 - 300 = 700\\) students remained.\n\n3. **Calculate the number of students who went out through exit B:**\n   - \\(3/5\\) of the remaining 700 students went out through exit B.\n   - \\(3/5 \\times 700 = 420\\) students.\n\n4. **Calculate the number of students remaining after exit B:**\n   - \\(700 - 420 = 280\\) students remained.\n\n5. **Calculate the number of students who went out through exit C:**\n   - The remaining 280 students went out through exit C.\n\nTherefore, the number of students who went out through exit C is **280**."
+    },
+    {
+      "suite": "bbh_date",
+      "passed": true,
+      "expected": "(E)",
+      "output": "(E) 02/09/2020"
+    },
+    {
+      "suite": "bbh_date",
+      "passed": false,
+      "expected": "(F)",
+      "output": "05/29/2021"
+    },
+    {
+      "suite": "bbh_logic",
+      "passed": false,
+      "expected": "(E)",
+      "output": "(A) The truck is the third-newest"
+    },
+    {
+      "suite": "bbh_logic",
+      "passed": false,
+      "expected": "(D)",
+      "output": "(A) Amy finished second"
+    }
+  ]
+}

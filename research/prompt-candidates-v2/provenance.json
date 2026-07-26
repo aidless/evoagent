@@ -1,0 +1,13 @@
+{
+  "source_papers": [
+    "2508.16665",
+    "2605.02915",
+    "2511.21734",
+    "2508.16456"
+  ],
+  "claims_status": "evidence_only",
+  "generated_candidates": [
+    "verification_first",
+    "conditional_verify"
+  ]
+}

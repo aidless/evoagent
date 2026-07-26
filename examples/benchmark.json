@@ -1,0 +1,8 @@
+﻿{
+  "cases": [
+    {"id": "exact", "input": "hello", "expected": "hello"},
+    {"id": "case", "input": "HeLLo", "expected": "hello"},
+    {"id": "space", "input": "  world  ", "expected": "world"},
+    {"id": "both", "input": "  EvOlVe ", "expected": "evolve"}
+  ]
+}

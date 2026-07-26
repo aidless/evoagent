@@ -1,0 +1,45 @@
+﻿{
+  "verified": true,
+  "score": 0.6666666666666666,
+  "passed": 2,
+  "total": 3,
+  "suites": {
+    "bbh_date": {
+      "passed": 0,
+      "total": 1,
+      "score": 0.0
+    },
+    "bbh_logic": {
+      "passed": 1,
+      "total": 1,
+      "score": 1.0
+    },
+    "gsm8k": {
+      "passed": 1,
+      "total": 1,
+      "score": 1.0
+    }
+  },
+  "seed": 314159,
+  "model": "E:\\models\\qwen2-7b-instruct-q4_k_m.gguf",
+  "details": [
+    {
+      "suite": "gsm8k",
+      "passed": true,
+      "expected": "20",
+      "output": "20%"
+    },
+    {
+      "suite": "bbh_date",
+      "passed": false,
+      "expected": "(A)",
+      "output": "A"
+    },
+    {
+      "suite": "bbh_logic",
+      "passed": true,
+      "expected": "(E)",
+      "output": "(E)"
+    }
+  ]
+}

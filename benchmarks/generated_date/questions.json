@@ -1,0 +1,2706 @@
+{
+  "version": 1,
+  "seed": 2026072402,
+  "cases": [
+    {
+      "id": "date-0001",
+      "input": "The day before yesterday was 7/16/2014. What is the date 3 months later in MM/DD/YYYY?\nOptions:\n(A) 10/25/2014\n(B) 07/20/2014\n(C) 10/17/2014\n(D) 10/11/2014\n(E) 10/19/2014\n(F) 10/18/2014",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0002",
+      "input": "The day before yesterday was 3/31/2011. What is the date 2 months later in MM/DD/YYYY?\nOptions:\n(A) 06/02/2011\n(B) 05/31/2011\n(C) 07/03/2011\n(D) 06/04/2011\n(E) 06/03/2011\n(F) 06/09/2011",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0003",
+      "input": "Tomorrow is 5/3/2011. What is the date a week ago in MM/DD/YYYY?\nOptions:\n(A) 04/18/2011\n(B) 04/27/2011\n(C) 04/25/2011\n(D) 04/26/2011\n(E) 05/26/2011\n(F) 01/25/2011",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0004",
+      "input": "Tomorrow is 5/7/1995. What is the date a year later in MM/DD/YYYY?\nOptions:\n(A) 05/05/1996\n(B) 06/06/1996\n(C) 05/07/1996\n(D) 05/06/1996\n(E) 05/04/1996\n(F) 08/04/1996",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0005",
+      "input": "Yesterday was 8/16/1994. What is the date a week ago in MM/DD/YYYY?\nOptions:\n(A) 08/09/1994\n(B) 08/03/1994\n(C) 08/10/1994\n(D) 09/10/1994\n(E) 05/12/1994\n(F) 07/10/1994",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0006",
+      "input": "The day before yesterday was 10/20/2012. What is the date 2 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 10/07/2012\n(B) 10/09/2012\n(C) 10/06/2012\n(D) 01/06/2013\n(E) 07/10/2012\n(F) 10/08/2012",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0007",
+      "input": "The day before yesterday was 12/29/2006. What is the date a day ago in MM/DD/YYYY?\nOptions:\n(A) 12/30/2006\n(B) 03/30/2007\n(C) 11/29/2006\n(D) 10/01/2006\n(E) 01/06/2007\n(F) 12/28/2006",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0008",
+      "input": "The day before yesterday was 8/31/2009. What is the date one day later in MM/DD/YYYY?\nOptions:\n(A) 12/02/2009\n(B) 08/03/2009\n(C) 09/10/2009\n(D) 09/04/2009\n(E) 09/03/2009\n(F) 09/02/2009",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0009",
+      "input": "Tomorrow is 10/31/2005. What is the date 3 months ago in MM/DD/YYYY?\nOptions:\n(A) 07/31/2005\n(B) 07/23/2005\n(C) 05/01/2005\n(D) 07/30/2005\n(E) 08/06/2005\n(F) 08/01/2005",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0010",
+      "input": "The day before yesterday was 9/2/2022. What is the date 3 weeks later in MM/DD/YYYY?\nOptions:\n(A) 09/25/2022\n(B) 09/26/2022\n(C) 10/02/2022\n(D) 10/26/2022\n(E) 09/18/2022\n(F) 09/23/2022",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0011",
+      "input": "The day before yesterday was 3/25/2012. What is the date 3 months ago in MM/DD/YYYY?\nOptions:\n(A) 12/27/2011\n(B) 11/26/2011\n(C) 03/26/2012\n(D) 01/03/2012\n(E) 12/20/2011\n(F) 09/28/2011",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0012",
+      "input": "Today is 10/10/2023. What is the date 3 years later in MM/DD/YYYY?\nOptions:\n(A) 10/08/2026\n(B) 10/17/2026\n(C) 09/09/2026\n(D) 10/12/2026\n(E) 10/03/2026\n(F) 10/10/2026",
+      "meta": {
+        "setup": "today",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0013",
+      "input": "Today is 12/5/2024. What is the date one month ago in MM/DD/YYYY?\nOptions:\n(A) 11/12/2024\n(B) 08/07/2024\n(C) 10/05/2024\n(D) 10/29/2024\n(E) 02/03/2025\n(F) 11/05/2024",
+      "meta": {
+        "setup": "today",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0014",
+      "input": "Yesterday was 4/3/2027. What is the date a month later in MM/DD/YYYY?\nOptions:\n(A) 04/27/2027\n(B) 06/04/2027\n(C) 08/02/2027\n(D) 05/11/2027\n(E) 05/04/2027\n(F) 05/06/2027",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0015",
+      "input": "Tomorrow is 8/3/1998. What is the date 3 months later in MM/DD/YYYY?\nOptions:\n(A) 11/01/1998\n(B) 10/31/1998\n(C) 11/02/1998\n(D) 10/26/1998\n(E) 11/04/1998\n(F) 11/03/1998",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0016",
+      "input": "Tomorrow is 11/4/2017. What is the date 3 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 10/15/2017\n(B) 01/11/2018\n(C) 10/14/2017\n(D) 10/13/2017\n(E) 10/06/2017\n(F) 09/12/2017",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0017",
+      "input": "Yesterday was 10/27/2025. What is the date 3 years ago in MM/DD/YYYY?\nOptions:\n(A) 10/26/2022\n(B) 10/28/2022\n(C) 10/29/2022\n(D) 01/26/2023\n(E) 09/27/2022\n(F) 11/28/2022",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0018",
+      "input": "Tomorrow is 5/29/2022. What is the date 2 days later in MM/DD/YYYY?\nOptions:\n(A) 06/06/2022\n(B) 05/28/2022\n(C) 08/28/2022\n(D) 05/30/2022\n(E) 05/31/2022\n(F) 05/23/2022",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0019",
+      "input": "Tomorrow is 7/19/2025. What is the date 2 years ago in MM/DD/YYYY?\nOptions:\n(A) 07/16/2023\n(B) 07/25/2023\n(C) 08/18/2023\n(D) 07/18/2023\n(E) 07/11/2023\n(F) 07/19/2023",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0020",
+      "input": "Tomorrow is 11/29/2022. What is the date 3 years ago in MM/DD/YYYY?\nOptions:\n(A) 12/05/2019\n(B) 12/29/2019\n(C) 11/28/2019\n(D) 11/27/2019\n(E) 08/30/2019\n(F) 11/29/2019",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0021",
+      "input": "Yesterday was 6/7/1990. What is the date a day later in MM/DD/YYYY?\nOptions:\n(A) 06/10/1990\n(B) 06/07/1990\n(C) 05/09/1990\n(D) 06/09/1990\n(E) 06/11/1990\n(F) 07/10/1990",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0022",
+      "input": "Yesterday was 11/14/1990. What is the date 2 weeks later in MM/DD/YYYY?\nOptions:\n(A) 11/28/1990\n(B) 12/30/1990\n(C) 10/29/1990\n(D) 11/27/1990\n(E) 11/29/1990\n(F) 02/27/1991",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0023",
+      "input": "The day before yesterday was 5/18/1995. What is the date 2 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/16/1995\n(B) 05/18/1995\n(C) 06/18/1995\n(D) 04/17/1995\n(E) 05/16/1995\n(F) 05/17/1995",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0024",
+      "input": "Tomorrow is 1/19/2012. What is the date 3 days ago in MM/DD/YYYY?\nOptions:\n(A) 04/14/2012\n(B) 01/08/2012\n(C) 01/22/2012\n(D) 01/13/2012\n(E) 01/15/2012\n(F) 01/14/2012",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0025",
+      "input": "Yesterday was 8/24/2023. What is the date a week later in MM/DD/YYYY?\nOptions:\n(A) 08/31/2023\n(B) 08/30/2023\n(C) 08/01/2023\n(D) 11/30/2023\n(E) 06/03/2023\n(F) 09/01/2023",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0026",
+      "input": "Tomorrow is 10/28/2013. What is the date one day ago in MM/DD/YYYY?\nOptions:\n(A) 10/25/2013\n(B) 10/28/2013\n(C) 09/25/2013\n(D) 10/26/2013\n(E) 01/24/2014\n(F) 07/28/2013",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0027",
+      "input": "The day before yesterday was 8/18/2006. What is the date 3 years later in MM/DD/YYYY?\nOptions:\n(A) 09/20/2009\n(B) 07/20/2009\n(C) 05/22/2009\n(D) 08/19/2009\n(E) 08/20/2009\n(F) 08/18/2009",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0028",
+      "input": "Today is 9/29/1997. What is the date a week later in MM/DD/YYYY?\nOptions:\n(A) 09/29/1997\n(B) 10/13/1997\n(C) 01/04/1998\n(D) 09/05/1997\n(E) 10/06/1997\n(F) 11/06/1997",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0029",
+      "input": "Yesterday was 6/18/2024. What is the date 3 years ago in MM/DD/YYYY?\nOptions:\n(A) 06/26/2021\n(B) 06/20/2021\n(C) 06/19/2021\n(D) 03/21/2021\n(E) 07/20/2021\n(F) 09/17/2021",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0030",
+      "input": "Tomorrow is 6/30/2004. What is the date 3 days ago in MM/DD/YYYY?\nOptions:\n(A) 07/03/2004\n(B) 03/28/2004\n(C) 05/26/2004\n(D) 06/27/2004\n(E) 07/27/2004\n(F) 06/26/2004",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0031",
+      "input": "Today is 3/28/2026. What is the date one day ago in MM/DD/YYYY?\nOptions:\n(A) 12/27/2025\n(B) 03/27/2026\n(C) 02/24/2026\n(D) 03/28/2026\n(E) 04/27/2026\n(F) 04/03/2026",
+      "meta": {
+        "setup": "today",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0032",
+      "input": "Today is 2/7/2025. What is the date a month ago in MM/DD/YYYY?\nOptions:\n(A) 01/07/2025\n(B) 01/05/2025\n(C) 12/31/2024\n(D) 12/07/2024\n(E) 10/09/2024\n(F) 01/09/2025",
+      "meta": {
+        "setup": "today",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0033",
+      "input": "Yesterday was 9/3/2027. What is the date 3 days later in MM/DD/YYYY?\nOptions:\n(A) 08/07/2027\n(B) 09/06/2027\n(C) 09/14/2027\n(D) 09/09/2027\n(E) 09/07/2027\n(F) 06/09/2027",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0034",
+      "input": "The day before yesterday was 4/29/2014. What is the date 3 months later in MM/DD/YYYY?\nOptions:\n(A) 08/02/2014\n(B) 08/08/2014\n(C) 05/03/2014\n(D) 08/03/2014\n(E) 08/01/2014\n(F) 09/01/2014",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0035",
+      "input": "The day before yesterday was 8/29/2019. What is the date a year later in MM/DD/YYYY?\nOptions:\n(A) 09/01/2020\n(B) 07/31/2020\n(C) 08/24/2020\n(D) 08/30/2020\n(E) 08/31/2020\n(F) 09/07/2020",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0036",
+      "input": "Today is 1/7/2009. What is the date 3 years later in MM/DD/YYYY?\nOptions:\n(A) 10/09/2011\n(B) 01/07/2012\n(C) 04/06/2012\n(D) 12/07/2011\n(E) 01/09/2012\n(F) 01/14/2012",
+      "meta": {
+        "setup": "today",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0037",
+      "input": "Tomorrow is 1/22/2029. What is the date a month later in MM/DD/YYYY?\nOptions:\n(A) 02/20/2029\n(B) 02/21/2029\n(C) 02/28/2029\n(D) 05/22/2029\n(E) 03/24/2029\n(F) 02/19/2029",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0038",
+      "input": "The day before yesterday was 5/25/1996. What is the date 3 years later in MM/DD/YYYY?\nOptions:\n(A) 05/29/1999\n(B) 05/27/1999\n(C) 04/26/1999\n(D) 06/27/1999\n(E) 02/26/1999\n(F) 05/28/1999",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0039",
+      "input": "The day before yesterday was 9/7/2010. What is the date one month later in MM/DD/YYYY?\nOptions:\n(A) 10/07/2010\n(B) 10/16/2010\n(C) 10/11/2010\n(D) 10/08/2010\n(E) 10/09/2010\n(F) 09/08/2010",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0040",
+      "input": "Tomorrow is 3/3/2024. What is the date 2 years later in MM/DD/YYYY?\nOptions:\n(A) 02/28/2026\n(B) 03/09/2026\n(C) 01/30/2026\n(D) 04/02/2026\n(E) 03/01/2026\n(F) 03/02/2026",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0041",
+      "input": "The day before yesterday was 12/10/2030. What is the date one month ago in MM/DD/YYYY?\nOptions:\n(A) 11/11/2030\n(B) 11/10/2030\n(C) 11/13/2030\n(D) 11/12/2030\n(E) 10/12/2030\n(F) 11/05/2030",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0042",
+      "input": "Tomorrow is 1/24/2003. What is the date 3 months ago in MM/DD/YYYY?\nOptions:\n(A) 10/30/2002\n(B) 10/23/2002\n(C) 07/25/2002\n(D) 10/21/2002\n(E) 10/16/2002\n(F) 10/25/2002",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0043",
+      "input": "Today is 1/30/2005. What is the date one month later in MM/DD/YYYY?\nOptions:\n(A) 05/29/2005\n(B) 02/28/2005\n(C) 03/01/2005\n(D) 03/02/2005\n(E) 03/07/2005\n(F) 11/30/2004",
+      "meta": {
+        "setup": "today",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0044",
+      "input": "Yesterday was 2/23/1997. What is the date 2 weeks later in MM/DD/YYYY?\nOptions:\n(A) 03/10/1997\n(B) 02/07/1997\n(C) 04/10/1997\n(D) 03/11/1997\n(E) 06/08/1997\n(F) 03/12/1997",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0045",
+      "input": "The day before yesterday was 5/9/2009. What is the date 2 days ago in MM/DD/YYYY?\nOptions:\n(A) 05/16/2009\n(B) 05/10/2009\n(C) 05/08/2009\n(D) 08/07/2009\n(E) 05/09/2009\n(F) 06/09/2009",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0046",
+      "input": "Today is 9/25/1998. What is the date 2 months ago in MM/DD/YYYY?\nOptions:\n(A) 07/26/1998\n(B) 04/26/1998\n(C) 07/18/1998\n(D) 06/24/1998\n(E) 07/25/1998\n(F) 08/01/1998",
+      "meta": {
+        "setup": "today",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0047",
+      "input": "The day before yesterday was 1/3/2020. What is the date 3 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 12/17/2019\n(B) 12/16/2019\n(C) 12/08/2019\n(D) 12/14/2019\n(E) 11/14/2019\n(F) 12/15/2019",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0048",
+      "input": "Today is 4/11/2011. What is the date 3 months ago in MM/DD/YYYY?\nOptions:\n(A) 01/18/2011\n(B) 01/11/2011\n(C) 01/10/2011\n(D) 01/13/2011\n(E) 01/04/2011\n(F) 01/12/2011",
+      "meta": {
+        "setup": "today",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0049",
+      "input": "Today is 9/4/1998. What is the date 2 months later in MM/DD/YYYY?\nOptions:\n(A) 08/06/1998\n(B) 11/02/1998\n(C) 10/04/1998\n(D) 10/28/1998\n(E) 11/04/1998\n(F) 12/05/1998",
+      "meta": {
+        "setup": "today",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0050",
+      "input": "Tomorrow is 9/8/2003. What is the date 2 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 08/23/2003\n(B) 08/31/2003\n(C) 08/24/2003\n(D) 08/25/2003\n(E) 09/24/2003\n(F) 05/26/2003",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0051",
+      "input": "Yesterday was 5/6/2010. What is the date 2 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 04/22/2010\n(B) 04/23/2010\n(C) 04/30/2010\n(D) 04/16/2010\n(E) 04/25/2010\n(F) 05/24/2010",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0052",
+      "input": "Tomorrow is 4/12/2003. What is the date one month later in MM/DD/YYYY?\nOptions:\n(A) 02/10/2003\n(B) 05/10/2003\n(C) 04/10/2003\n(D) 05/13/2003\n(E) 05/11/2003\n(F) 05/09/2003",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0053",
+      "input": "Tomorrow is 7/14/2023. What is the date one month later in MM/DD/YYYY?\nOptions:\n(A) 05/15/2023\n(B) 08/06/2023\n(C) 08/12/2023\n(D) 08/13/2023\n(E) 11/11/2023\n(F) 09/13/2023",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0054",
+      "input": "Yesterday was 10/10/1991. What is the date 2 years ago in MM/DD/YYYY?\nOptions:\n(A) 11/11/1989\n(B) 07/13/1989\n(C) 10/18/1989\n(D) 10/13/1989\n(E) 10/11/1989\n(F) 10/04/1989",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0055",
+      "input": "Tomorrow is 8/11/1997. What is the date 3 years later in MM/DD/YYYY?\nOptions:\n(A) 08/10/2000\n(B) 09/10/2000\n(C) 08/12/2000\n(D) 08/17/2000\n(E) 08/03/2000\n(F) 08/08/2000",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0056",
+      "input": "The day before yesterday was 5/18/1991. What is the date 2 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 04/05/1991\n(B) 02/05/1991\n(C) 05/06/1991\n(D) 05/08/1991\n(E) 05/04/1991\n(F) 04/29/1991",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0057",
+      "input": "The day before yesterday was 3/15/2003. What is the date 2 years later in MM/DD/YYYY?\nOptions:\n(A) 06/15/2005\n(B) 03/17/2005\n(C) 03/19/2005\n(D) 03/18/2005\n(E) 04/17/2005\n(F) 03/16/2005",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0058",
+      "input": "The day before yesterday was 1/13/2027. What is the date 2 months ago in MM/DD/YYYY?\nOptions:\n(A) 11/22/2026\n(B) 02/13/2027\n(C) 11/13/2026\n(D) 08/17/2026\n(E) 11/16/2026\n(F) 11/15/2026",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0059",
+      "input": "The day before yesterday was 4/25/2012. What is the date 2 days later in MM/DD/YYYY?\nOptions:\n(A) 04/30/2012\n(B) 05/30/2012\n(C) 04/29/2012\n(D) 01/30/2012\n(E) 04/27/2012\n(F) 04/28/2012",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0060",
+      "input": "Today is 3/1/2005. What is the date 2 weeks later in MM/DD/YYYY?\nOptions:\n(A) 03/13/2005\n(B) 03/08/2005\n(C) 03/14/2005\n(D) 04/15/2005\n(E) 12/15/2004\n(F) 03/15/2005",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0061",
+      "input": "Yesterday was 2/6/2026. What is the date 3 months ago in MM/DD/YYYY?\nOptions:\n(A) 11/05/2025\n(B) 08/09/2025\n(C) 10/07/2025\n(D) 11/06/2025\n(E) 11/07/2025\n(F) 10/31/2025",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0062",
+      "input": "Today is 11/5/1992. What is the date 2 months ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1992\n(B) 09/05/1992\n(C) 09/03/1992\n(D) 08/05/1992\n(E) 09/06/1992\n(F) 09/07/1992",
+      "meta": {
+        "setup": "today",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0063",
+      "input": "Today is 10/29/2030. What is the date 3 days later in MM/DD/YYYY?\nOptions:\n(A) 11/03/2030\n(B) 01/30/2031\n(C) 10/30/2030\n(D) 10/31/2030\n(E) 11/01/2030\n(F) 08/03/2030",
+      "meta": {
+        "setup": "today",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0064",
+      "input": "Yesterday was 2/19/2002. What is the date a month ago in MM/DD/YYYY?\nOptions:\n(A) 01/27/2002\n(B) 01/20/2002\n(C) 01/13/2002\n(D) 04/20/2002\n(E) 01/21/2002\n(F) 12/20/2001",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0065",
+      "input": "Tomorrow is 10/18/1991. What is the date 2 years ago in MM/DD/YYYY?\nOptions:\n(A) 09/16/1989\n(B) 11/17/1989\n(C) 07/19/1989\n(D) 10/17/1989\n(E) 10/10/1989\n(F) 01/15/1990",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0066",
+      "input": "Tomorrow is 9/18/2003. What is the date 3 days ago in MM/DD/YYYY?\nOptions:\n(A) 12/13/2003\n(B) 09/21/2003\n(C) 09/16/2003\n(D) 09/13/2003\n(E) 09/12/2003\n(F) 09/14/2003",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0067",
+      "input": "Yesterday was 11/18/2014. What is the date a day later in MM/DD/YYYY?\nOptions:\n(A) 11/22/2014\n(B) 02/18/2015\n(C) 11/13/2014\n(D) 10/20/2014\n(E) 11/20/2014\n(F) 11/18/2014",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0068",
+      "input": "The day before yesterday was 10/29/2026. What is the date 2 months later in MM/DD/YYYY?\nOptions:\n(A) 12/24/2026\n(B) 01/31/2027\n(C) 12/29/2026\n(D) 12/31/2026\n(E) 01/01/2027\n(F) 03/31/2027",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0069",
+      "input": "Today is 3/16/2000. What is the date 2 days ago in MM/DD/YYYY?\nOptions:\n(A) 03/21/2000\n(B) 12/15/1999\n(C) 04/14/2000\n(D) 03/14/2000\n(E) 02/12/2000\n(F) 03/16/2000",
+      "meta": {
+        "setup": "today",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0070",
+      "input": "The day before yesterday was 5/24/1992. What is the date 2 days later in MM/DD/YYYY?\nOptions:\n(A) 05/30/1992\n(B) 04/27/1992\n(C) 05/28/1992\n(D) 06/28/1992\n(E) 02/28/1992\n(F) 05/27/1992",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0071",
+      "input": "Yesterday was 7/20/2014. What is the date 3 months ago in MM/DD/YYYY?\nOptions:\n(A) 03/21/2014\n(B) 04/23/2014\n(C) 04/20/2014\n(D) 04/14/2014\n(E) 04/22/2014\n(F) 04/21/2014",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0072",
+      "input": "Today is 11/9/2029. What is the date 3 weeks later in MM/DD/YYYY?\nOptions:\n(A) 12/02/2029\n(B) 12/07/2029\n(C) 10/30/2029\n(D) 11/30/2029\n(E) 11/28/2029\n(F) 12/31/2029",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0073",
+      "input": "Tomorrow is 1/17/2026. What is the date a month ago in MM/DD/YYYY?\nOptions:\n(A) 12/15/2025\n(B) 12/17/2025\n(C) 01/16/2026\n(D) 12/16/2025\n(E) 11/15/2025\n(F) 12/23/2025",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0074",
+      "input": "The day before yesterday was 5/31/2010. What is the date 3 months later in MM/DD/YYYY?\nOptions:\n(A) 12/01/2010\n(B) 08/31/2010\n(C) 08/26/2010\n(D) 09/02/2010\n(E) 08/02/2010\n(F) 09/03/2010",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0075",
+      "input": "Tomorrow is 12/10/2013. What is the date one month ago in MM/DD/YYYY?\nOptions:\n(A) 11/02/2013\n(B) 11/09/2013\n(C) 08/11/2013\n(D) 11/16/2013\n(E) 11/07/2013\n(F) 11/08/2013",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0076",
+      "input": "The day before yesterday was 7/13/2018. What is the date a year ago in MM/DD/YYYY?\nOptions:\n(A) 07/08/2017\n(B) 07/17/2017\n(C) 07/14/2017\n(D) 07/15/2017\n(E) 07/22/2017\n(F) 06/14/2017",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0077",
+      "input": "The day before yesterday was 4/23/2021. What is the date 2 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 01/11/2021\n(B) 03/11/2021\n(C) 04/18/2021\n(D) 04/11/2021\n(E) 04/12/2021\n(F) 04/04/2021",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0078",
+      "input": "The day before yesterday was 9/18/2008. What is the date 3 months later in MM/DD/YYYY?\nOptions:\n(A) 12/18/2008\n(B) 11/19/2008\n(C) 12/13/2008\n(D) 12/19/2008\n(E) 12/22/2008\n(F) 12/20/2008",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0079",
+      "input": "The day before yesterday was 12/13/2016. What is the date 3 days ago in MM/DD/YYYY?\nOptions:\n(A) 11/11/2016\n(B) 01/12/2017\n(C) 12/14/2016\n(D) 12/12/2016\n(E) 03/12/2017\n(F) 12/19/2016",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0080",
+      "input": "Today is 6/18/2025. What is the date a month later in MM/DD/YYYY?\nOptions:\n(A) 07/11/2025\n(B) 06/17/2025\n(C) 08/18/2025\n(D) 07/18/2025\n(E) 10/16/2025\n(F) 04/19/2025",
+      "meta": {
+        "setup": "today",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0081",
+      "input": "Yesterday was 7/23/2029. What is the date one week later in MM/DD/YYYY?\nOptions:\n(A) 10/29/2029\n(B) 07/31/2029\n(C) 08/02/2029\n(D) 08/01/2029\n(E) 05/02/2029\n(F) 07/24/2029",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0082",
+      "input": "Tomorrow is 11/10/1991. What is the date a month later in MM/DD/YYYY?\nOptions:\n(A) 12/09/1991\n(B) 09/10/1991\n(C) 12/11/1991\n(D) 12/02/1991\n(E) 12/16/1991\n(F) 01/09/1992",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0083",
+      "input": "Yesterday was 10/20/2020. What is the date 3 months ago in MM/DD/YYYY?\nOptions:\n(A) 06/20/2020\n(B) 07/23/2020\n(C) 07/19/2020\n(D) 07/22/2020\n(E) 07/20/2020\n(F) 07/21/2020",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0084",
+      "input": "The day before yesterday was 12/7/1996. What is the date a week ago in MM/DD/YYYY?\nOptions:\n(A) 01/02/1997\n(B) 12/03/1996\n(C) 12/02/1996\n(D) 11/25/1996\n(E) 09/03/1996\n(F) 12/09/1996",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0085",
+      "input": "Yesterday was 2/7/2023. What is the date 2 months later in MM/DD/YYYY?\nOptions:\n(A) 05/09/2023\n(B) 03/08/2023\n(C) 07/07/2023\n(D) 01/08/2023\n(E) 04/08/2023\n(F) 04/01/2023",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0086",
+      "input": "Tomorrow is 11/24/2021. What is the date 3 years ago in MM/DD/YYYY?\nOptions:\n(A) 11/23/2018\n(B) 11/25/2018\n(C) 11/16/2018\n(D) 11/24/2018\n(E) 11/22/2018\n(F) 11/30/2018",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0087",
+      "input": "Yesterday was 11/27/2026. What is the date 3 years ago in MM/DD/YYYY?\nOptions:\n(A) 11/26/2023\n(B) 10/28/2023\n(C) 11/30/2023\n(D) 11/28/2023\n(E) 11/29/2023\n(F) 11/27/2023",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0088",
+      "input": "Tomorrow is 1/27/1992. What is the date a month later in MM/DD/YYYY?\nOptions:\n(A) 02/26/1992\n(B) 02/28/1992\n(C) 02/27/1992\n(D) 11/28/1991\n(E) 03/28/1992\n(F) 03/04/1992",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0089",
+      "input": "The day before yesterday was 10/31/2017. What is the date a year later in MM/DD/YYYY?\nOptions:\n(A) 01/31/2019\n(B) 10/26/2018\n(C) 11/04/2018\n(D) 10/31/2018\n(E) 11/02/2018\n(F) 10/02/2018",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0090",
+      "input": "Yesterday was 8/1/2005. What is the date a year ago in MM/DD/YYYY?\nOptions:\n(A) 05/04/2004\n(B) 09/02/2004\n(C) 10/31/2004\n(D) 08/02/2004\n(E) 07/31/2004\n(F) 08/01/2004",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0091",
+      "input": "Tomorrow is 1/1/2031. What is the date 2 years ago in MM/DD/YYYY?\nOptions:\n(A) 01/02/2029\n(B) 12/30/2028\n(C) 12/31/2028\n(D) 12/24/2028\n(E) 11/30/2028\n(F) 10/02/2028",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0092",
+      "input": "The day before yesterday was 3/6/2026. What is the date 3 days ago in MM/DD/YYYY?\nOptions:\n(A) 12/05/2025\n(B) 03/12/2026\n(C) 02/02/2026\n(D) 04/05/2026\n(E) 03/05/2026\n(F) 03/07/2026",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0093",
+      "input": "Today is 2/12/2014. What is the date 3 days later in MM/DD/YYYY?\nOptions:\n(A) 01/15/2014\n(B) 05/16/2014\n(C) 02/08/2014\n(D) 02/15/2014\n(E) 02/17/2014\n(F) 11/17/2013",
+      "meta": {
+        "setup": "today",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0094",
+      "input": "Today is 4/2/2001. What is the date one year ago in MM/DD/YYYY?\nOptions:\n(A) 07/01/2000\n(B) 04/09/2000\n(C) 05/03/2000\n(D) 04/02/2000\n(E) 03/02/2000\n(F) 04/03/2000",
+      "meta": {
+        "setup": "today",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0095",
+      "input": "Today is 7/17/2029. What is the date 2 months later in MM/DD/YYYY?\nOptions:\n(A) 09/15/2029\n(B) 09/16/2029\n(C) 10/18/2029\n(D) 08/17/2029\n(E) 09/10/2029\n(F) 09/17/2029",
+      "meta": {
+        "setup": "today",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0096",
+      "input": "Yesterday was 4/30/2014. What is the date 3 months ago in MM/DD/YYYY?\nOptions:\n(A) 01/31/2014\n(B) 03/04/2014\n(C) 01/25/2014\n(D) 02/01/2014\n(E) 01/01/2014\n(F) 02/08/2014",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0097",
+      "input": "Yesterday was 3/25/2005. What is the date 3 months ago in MM/DD/YYYY?\nOptions:\n(A) 12/24/2004\n(B) 03/26/2005\n(C) 01/26/2005\n(D) 12/26/2004\n(E) 12/19/2004\n(F) 11/25/2004",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0098",
+      "input": "The day before yesterday was 12/21/1990. What is the date 3 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 11/25/1990\n(B) 12/04/1990\n(C) 11/01/1990\n(D) 12/02/1990\n(E) 09/03/1990\n(F) 12/01/1990",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0099",
+      "input": "The day before yesterday was 7/23/2000. What is the date one week ago in MM/DD/YYYY?\nOptions:\n(A) 07/25/2000\n(B) 10/16/2000\n(C) 07/18/2000\n(D) 06/17/2000\n(E) 07/20/2000\n(F) 04/19/2000",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0100",
+      "input": "Tomorrow is 2/15/2011. What is the date 3 weeks later in MM/DD/YYYY?\nOptions:\n(A) 03/08/2011\n(B) 02/04/2011\n(C) 03/07/2011\n(D) 02/28/2011\n(E) 03/06/2011\n(F) 04/07/2011",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0101",
+      "input": "The day before yesterday was 11/4/2019. What is the date a day later in MM/DD/YYYY?\nOptions:\n(A) 11/07/2019\n(B) 02/05/2020\n(C) 11/09/2019\n(D) 11/14/2019\n(E) 11/08/2019\n(F) 11/05/2019",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0102",
+      "input": "The day before yesterday was 7/21/2006. What is the date 2 days ago in MM/DD/YYYY?\nOptions:\n(A) 04/22/2006\n(B) 10/19/2006\n(C) 07/14/2006\n(D) 07/21/2006\n(E) 07/22/2006\n(F) 07/23/2006",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0103",
+      "input": "Today is 1/5/2012. What is the date a month ago in MM/DD/YYYY?\nOptions:\n(A) 12/04/2011\n(B) 01/05/2012\n(C) 12/05/2011\n(D) 09/06/2011\n(E) 12/03/2011\n(F) 11/28/2011",
+      "meta": {
+        "setup": "today",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0104",
+      "input": "The day before yesterday was 4/28/2030. What is the date one day ago in MM/DD/YYYY?\nOptions:\n(A) 05/30/2030\n(B) 04/28/2030\n(C) 04/30/2030\n(D) 04/22/2030\n(E) 03/29/2030\n(F) 04/29/2030",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0105",
+      "input": "The day before yesterday was 3/29/2003. What is the date 2 months later in MM/DD/YYYY?\nOptions:\n(A) 05/30/2003\n(B) 07/01/2003\n(C) 03/02/2003\n(D) 06/02/2003\n(E) 05/31/2003\n(F) 05/29/2003",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0106",
+      "input": "The day before yesterday was 7/9/2013. What is the date 2 days later in MM/DD/YYYY?\nOptions:\n(A) 08/13/2013\n(B) 07/15/2013\n(C) 07/14/2013\n(D) 07/13/2013\n(E) 07/06/2013\n(F) 07/12/2013",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0107",
+      "input": "Tomorrow is 9/26/1999. What is the date one day ago in MM/DD/YYYY?\nOptions:\n(A) 09/25/1999\n(B) 09/22/1999\n(C) 06/26/1999\n(D) 09/24/1999\n(E) 09/17/1999\n(F) 09/23/1999",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0108",
+      "input": "Yesterday was 2/16/1998. What is the date one week ago in MM/DD/YYYY?\nOptions:\n(A) 02/17/1998\n(B) 05/11/1998\n(C) 02/08/1998\n(D) 01/10/1998\n(E) 02/10/1998\n(F) 11/12/1997",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0109",
+      "input": "The day before yesterday was 11/26/2000. What is the date 2 days later in MM/DD/YYYY?\nOptions:\n(A) 10/30/2000\n(B) 11/30/2000\n(C) 11/28/2000\n(D) 12/31/2000\n(E) 09/01/2000\n(F) 02/28/2001",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0110",
+      "input": "Tomorrow is 5/24/2015. What is the date one month later in MM/DD/YYYY?\nOptions:\n(A) 06/21/2015\n(B) 06/23/2015\n(C) 07/24/2015\n(D) 06/24/2015\n(E) 05/23/2015\n(F) 06/22/2015",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0111",
+      "input": "Yesterday was 8/19/2026. What is the date a week ago in MM/DD/YYYY?\nOptions:\n(A) 08/06/2026\n(B) 08/20/2026\n(C) 09/13/2026\n(D) 08/13/2026\n(E) 07/13/2026\n(F) 11/11/2026",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0112",
+      "input": "The day before yesterday was 10/17/2026. What is the date 2 months ago in MM/DD/YYYY?\nOptions:\n(A) 11/17/2026\n(B) 08/21/2026\n(C) 08/26/2026\n(D) 05/21/2026\n(E) 08/18/2026\n(F) 08/19/2026",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0113",
+      "input": "The day before yesterday was 10/31/1994. What is the date a month ago in MM/DD/YYYY?\nOptions:\n(A) 11/02/1994\n(B) 09/30/1994\n(C) 09/25/1994\n(D) 10/02/1994\n(E) 10/04/1994\n(F) 10/01/1994",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0114",
+      "input": "Tomorrow is 1/29/1990. What is the date 3 days ago in MM/DD/YYYY?\nOptions:\n(A) 01/25/1990\n(B) 01/23/1990\n(C) 01/26/1990\n(D) 10/27/1989\n(E) 02/25/1990\n(F) 01/18/1990",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0115",
+      "input": "The day before yesterday was 5/3/2008. What is the date a week later in MM/DD/YYYY?\nOptions:\n(A) 02/12/2008\n(B) 04/11/2008\n(C) 05/11/2008\n(D) 05/05/2008\n(E) 05/12/2008\n(F) 05/13/2008",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0116",
+      "input": "The day before yesterday was 4/8/2014. What is the date 2 years later in MM/DD/YYYY?\nOptions:\n(A) 03/10/2016\n(B) 04/03/2016\n(C) 04/11/2016\n(D) 04/17/2016\n(E) 07/09/2016\n(F) 04/10/2016",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0117",
+      "input": "Yesterday was 5/25/2017. What is the date a year ago in MM/DD/YYYY?\nOptions:\n(A) 06/02/2016\n(B) 05/24/2016\n(C) 06/26/2016\n(D) 02/26/2016\n(E) 05/28/2016\n(F) 05/26/2016",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0118",
+      "input": "Yesterday was 12/25/1997. What is the date one week later in MM/DD/YYYY?\nOptions:\n(A) 01/01/1998\n(B) 01/02/1998\n(C) 12/31/1997\n(D) 12/02/1997\n(E) 12/26/1997\n(F) 01/03/1998",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0119",
+      "input": "Today is 8/1/2011. What is the date 3 days later in MM/DD/YYYY?\nOptions:\n(A) 08/04/2011\n(B) 11/02/2011\n(C) 07/28/2011\n(D) 08/02/2011\n(E) 05/06/2011\n(F) 07/04/2011",
+      "meta": {
+        "setup": "today",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0120",
+      "input": "The day before yesterday was 3/19/2020. What is the date 2 weeks later in MM/DD/YYYY?\nOptions:\n(A) 04/11/2020\n(B) 01/05/2020\n(C) 04/06/2020\n(D) 04/04/2020\n(E) 04/05/2020\n(F) 03/28/2020",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0121",
+      "input": "Tomorrow is 11/14/2004. What is the date 2 days later in MM/DD/YYYY?\nOptions:\n(A) 11/17/2004\n(B) 12/16/2004\n(C) 11/08/2004\n(D) 11/15/2004\n(E) 11/16/2004\n(F) 08/17/2004",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0122",
+      "input": "The day before yesterday was 5/31/1992. What is the date 2 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1992\n(B) 05/29/1992\n(C) 05/31/1992\n(D) 03/02/1992\n(E) 05/24/1992\n(F) 06/02/1992",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0123",
+      "input": "Yesterday was 4/9/2014. What is the date 2 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 03/20/2014\n(B) 03/25/2014\n(C) 04/03/2014\n(D) 02/24/2014\n(E) 03/27/2014\n(F) 06/25/2014",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0124",
+      "input": "Yesterday was 2/6/2009. What is the date 3 days ago in MM/DD/YYYY?\nOptions:\n(A) 02/11/2009\n(B) 11/06/2008\n(C) 02/04/2009\n(D) 02/05/2009\n(E) 01/04/2009\n(F) 02/03/2009",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0125",
+      "input": "The day before yesterday was 4/22/2001. What is the date 2 days ago in MM/DD/YYYY?\nOptions:\n(A) 04/20/2001\n(B) 04/23/2001\n(C) 04/29/2001\n(D) 01/22/2001\n(E) 04/15/2001\n(F) 04/22/2001",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0126",
+      "input": "Tomorrow is 9/22/2004. What is the date 2 years ago in MM/DD/YYYY?\nOptions:\n(A) 09/28/2002\n(B) 12/20/2002\n(C) 09/20/2002\n(D) 09/21/2002\n(E) 09/22/2002\n(F) 09/19/2002",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0127",
+      "input": "Tomorrow is 11/11/2019. What is the date 2 weeks later in MM/DD/YYYY?\nOptions:\n(A) 11/25/2019\n(B) 08/26/2019\n(C) 11/23/2019\n(D) 02/22/2020\n(E) 11/24/2019\n(F) 12/25/2019",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0128",
+      "input": "Tomorrow is 11/11/2019. What is the date one week ago in MM/DD/YYYY?\nOptions:\n(A) 10/03/2019\n(B) 11/01/2019\n(C) 02/01/2020\n(D) 11/10/2019\n(E) 11/03/2019\n(F) 11/05/2019",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0129",
+      "input": "Yesterday was 8/29/2008. What is the date 3 years ago in MM/DD/YYYY?\nOptions:\n(A) 08/28/2005\n(B) 07/30/2005\n(C) 06/01/2005\n(D) 08/30/2005\n(E) 09/01/2005\n(F) 08/23/2005",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0130",
+      "input": "The day before yesterday was 12/22/2027. What is the date a month later in MM/DD/YYYY?\nOptions:\n(A) 01/26/2028\n(B) 01/24/2028\n(C) 12/24/2027\n(D) 01/22/2028\n(E) 01/23/2028\n(F) 10/26/2027",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0131",
+      "input": "Today is 10/8/2008. What is the date 3 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 09/19/2008\n(B) 09/16/2008\n(C) 09/24/2008\n(D) 09/17/2008\n(E) 09/18/2008\n(F) 12/16/2008",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0132",
+      "input": "Tomorrow is 5/19/1990. What is the date one year later in MM/DD/YYYY?\nOptions:\n(A) 05/17/1991\n(B) 05/11/1991\n(C) 05/25/1991\n(D) 08/16/1991\n(E) 05/18/1991\n(F) 05/16/1991",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0133",
+      "input": "Today is 12/30/1992. What is the date 3 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 12/09/1992\n(B) 09/10/1992\n(C) 11/08/1992\n(D) 12/02/1992\n(E) 12/10/1992\n(F) 03/09/1993",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0134",
+      "input": "The day before yesterday was 5/27/1990. What is the date 3 days later in MM/DD/YYYY?\nOptions:\n(A) 08/30/1990\n(B) 06/02/1990\n(C) 05/01/1990\n(D) 06/01/1990\n(E) 06/08/1990\n(F) 05/30/1990",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0135",
+      "input": "The day before yesterday was 2/25/2006. What is the date 2 months later in MM/DD/YYYY?\nOptions:\n(A) 04/28/2006\n(B) 05/04/2006\n(C) 01/27/2006\n(D) 04/25/2006\n(E) 04/27/2006\n(F) 04/26/2006",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0136",
+      "input": "Yesterday was 9/20/1996. What is the date 3 months later in MM/DD/YYYY?\nOptions:\n(A) 01/21/1997\n(B) 12/21/1996\n(C) 12/22/1996\n(D) 11/20/1996\n(E) 12/14/1996\n(F) 03/21/1997",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0137",
+      "input": "The day before yesterday was 9/11/2029. What is the date one month later in MM/DD/YYYY?\nOptions:\n(A) 09/12/2029\n(B) 11/13/2029\n(C) 10/13/2029\n(D) 07/15/2029\n(E) 10/11/2029\n(F) 10/15/2029",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0138",
+      "input": "Yesterday was 1/25/2029. What is the date 2 years later in MM/DD/YYYY?\nOptions:\n(A) 12/26/2030\n(B) 01/26/2031\n(C) 01/19/2031\n(D) 10/28/2030\n(E) 02/26/2031\n(F) 01/27/2031",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0139",
+      "input": "Tomorrow is 6/3/1991. What is the date one week later in MM/DD/YYYY?\nOptions:\n(A) 06/11/1991\n(B) 06/10/1991\n(C) 06/09/1991\n(D) 05/09/1991\n(E) 09/07/1991\n(F) 07/10/1991",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0140",
+      "input": "Yesterday was 1/23/2013. What is the date 3 months later in MM/DD/YYYY?\nOptions:\n(A) 01/24/2013\n(B) 03/24/2013\n(C) 04/26/2013\n(D) 04/24/2013\n(E) 04/17/2013\n(F) 04/23/2013",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0141",
+      "input": "Yesterday was 1/7/2028. What is the date 3 days later in MM/DD/YYYY?\nOptions:\n(A) 01/11/2028\n(B) 02/11/2028\n(C) 01/12/2028\n(D) 01/10/2028\n(E) 01/09/2028\n(F) 04/10/2028",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0142",
+      "input": "The day before yesterday was 12/18/2018. What is the date 3 months ago in MM/DD/YYYY?\nOptions:\n(A) 06/22/2018\n(B) 09/20/2018\n(C) 10/21/2018\n(D) 09/19/2018\n(E) 09/18/2018\n(F) 09/13/2018",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0143",
+      "input": "Yesterday was 6/26/2017. What is the date 2 days ago in MM/DD/YYYY?\nOptions:\n(A) 07/02/2017\n(B) 03/27/2017\n(C) 06/25/2017\n(D) 06/18/2017\n(E) 06/24/2017\n(F) 06/27/2017",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0144",
+      "input": "Today is 3/13/2018. What is the date 3 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 02/20/2018\n(B) 02/19/2018\n(C) 01/20/2018\n(D) 02/13/2018\n(E) 11/22/2017\n(F) 05/21/2018",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0145",
+      "input": "The day before yesterday was 1/17/2018. What is the date 2 years ago in MM/DD/YYYY?\nOptions:\n(A) 10/21/2015\n(B) 02/19/2016\n(C) 12/19/2015\n(D) 01/19/2016\n(E) 04/18/2016\n(F) 01/17/2016",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0146",
+      "input": "Tomorrow is 8/6/2010. What is the date 2 years ago in MM/DD/YYYY?\nOptions:\n(A) 08/12/2008\n(B) 08/05/2008\n(C) 08/04/2008\n(D) 08/03/2008\n(E) 08/06/2008\n(F) 07/29/2008",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0147",
+      "input": "Yesterday was 12/14/2015. What is the date 3 days ago in MM/DD/YYYY?\nOptions:\n(A) 03/11/2016\n(B) 11/11/2015\n(C) 12/05/2015\n(D) 12/13/2015\n(E) 12/10/2015\n(F) 12/12/2015",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0148",
+      "input": "The day before yesterday was 8/26/1998. What is the date 3 days later in MM/DD/YYYY?\nOptions:\n(A) 06/02/1998\n(B) 09/01/1998\n(C) 07/31/1998\n(D) 08/31/1998\n(E) 08/24/1998\n(F) 08/30/1998",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0149",
+      "input": "The day before yesterday was 10/4/2029. What is the date 3 days ago in MM/DD/YYYY?\nOptions:\n(A) 10/05/2029\n(B) 10/04/2029\n(C) 10/03/2029\n(D) 10/10/2029\n(E) 10/01/2029\n(F) 10/02/2029",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0150",
+      "input": "Yesterday was 9/13/2001. What is the date 3 years ago in MM/DD/YYYY?\nOptions:\n(A) 09/14/1998\n(B) 08/14/1998\n(C) 06/16/1998\n(D) 12/13/1998\n(E) 09/13/1998\n(F) 09/16/1998",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0151",
+      "input": "Today is 5/24/2017. What is the date 2 weeks later in MM/DD/YYYY?\nOptions:\n(A) 07/08/2017\n(B) 06/05/2017\n(C) 03/09/2017\n(D) 06/08/2017\n(E) 06/07/2017\n(F) 06/09/2017",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0152",
+      "input": "Today is 4/13/2019. What is the date 3 years later in MM/DD/YYYY?\nOptions:\n(A) 07/12/2022\n(B) 04/15/2022\n(C) 03/13/2022\n(D) 04/13/2022\n(E) 04/20/2022\n(F) 04/06/2022",
+      "meta": {
+        "setup": "today",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0153",
+      "input": "Tomorrow is 4/27/2028. What is the date 3 years ago in MM/DD/YYYY?\nOptions:\n(A) 05/03/2025\n(B) 01/26/2025\n(C) 05/27/2025\n(D) 04/26/2025\n(E) 07/25/2025\n(F) 03/26/2025",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0154",
+      "input": "Tomorrow is 4/9/2016. What is the date 2 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 03/25/2016\n(B) 04/25/2016\n(C) 04/01/2016\n(D) 03/24/2016\n(E) 12/26/2015\n(F) 03/26/2016",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0155",
+      "input": "Yesterday was 9/1/1991. What is the date 3 days later in MM/DD/YYYY?\nOptions:\n(A) 10/06/1991\n(B) 12/04/1991\n(C) 09/03/1991\n(D) 09/05/1991\n(E) 08/05/1991\n(F) 09/04/1991",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0156",
+      "input": "Today is 7/1/2008. What is the date 2 days later in MM/DD/YYYY?\nOptions:\n(A) 07/03/2008\n(B) 07/10/2008\n(C) 06/26/2008\n(D) 10/01/2008\n(E) 07/02/2008\n(F) 07/05/2008",
+      "meta": {
+        "setup": "today",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0157",
+      "input": "The day before yesterday was 2/19/1992. What is the date 3 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 01/31/1992\n(B) 03/02/1992\n(C) 04/30/1992\n(D) 01/29/1992\n(E) 01/30/1992\n(F) 01/24/1992",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0158",
+      "input": "Tomorrow is 9/7/2027. What is the date one year later in MM/DD/YYYY?\nOptions:\n(A) 09/08/2028\n(B) 08/30/2028\n(C) 09/06/2028\n(D) 09/04/2028\n(E) 10/07/2028\n(F) 09/13/2028",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0159",
+      "input": "Yesterday was 9/24/2006. What is the date a day later in MM/DD/YYYY?\nOptions:\n(A) 10/27/2006\n(B) 10/03/2006\n(C) 09/24/2006\n(D) 09/19/2006\n(E) 09/27/2006\n(F) 09/26/2006",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0160",
+      "input": "Yesterday was 12/8/1993. What is the date 3 days later in MM/DD/YYYY?\nOptions:\n(A) 01/12/1994\n(B) 12/19/1993\n(C) 12/13/1993\n(D) 12/12/1993\n(E) 09/13/1993\n(F) 12/05/1993",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0161",
+      "input": "Yesterday was 10/18/2016. What is the date one month later in MM/DD/YYYY?\nOptions:\n(A) 08/21/2016\n(B) 11/18/2016\n(C) 11/19/2016\n(D) 12/20/2016\n(E) 11/21/2016\n(F) 02/17/2017",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0162",
+      "input": "Yesterday was 12/11/2028. What is the date 3 days later in MM/DD/YYYY?\nOptions:\n(A) 12/17/2028\n(B) 03/15/2029\n(C) 01/15/2029\n(D) 12/22/2028\n(E) 12/15/2028\n(F) 12/08/2028",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0163",
+      "input": "Today is 10/8/2014. What is the date 2 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 10/25/2014\n(B) 09/23/2014\n(C) 10/01/2014\n(D) 08/24/2014\n(E) 09/24/2014\n(F) 12/23/2014",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0164",
+      "input": "The day before yesterday was 4/4/2010. What is the date 2 months later in MM/DD/YYYY?\nOptions:\n(A) 03/08/2010\n(B) 06/06/2010\n(C) 06/07/2010\n(D) 07/07/2010\n(E) 09/04/2010\n(F) 06/04/2010",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0165",
+      "input": "Today is 4/18/2025. What is the date 3 years later in MM/DD/YYYY?\nOptions:\n(A) 04/18/2028\n(B) 04/25/2028\n(C) 01/19/2028\n(D) 04/16/2028\n(E) 04/17/2028\n(F) 03/18/2028",
+      "meta": {
+        "setup": "today",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0166",
+      "input": "Tomorrow is 8/6/2029. What is the date 3 months later in MM/DD/YYYY?\nOptions:\n(A) 11/05/2029\n(B) 02/03/2030\n(C) 11/06/2029\n(D) 11/12/2029\n(E) 12/06/2029\n(F) 10/29/2029",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0167",
+      "input": "Yesterday was 12/15/2030. What is the date 3 months ago in MM/DD/YYYY?\nOptions:\n(A) 09/18/2030\n(B) 09/17/2030\n(C) 10/17/2030\n(D) 09/15/2030\n(E) 12/15/2030\n(F) 09/16/2030",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0168",
+      "input": "Yesterday was 4/11/2013. What is the date one week later in MM/DD/YYYY?\nOptions:\n(A) 04/17/2013\n(B) 04/20/2013\n(C) 04/26/2013\n(D) 04/19/2013\n(E) 04/21/2013\n(F) 03/19/2013",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0169",
+      "input": "Yesterday was 4/9/2029. What is the date one week ago in MM/DD/YYYY?\nOptions:\n(A) 04/05/2029\n(B) 03/27/2029\n(C) 04/03/2029\n(D) 07/02/2029\n(E) 04/10/2029\n(F) 03/03/2029",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0170",
+      "input": "Today is 6/16/2025. What is the date a week ago in MM/DD/YYYY?\nOptions:\n(A) 06/11/2025\n(B) 03/11/2025\n(C) 06/09/2025\n(D) 09/07/2025\n(E) 06/10/2025\n(F) 07/10/2025",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0171",
+      "input": "Yesterday was 12/26/2020. What is the date 3 days later in MM/DD/YYYY?\nOptions:\n(A) 03/30/2021\n(B) 12/28/2020\n(C) 10/01/2020\n(D) 12/30/2020\n(E) 01/30/2021\n(F) 12/29/2020",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0172",
+      "input": "The day before yesterday was 6/24/2020. What is the date a week ago in MM/DD/YYYY?\nOptions:\n(A) 07/20/2020\n(B) 06/19/2020\n(C) 03/21/2020\n(D) 06/12/2020\n(E) 06/17/2020\n(F) 05/19/2020",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0173",
+      "input": "Tomorrow is 6/23/2005. What is the date 2 days later in MM/DD/YYYY?\nOptions:\n(A) 05/24/2005\n(B) 06/23/2005\n(C) 06/25/2005\n(D) 06/24/2005\n(E) 03/26/2005\n(F) 09/22/2005",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0174",
+      "input": "The day before yesterday was 12/18/2002. What is the date one week ago in MM/DD/YYYY?\nOptions:\n(A) 03/13/2003\n(B) 11/12/2002\n(C) 12/06/2002\n(D) 12/20/2002\n(E) 12/13/2002\n(F) 12/12/2002",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0175",
+      "input": "Today is 11/23/1996. What is the date one year later in MM/DD/YYYY?\nOptions:\n(A) 11/23/1997\n(B) 11/25/1997\n(C) 08/25/1997\n(D) 10/23/1997\n(E) 11/21/1997\n(F) 11/16/1997",
+      "meta": {
+        "setup": "today",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0176",
+      "input": "Yesterday was 5/31/1991. What is the date 3 years later in MM/DD/YYYY?\nOptions:\n(A) 05/01/1994\n(B) 05/31/1994\n(C) 06/08/1994\n(D) 08/30/1994\n(E) 05/25/1994\n(F) 06/01/1994",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0177",
+      "input": "Yesterday was 6/5/1990. What is the date 3 years later in MM/DD/YYYY?\nOptions:\n(A) 06/08/1993\n(B) 03/08/1993\n(C) 05/30/1993\n(D) 06/07/1993\n(E) 06/06/1993\n(F) 06/13/1993",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0178",
+      "input": "Tomorrow is 9/15/2001. What is the date a month later in MM/DD/YYYY?\nOptions:\n(A) 09/13/2001\n(B) 10/14/2001\n(C) 11/14/2001\n(D) 10/12/2001\n(E) 10/07/2001\n(F) 10/21/2001",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0179",
+      "input": "Tomorrow is 5/16/2019. What is the date one week ago in MM/DD/YYYY?\nOptions:\n(A) 05/01/2019\n(B) 05/08/2019\n(C) 08/06/2019\n(D) 04/07/2019\n(E) 05/06/2019\n(F) 05/09/2019",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0180",
+      "input": "Today is 1/10/2011. What is the date one year later in MM/DD/YYYY?\nOptions:\n(A) 01/03/2012\n(B) 01/12/2012\n(C) 01/10/2012\n(D) 12/10/2011\n(E) 04/09/2012\n(F) 01/08/2012",
+      "meta": {
+        "setup": "today",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0181",
+      "input": "The day before yesterday was 5/13/2006. What is the date 3 days later in MM/DD/YYYY?\nOptions:\n(A) 05/17/2006\n(B) 08/16/2006\n(C) 05/18/2006\n(D) 02/17/2006\n(E) 05/25/2006\n(F) 04/17/2006",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0182",
+      "input": "Today is 11/27/2013. What is the date 3 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 11/07/2013\n(B) 08/08/2013\n(C) 11/13/2013\n(D) 11/05/2013\n(E) 11/06/2013\n(F) 02/04/2014",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0183",
+      "input": "Tomorrow is 10/10/2029. What is the date 2 years later in MM/DD/YYYY?\nOptions:\n(A) 10/10/2031\n(B) 10/02/2031\n(C) 10/09/2031\n(D) 10/16/2031\n(E) 09/08/2031\n(F) 11/09/2031",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0184",
+      "input": "Yesterday was 7/1/1994. What is the date 2 weeks later in MM/DD/YYYY?\nOptions:\n(A) 07/16/1994\n(B) 08/16/1994\n(C) 06/15/1994\n(D) 04/17/1994\n(E) 07/17/1994\n(F) 07/15/1994",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0185",
+      "input": "Today is 7/1/2021. What is the date 2 months ago in MM/DD/YYYY?\nOptions:\n(A) 01/31/2021\n(B) 03/31/2021\n(C) 04/24/2021\n(D) 04/29/2021\n(E) 05/02/2021\n(F) 05/01/2021",
+      "meta": {
+        "setup": "today",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0186",
+      "input": "Yesterday was 3/31/2019. What is the date one day ago in MM/DD/YYYY?\nOptions:\n(A) 03/31/2019\n(B) 06/29/2019\n(C) 12/31/2018\n(D) 03/24/2019\n(E) 05/01/2019\n(F) 03/29/2019",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0187",
+      "input": "Today is 8/13/2024. What is the date 3 years ago in MM/DD/YYYY?\nOptions:\n(A) 08/20/2021\n(B) 08/12/2021\n(C) 08/14/2021\n(D) 07/13/2021\n(E) 05/15/2021\n(F) 08/13/2021",
+      "meta": {
+        "setup": "today",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0188",
+      "input": "Yesterday was 4/16/2009. What is the date a year ago in MM/DD/YYYY?\nOptions:\n(A) 04/15/2008\n(B) 04/24/2008\n(C) 01/18/2008\n(D) 04/16/2008\n(E) 05/18/2008\n(F) 04/17/2008",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0189",
+      "input": "Yesterday was 4/30/1991. What is the date 2 weeks later in MM/DD/YYYY?\nOptions:\n(A) 05/17/1991\n(B) 02/14/1991\n(C) 06/15/1991\n(D) 05/15/1991\n(E) 05/08/1991\n(F) 05/16/1991",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0190",
+      "input": "Today is 9/25/2010. What is the date one week ago in MM/DD/YYYY?\nOptions:\n(A) 09/20/2010\n(B) 09/18/2010\n(C) 09/19/2010\n(D) 09/16/2010\n(E) 12/17/2010\n(F) 09/25/2010",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0191",
+      "input": "Yesterday was 11/25/2020. What is the date 3 months ago in MM/DD/YYYY?\nOptions:\n(A) 05/28/2020\n(B) 11/24/2020\n(C) 07/26/2020\n(D) 08/19/2020\n(E) 08/28/2020\n(F) 08/26/2020",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0192",
+      "input": "The day before yesterday was 9/4/2012. What is the date one month ago in MM/DD/YYYY?\nOptions:\n(A) 08/08/2012\n(B) 11/04/2012\n(C) 07/30/2012\n(D) 08/13/2012\n(E) 08/06/2012\n(F) 08/07/2012",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0193",
+      "input": "Tomorrow is 9/2/2025. What is the date one day later in MM/DD/YYYY?\nOptions:\n(A) 10/03/2025\n(B) 09/04/2025\n(C) 09/03/2025\n(D) 08/31/2025\n(E) 09/02/2025\n(F) 09/01/2025",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0194",
+      "input": "Today is 8/27/2018. What is the date 3 days ago in MM/DD/YYYY?\nOptions:\n(A) 11/22/2018\n(B) 07/24/2018\n(C) 09/24/2018\n(D) 08/24/2018\n(E) 08/17/2018\n(F) 08/23/2018",
+      "meta": {
+        "setup": "today",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0195",
+      "input": "The day before yesterday was 1/12/1999. What is the date 2 days later in MM/DD/YYYY?\nOptions:\n(A) 01/16/1999\n(B) 01/17/1999\n(C) 01/09/1999\n(D) 12/16/1998\n(E) 01/23/1999\n(F) 01/15/1999",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0196",
+      "input": "The day before yesterday was 3/27/2015. What is the date 2 years later in MM/DD/YYYY?\nOptions:\n(A) 03/27/2017\n(B) 03/31/2017\n(C) 03/28/2017\n(D) 03/22/2017\n(E) 04/05/2017\n(F) 03/29/2017",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0197",
+      "input": "Tomorrow is 6/18/2015. What is the date one year later in MM/DD/YYYY?\nOptions:\n(A) 06/10/2016\n(B) 06/15/2016\n(C) 06/24/2016\n(D) 06/17/2016\n(E) 07/18/2016\n(F) 06/16/2016",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0198",
+      "input": "Today is 9/12/1996. What is the date 2 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 08/31/1996\n(B) 08/28/1996\n(C) 09/29/1996\n(D) 08/29/1996\n(E) 08/27/1996\n(F) 07/29/1996",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0199",
+      "input": "The day before yesterday was 7/24/2002. What is the date a month ago in MM/DD/YYYY?\nOptions:\n(A) 09/24/2002\n(B) 06/27/2002\n(C) 06/19/2002\n(D) 07/27/2002\n(E) 06/24/2002\n(F) 06/26/2002",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0200",
+      "input": "Yesterday was 2/17/2021. What is the date one week later in MM/DD/YYYY?\nOptions:\n(A) 03/04/2021\n(B) 02/18/2021\n(C) 01/25/2021\n(D) 05/26/2021\n(E) 02/27/2021\n(F) 02/25/2021",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0201",
+      "input": "Today is 10/26/2009. What is the date 3 days ago in MM/DD/YYYY?\nOptions:\n(A) 10/24/2009\n(B) 01/21/2010\n(C) 10/22/2009\n(D) 11/23/2009\n(E) 10/23/2009\n(F) 07/25/2009",
+      "meta": {
+        "setup": "today",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0202",
+      "input": "Today is 4/2/2001. What is the date 2 years later in MM/DD/YYYY?\nOptions:\n(A) 04/04/2003\n(B) 01/02/2003\n(C) 03/02/2003\n(D) 04/02/2003\n(E) 05/03/2003\n(F) 04/09/2003",
+      "meta": {
+        "setup": "today",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0203",
+      "input": "Today is 12/5/2006. What is the date one year later in MM/DD/YYYY?\nOptions:\n(A) 09/06/2007\n(B) 03/04/2008\n(C) 12/05/2007\n(D) 12/12/2007\n(E) 11/28/2007\n(F) 12/07/2007",
+      "meta": {
+        "setup": "today",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0204",
+      "input": "The day before yesterday was 3/11/2003. What is the date one year later in MM/DD/YYYY?\nOptions:\n(A) 02/11/2004\n(B) 03/06/2004\n(C) 03/12/2004\n(D) 03/15/2004\n(E) 03/13/2004\n(F) 06/11/2004",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0205",
+      "input": "Today is 10/30/2023. What is the date 2 years ago in MM/DD/YYYY?\nOptions:\n(A) 10/23/2021\n(B) 10/31/2021\n(C) 11/06/2021\n(D) 09/29/2021\n(E) 01/28/2022\n(F) 10/30/2021",
+      "meta": {
+        "setup": "today",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0206",
+      "input": "Yesterday was 10/13/2001. What is the date 3 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 09/22/2001\n(B) 09/23/2001\n(C) 09/21/2001\n(D) 10/24/2001\n(E) 09/25/2001\n(F) 12/22/2001",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0207",
+      "input": "The day before yesterday was 11/23/2000. What is the date 3 years ago in MM/DD/YYYY?\nOptions:\n(A) 11/27/1997\n(B) 11/18/1997\n(C) 11/26/1997\n(D) 11/23/1997\n(E) 10/25/1997\n(F) 11/25/1997",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0208",
+      "input": "Today is 3/4/1992. What is the date 2 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 01/19/1992\n(B) 11/21/1991\n(C) 02/19/1992\n(D) 02/17/1992\n(E) 02/26/1992\n(F) 02/21/1992",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0209",
+      "input": "Tomorrow is 3/2/2026. What is the date a year ago in MM/DD/YYYY?\nOptions:\n(A) 03/01/2025\n(B) 03/03/2025\n(C) 05/30/2025\n(D) 03/02/2025\n(E) 04/01/2025\n(F) 03/08/2025",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0210",
+      "input": "Today is 7/26/2001. What is the date 3 days ago in MM/DD/YYYY?\nOptions:\n(A) 07/23/2001\n(B) 08/23/2001\n(C) 07/16/2001\n(D) 07/30/2001\n(E) 04/24/2001\n(F) 07/22/2001",
+      "meta": {
+        "setup": "today",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0211",
+      "input": "Today is 8/28/1997. What is the date 3 days later in MM/DD/YYYY?\nOptions:\n(A) 11/29/1997\n(B) 09/02/1997\n(C) 08/24/1997\n(D) 09/01/1997\n(E) 08/31/1997\n(F) 08/30/1997",
+      "meta": {
+        "setup": "today",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0212",
+      "input": "The day before yesterday was 10/8/2022. What is the date one month later in MM/DD/YYYY?\nOptions:\n(A) 11/10/2022\n(B) 10/10/2022\n(C) 11/03/2022\n(D) 12/11/2022\n(E) 11/08/2022\n(F) 11/17/2022",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0213",
+      "input": "Today is 4/16/2012. What is the date 3 days ago in MM/DD/YYYY?\nOptions:\n(A) 04/20/2012\n(B) 07/12/2012\n(C) 04/14/2012\n(D) 05/14/2012\n(E) 01/14/2012\n(F) 04/13/2012",
+      "meta": {
+        "setup": "today",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0214",
+      "input": "Tomorrow is 9/24/1999. What is the date 3 months ago in MM/DD/YYYY?\nOptions:\n(A) 06/24/1999\n(B) 06/16/1999\n(C) 09/21/1999\n(D) 06/25/1999\n(E) 06/23/1999\n(F) 05/23/1999",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0215",
+      "input": "Tomorrow is 5/13/2028. What is the date one year later in MM/DD/YYYY?\nOptions:\n(A) 08/10/2029\n(B) 05/13/2029\n(C) 05/14/2029\n(D) 05/19/2029\n(E) 04/11/2029\n(F) 05/12/2029",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0216",
+      "input": "Yesterday was 2/11/2005. What is the date 2 days ago in MM/DD/YYYY?\nOptions:\n(A) 02/10/2005\n(B) 11/12/2004\n(C) 03/13/2005\n(D) 02/11/2005\n(E) 02/03/2005\n(F) 02/09/2005",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0217",
+      "input": "Tomorrow is 8/30/2027. What is the date one year later in MM/DD/YYYY?\nOptions:\n(A) 08/22/2028\n(B) 05/31/2028\n(C) 08/31/2028\n(D) 11/27/2028\n(E) 08/29/2028\n(F) 09/29/2028",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0218",
+      "input": "Today is 1/22/2000. What is the date 3 days ago in MM/DD/YYYY?\nOptions:\n(A) 12/19/1999\n(B) 01/21/2000\n(C) 04/18/2000\n(D) 01/26/2000\n(E) 01/20/2000\n(F) 01/19/2000",
+      "meta": {
+        "setup": "today",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0219",
+      "input": "The day before yesterday was 7/25/1991. What is the date a day later in MM/DD/YYYY?\nOptions:\n(A) 10/26/1991\n(B) 07/27/1991\n(C) 08/28/1991\n(D) 07/26/1991\n(E) 07/29/1991\n(F) 07/28/1991",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0220",
+      "input": "Tomorrow is 8/19/2002. What is the date one month ago in MM/DD/YYYY?\nOptions:\n(A) 07/20/2002\n(B) 07/17/2002\n(C) 07/11/2002\n(D) 07/18/2002\n(E) 04/19/2002\n(F) 10/16/2002",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0221",
+      "input": "The day before yesterday was 8/1/2024. What is the date 2 years ago in MM/DD/YYYY?\nOptions:\n(A) 08/01/2022\n(B) 07/03/2022\n(C) 08/03/2022\n(D) 07/27/2022\n(E) 09/03/2022\n(F) 05/05/2022",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0222",
+      "input": "The day before yesterday was 10/3/1995. What is the date 3 years later in MM/DD/YYYY?\nOptions:\n(A) 10/05/1998\n(B) 09/28/1998\n(C) 07/07/1998\n(D) 10/12/1998\n(E) 10/04/1998\n(F) 09/04/1998",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0223",
+      "input": "The day before yesterday was 2/5/1996. What is the date 2 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 01/26/1996\n(B) 01/25/1996\n(C) 01/17/1996\n(D) 01/31/1996\n(E) 01/24/1996\n(F) 12/24/1995",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0224",
+      "input": "Yesterday was 3/14/2021. What is the date 2 months later in MM/DD/YYYY?\nOptions:\n(A) 02/14/2021\n(B) 04/14/2021\n(C) 05/17/2021\n(D) 05/15/2021\n(E) 05/22/2021\n(F) 05/16/2021",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0225",
+      "input": "Tomorrow is 4/9/2008. What is the date 3 years later in MM/DD/YYYY?\nOptions:\n(A) 04/06/2011\n(B) 04/09/2011\n(C) 03/08/2011\n(D) 04/08/2011\n(E) 01/08/2011\n(F) 05/09/2011",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0226",
+      "input": "Today is 9/28/2007. What is the date a day later in MM/DD/YYYY?\nOptions:\n(A) 09/27/2007\n(B) 09/29/2007\n(C) 12/28/2007\n(D) 08/29/2007\n(E) 10/30/2007\n(F) 10/01/2007",
+      "meta": {
+        "setup": "today",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0227",
+      "input": "Yesterday was 9/1/2028. What is the date 3 months ago in MM/DD/YYYY?\nOptions:\n(A) 05/02/2028\n(B) 03/04/2028\n(C) 06/04/2028\n(D) 08/31/2028\n(E) 07/03/2028\n(F) 06/02/2028",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0228",
+      "input": "The day before yesterday was 1/19/2012. What is the date 3 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 12/30/2011\n(B) 01/31/2012\n(C) 03/30/2012\n(D) 10/02/2011\n(E) 12/31/2011\n(F) 12/29/2011",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0229",
+      "input": "Today is 8/16/2024. What is the date one year ago in MM/DD/YYYY?\nOptions:\n(A) 08/09/2023\n(B) 08/16/2023\n(C) 05/18/2023\n(D) 07/16/2023\n(E) 08/18/2023\n(F) 08/17/2023",
+      "meta": {
+        "setup": "today",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0230",
+      "input": "Yesterday was 12/29/2020. What is the date 2 years later in MM/DD/YYYY?\nOptions:\n(A) 12/31/2022\n(B) 12/23/2022\n(C) 01/30/2023\n(D) 12/28/2022\n(E) 03/30/2023\n(F) 12/30/2022",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0231",
+      "input": "The day before yesterday was 2/21/1994. What is the date 2 days ago in MM/DD/YYYY?\nOptions:\n(A) 02/22/1994\n(B) 02/21/1994\n(C) 02/20/1994\n(D) 02/19/1994\n(E) 01/21/1994\n(F) 02/23/1994",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0232",
+      "input": "Tomorrow is 1/30/2000. What is the date 2 years later in MM/DD/YYYY?\nOptions:\n(A) 01/29/2002\n(B) 12/29/2001\n(C) 10/31/2001\n(D) 01/31/2002\n(E) 04/29/2002\n(F) 03/01/2002",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0233",
+      "input": "The day before yesterday was 1/5/1990. What is the date one year ago in MM/DD/YYYY?\nOptions:\n(A) 04/07/1989\n(B) 02/07/1989\n(C) 10/09/1988\n(D) 01/09/1989\n(E) 01/07/1989\n(F) 01/06/1989",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0234",
+      "input": "Yesterday was 8/14/2018. What is the date 2 days ago in MM/DD/YYYY?\nOptions:\n(A) 11/11/2018\n(B) 08/11/2018\n(C) 05/15/2018\n(D) 08/13/2018\n(E) 08/06/2018\n(F) 09/13/2018",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0235",
+      "input": "Today is 9/10/2005. What is the date a year ago in MM/DD/YYYY?\nOptions:\n(A) 09/09/2004\n(B) 09/08/2004\n(C) 10/11/2004\n(D) 09/10/2004\n(E) 09/03/2004\n(F) 06/12/2004",
+      "meta": {
+        "setup": "today",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0236",
+      "input": "The day before yesterday was 8/21/1997. What is the date 3 weeks later in MM/DD/YYYY?\nOptions:\n(A) 09/11/1997\n(B) 08/13/1997\n(C) 10/14/1997\n(D) 09/15/1997\n(E) 09/13/1997\n(F) 09/20/1997",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0237",
+      "input": "Tomorrow is 1/7/2023. What is the date 2 years ago in MM/DD/YYYY?\nOptions:\n(A) 12/30/2020\n(B) 10/08/2020\n(C) 01/06/2021\n(D) 01/05/2021\n(E) 01/07/2021\n(F) 01/13/2021",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0238",
+      "input": "Yesterday was 12/21/1996. What is the date one year ago in MM/DD/YYYY?\nOptions:\n(A) 12/15/1995\n(B) 12/29/1995\n(C) 11/21/1995\n(D) 03/21/1996\n(E) 12/22/1995\n(F) 12/20/1995",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0239",
+      "input": "The day before yesterday was 11/14/2005. What is the date 2 years later in MM/DD/YYYY?\nOptions:\n(A) 11/16/2007\n(B) 11/15/2007\n(C) 11/18/2007\n(D) 02/14/2008\n(E) 11/17/2007\n(F) 11/14/2007",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0240",
+      "input": "The day before yesterday was 4/16/1995. What is the date 3 days ago in MM/DD/YYYY?\nOptions:\n(A) 04/14/1995\n(B) 03/15/1995\n(C) 04/08/1995\n(D) 04/17/1995\n(E) 04/15/1995\n(F) 07/14/1995",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0241",
+      "input": "Yesterday was 7/31/2017. What is the date 3 days ago in MM/DD/YYYY?\nOptions:\n(A) 04/30/2017\n(B) 08/29/2017\n(C) 07/27/2017\n(D) 07/29/2017\n(E) 10/27/2017\n(F) 06/28/2017",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0242",
+      "input": "The day before yesterday was 12/19/2009. What is the date one year later in MM/DD/YYYY?\nOptions:\n(A) 09/22/2010\n(B) 12/28/2010\n(C) 12/21/2010\n(D) 12/14/2010\n(E) 11/20/2010\n(F) 12/19/2010",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0243",
+      "input": "Today is 8/7/2003. What is the date one day ago in MM/DD/YYYY?\nOptions:\n(A) 08/05/2003\n(B) 08/06/2003\n(C) 08/04/2003\n(D) 05/08/2003\n(E) 11/04/2003\n(F) 08/07/2003",
+      "meta": {
+        "setup": "today",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0244",
+      "input": "Yesterday was 7/2/1990. What is the date 3 weeks later in MM/DD/YYYY?\nOptions:\n(A) 07/17/1990\n(B) 07/24/1990\n(C) 06/23/1990\n(D) 10/22/1990\n(E) 07/25/1990\n(F) 04/25/1990",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0245",
+      "input": "Tomorrow is 7/24/1991. What is the date 3 weeks later in MM/DD/YYYY?\nOptions:\n(A) 08/12/1991\n(B) 08/11/1991\n(C) 08/14/1991\n(D) 09/13/1991\n(E) 08/06/1991\n(F) 08/13/1991",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0246",
+      "input": "The day before yesterday was 10/24/1999. What is the date one day later in MM/DD/YYYY?\nOptions:\n(A) 10/27/1999\n(B) 09/26/1999\n(C) 11/03/1999\n(D) 10/28/1999\n(E) 10/29/1999\n(F) 10/25/1999",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0247",
+      "input": "The day before yesterday was 2/28/2017. What is the date one month ago in MM/DD/YYYY?\nOptions:\n(A) 01/02/2017\n(B) 02/01/2017\n(C) 01/26/2017\n(D) 02/02/2017\n(E) 05/03/2017\n(F) 02/03/2017",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0248",
+      "input": "Today is 10/14/2006. What is the date 3 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 09/21/2006\n(B) 09/25/2006\n(C) 09/23/2006\n(D) 09/22/2006\n(E) 08/23/2006\n(F) 12/22/2006",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0249",
+      "input": "Tomorrow is 7/25/2003. What is the date a month ago in MM/DD/YYYY?\nOptions:\n(A) 06/23/2003\n(B) 05/24/2003\n(C) 07/25/2003\n(D) 06/25/2003\n(E) 06/24/2003\n(F) 03/26/2003",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0250",
+      "input": "Yesterday was 5/4/2015. What is the date 3 weeks later in MM/DD/YYYY?\nOptions:\n(A) 05/26/2015\n(B) 06/02/2015\n(C) 02/25/2015\n(D) 04/25/2015\n(E) 05/19/2015\n(F) 05/24/2015",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0251",
+      "input": "Tomorrow is 1/17/2022. What is the date 2 years ago in MM/DD/YYYY?\nOptions:\n(A) 02/16/2020\n(B) 01/15/2020\n(C) 01/16/2020\n(D) 10/18/2019\n(E) 01/23/2020\n(F) 01/14/2020",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0252",
+      "input": "Tomorrow is 10/20/2013. What is the date 3 days ago in MM/DD/YYYY?\nOptions:\n(A) 07/18/2013\n(B) 10/23/2013\n(C) 10/18/2013\n(D) 01/14/2014\n(E) 10/16/2013\n(F) 09/15/2013",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0253",
+      "input": "The day before yesterday was 11/25/2016. What is the date 2 weeks later in MM/DD/YYYY?\nOptions:\n(A) 01/11/2017\n(B) 03/11/2017\n(C) 12/11/2016\n(D) 12/04/2016\n(E) 11/10/2016\n(F) 12/18/2016",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0254",
+      "input": "Yesterday was 9/8/2015. What is the date one month ago in MM/DD/YYYY?\nOptions:\n(A) 08/09/2015\n(B) 11/07/2015\n(C) 08/10/2015\n(D) 08/07/2015\n(E) 09/09/2015\n(F) 08/02/2015",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0255",
+      "input": "The day before yesterday was 11/2/2025. What is the date 3 weeks later in MM/DD/YYYY?\nOptions:\n(A) 02/23/2026\n(B) 11/23/2025\n(C) 11/26/2025\n(D) 11/25/2025\n(E) 12/26/2025\n(F) 11/27/2025",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0256",
+      "input": "Tomorrow is 4/4/1991. What is the date a month ago in MM/DD/YYYY?\nOptions:\n(A) 04/03/1991\n(B) 01/31/1991\n(C) 06/01/1991\n(D) 03/05/1991\n(E) 03/04/1991\n(F) 03/03/1991",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0257",
+      "input": "The day before yesterday was 12/25/1998. What is the date 3 days later in MM/DD/YYYY?\nOptions:\n(A) 03/30/1999\n(B) 01/30/1999\n(C) 12/30/1998\n(D) 11/29/1998\n(E) 12/28/1998\n(F) 10/01/1998",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0258",
+      "input": "The day before yesterday was 8/22/2015. What is the date 3 years ago in MM/DD/YYYY?\nOptions:\n(A) 08/31/2012\n(B) 09/24/2012\n(C) 08/24/2012\n(D) 11/22/2012\n(E) 08/23/2012\n(F) 07/24/2012",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0259",
+      "input": "Today is 9/26/2018. What is the date 3 weeks later in MM/DD/YYYY?\nOptions:\n(A) 10/16/2018\n(B) 10/17/2018\n(C) 10/24/2018\n(D) 11/17/2018\n(E) 09/16/2018\n(F) 07/19/2018",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0260",
+      "input": "Tomorrow is 1/21/1999. What is the date a day ago in MM/DD/YYYY?\nOptions:\n(A) 01/19/1999\n(B) 01/20/1999\n(C) 10/21/1998\n(D) 12/19/1998\n(E) 02/19/1999\n(F) 01/17/1999",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0261",
+      "input": "Today is 7/22/2029. What is the date 3 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 07/08/2029\n(B) 05/31/2029\n(C) 07/01/2029\n(D) 07/02/2029\n(E) 08/01/2029\n(F) 07/03/2029",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0262",
+      "input": "Today is 7/25/2024. What is the date 3 months later in MM/DD/YYYY?\nOptions:\n(A) 10/27/2024\n(B) 11/25/2024\n(C) 01/23/2025\n(D) 10/24/2024\n(E) 10/25/2024\n(F) 10/18/2024",
+      "meta": {
+        "setup": "today",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0263",
+      "input": "Yesterday was 5/23/2027. What is the date a week ago in MM/DD/YYYY?\nOptions:\n(A) 05/19/2027\n(B) 05/24/2027\n(C) 05/17/2027\n(D) 05/15/2027\n(E) 06/17/2027\n(F) 04/16/2027",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0264",
+      "input": "Tomorrow is 6/11/2011. What is the date a day later in MM/DD/YYYY?\nOptions:\n(A) 06/10/2011\n(B) 07/12/2011\n(C) 09/09/2011\n(D) 06/11/2011\n(E) 05/11/2011\n(F) 06/13/2011",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0265",
+      "input": "Today is 7/10/2013. What is the date a week later in MM/DD/YYYY?\nOptions:\n(A) 04/18/2013\n(B) 07/24/2013\n(C) 07/17/2013\n(D) 08/17/2013\n(E) 07/16/2013\n(F) 07/18/2013",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0266",
+      "input": "The day before yesterday was 4/8/2025. What is the date 2 years later in MM/DD/YYYY?\nOptions:\n(A) 04/09/2027\n(B) 07/09/2027\n(C) 04/10/2027\n(D) 05/11/2027\n(E) 01/10/2027\n(F) 04/03/2027",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0267",
+      "input": "Tomorrow is 11/20/2011. What is the date a day ago in MM/DD/YYYY?\nOptions:\n(A) 11/20/2011\n(B) 02/16/2012\n(C) 11/18/2011\n(D) 08/20/2011\n(E) 11/25/2011\n(F) 11/19/2011",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0268",
+      "input": "The day before yesterday was 2/28/2029. What is the date a day ago in MM/DD/YYYY?\nOptions:\n(A) 03/08/2029\n(B) 03/02/2029\n(C) 01/29/2029\n(D) 03/01/2029\n(E) 02/22/2029\n(F) 03/03/2029",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0269",
+      "input": "Today is 12/26/1993. What is the date 3 months later in MM/DD/YYYY?\nOptions:\n(A) 06/24/1994\n(B) 03/25/1994\n(C) 04/26/1994\n(D) 03/19/1994\n(E) 03/26/1994\n(F) 04/02/1994",
+      "meta": {
+        "setup": "today",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0270",
+      "input": "The day before yesterday was 8/1/1995. What is the date 3 days later in MM/DD/YYYY?\nOptions:\n(A) 08/07/1995\n(B) 07/06/1995\n(C) 08/06/1995\n(D) 05/08/1995\n(E) 11/04/1995\n(F) 08/13/1995",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0271",
+      "input": "Yesterday was 6/11/2029. What is the date 2 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 06/05/2029\n(B) 05/28/2029\n(C) 05/29/2029\n(D) 06/29/2029\n(E) 05/30/2029\n(F) 05/31/2029",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0272",
+      "input": "Tomorrow is 11/23/1991. What is the date 3 weeks later in MM/DD/YYYY?\nOptions:\n(A) 11/12/1991\n(B) 12/20/1991\n(C) 12/12/1991\n(D) 12/14/1991\n(E) 12/13/1991\n(F) 03/12/1992",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0273",
+      "input": "Tomorrow is 8/29/2011. What is the date a day later in MM/DD/YYYY?\nOptions:\n(A) 08/29/2011\n(B) 07/29/2011\n(C) 09/05/2011\n(D) 08/22/2011\n(E) 08/31/2011\n(F) 08/27/2011",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0274",
+      "input": "Today is 3/2/1994. What is the date 2 days later in MM/DD/YYYY?\nOptions:\n(A) 03/06/1994\n(B) 02/25/1994\n(C) 03/11/1994\n(D) 03/02/1994\n(E) 03/04/1994\n(F) 04/04/1994",
+      "meta": {
+        "setup": "today",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0275",
+      "input": "Tomorrow is 8/27/2020. What is the date a year later in MM/DD/YYYY?\nOptions:\n(A) 09/26/2021\n(B) 11/24/2021\n(C) 08/25/2021\n(D) 08/28/2021\n(E) 05/28/2021\n(F) 08/26/2021",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0276",
+      "input": "Tomorrow is 8/2/2025. What is the date one day later in MM/DD/YYYY?\nOptions:\n(A) 07/31/2025\n(B) 09/02/2025\n(C) 07/26/2025\n(D) 08/09/2025\n(E) 08/02/2025\n(F) 07/02/2025",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0277",
+      "input": "Yesterday was 2/6/1993. What is the date a year later in MM/DD/YYYY?\nOptions:\n(A) 02/05/1994\n(B) 01/07/1994\n(C) 02/07/1994\n(D) 02/08/1994\n(E) 02/06/1994\n(F) 03/10/1994",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0278",
+      "input": "The day before yesterday was 8/4/2013. What is the date one month ago in MM/DD/YYYY?\nOptions:\n(A) 07/06/2013\n(B) 07/05/2013\n(C) 10/04/2013\n(D) 07/13/2013\n(E) 07/08/2013\n(F) 06/29/2013",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0279",
+      "input": "Tomorrow is 3/30/2005. What is the date 2 years later in MM/DD/YYYY?\nOptions:\n(A) 03/27/2007\n(B) 03/31/2007\n(C) 03/29/2007\n(D) 03/28/2007\n(E) 03/30/2007\n(F) 04/05/2007",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0280",
+      "input": "Tomorrow is 4/12/2023. What is the date 2 years ago in MM/DD/YYYY?\nOptions:\n(A) 05/12/2021\n(B) 04/11/2021\n(C) 04/09/2021\n(D) 04/10/2021\n(E) 07/10/2021\n(F) 03/11/2021",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0281",
+      "input": "Today is 11/21/2023. What is the date 3 months later in MM/DD/YYYY?\nOptions:\n(A) 03/23/2024\n(B) 02/20/2024\n(C) 02/19/2024\n(D) 02/14/2024\n(E) 05/21/2024\n(F) 02/21/2024",
+      "meta": {
+        "setup": "today",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0282",
+      "input": "Yesterday was 12/6/1992. What is the date 3 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 08/18/1992\n(B) 02/14/1993\n(C) 11/15/1992\n(D) 11/18/1992\n(E) 11/16/1992\n(F) 11/23/1992",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0283",
+      "input": "The day before yesterday was 8/30/2015. What is the date 2 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 08/17/2015\n(B) 08/20/2015\n(C) 08/18/2015\n(D) 05/20/2015\n(E) 08/19/2015\n(F) 08/11/2015",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0284",
+      "input": "The day before yesterday was 10/1/2017. What is the date 2 days later in MM/DD/YYYY?\nOptions:\n(A) 11/05/2017\n(B) 10/12/2017\n(C) 10/07/2017\n(D) 09/28/2017\n(E) 10/05/2017\n(F) 10/06/2017",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0285",
+      "input": "The day before yesterday was 4/17/2008. What is the date 2 months later in MM/DD/YYYY?\nOptions:\n(A) 06/19/2008\n(B) 06/12/2008\n(C) 06/26/2008\n(D) 06/17/2008\n(E) 03/21/2008\n(F) 09/17/2008",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0286",
+      "input": "Yesterday was 4/25/2014. What is the date 3 years ago in MM/DD/YYYY?\nOptions:\n(A) 04/27/2011\n(B) 04/28/2011\n(C) 04/19/2011\n(D) 04/25/2011\n(E) 04/26/2011\n(F) 05/27/2011",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "year",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0287",
+      "input": "Tomorrow is 2/7/2014. What is the date 2 months later in MM/DD/YYYY?\nOptions:\n(A) 05/07/2014\n(B) 07/05/2014\n(C) 04/13/2014\n(D) 04/05/2014\n(E) 04/07/2014\n(F) 04/06/2014",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0288",
+      "input": "The day before yesterday was 5/27/2023. What is the date 2 days ago in MM/DD/YYYY?\nOptions:\n(A) 05/26/2023\n(B) 06/27/2023\n(C) 02/26/2023\n(D) 06/03/2023\n(E) 05/28/2023\n(F) 05/27/2023",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0289",
+      "input": "The day before yesterday was 11/22/2019. What is the date 3 days later in MM/DD/YYYY?\nOptions:\n(A) 08/29/2019\n(B) 11/20/2019\n(C) 11/28/2019\n(D) 11/27/2019\n(E) 11/26/2019\n(F) 02/25/2020",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0290",
+      "input": "Tomorrow is 9/13/2020. What is the date one day ago in MM/DD/YYYY?\nOptions:\n(A) 09/04/2020\n(B) 09/11/2020\n(C) 12/10/2020\n(D) 09/12/2020\n(E) 09/13/2020\n(F) 06/13/2020",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "day",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0291",
+      "input": "The day before yesterday was 2/1/2026. What is the date 2 months ago in MM/DD/YYYY?\nOptions:\n(A) 12/01/2025\n(B) 11/26/2025\n(C) 03/03/2026\n(D) 11/02/2025\n(E) 12/10/2025\n(F) 12/03/2025",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0292",
+      "input": "Today is 5/6/2020. What is the date one day later in MM/DD/YYYY?\nOptions:\n(A) 06/07/2020\n(B) 02/07/2020\n(C) 05/07/2020\n(D) 05/14/2020\n(E) 08/05/2020\n(F) 04/06/2020",
+      "meta": {
+        "setup": "today",
+        "unit": "day",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0293",
+      "input": "Today is 11/5/2008. What is the date 2 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 10/15/2008\n(B) 07/24/2008\n(C) 10/22/2008\n(D) 10/24/2008\n(E) 10/21/2008\n(F) 10/20/2008",
+      "meta": {
+        "setup": "today",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0294",
+      "input": "Yesterday was 5/7/1990. What is the date one week ago in MM/DD/YYYY?\nOptions:\n(A) 05/01/1990\n(B) 05/08/1990\n(C) 07/30/1990\n(D) 06/01/1990\n(E) 05/02/1990\n(F) 04/30/1990",
+      "meta": {
+        "setup": "yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0295",
+      "input": "The day before yesterday was 1/23/2019. What is the date 3 weeks later in MM/DD/YYYY?\nOptions:\n(A) 02/15/2019\n(B) 02/22/2019\n(C) 02/14/2019\n(D) 01/15/2019\n(E) 02/08/2019\n(F) 02/13/2019",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0296",
+      "input": "The day before yesterday was 9/23/2029. What is the date 3 weeks ago in MM/DD/YYYY?\nOptions:\n(A) 09/06/2029\n(B) 09/02/2029\n(C) 10/05/2029\n(D) 09/05/2029\n(E) 08/28/2029\n(F) 09/04/2029",
+      "meta": {
+        "setup": "day_before_yesterday",
+        "unit": "week",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0297",
+      "input": "Tomorrow is 3/30/2018. What is the date 3 months later in MM/DD/YYYY?\nOptions:\n(A) 03/31/2018\n(B) 07/01/2018\n(C) 06/29/2018\n(D) 06/22/2018\n(E) 07/30/2018\n(F) 05/29/2018",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0298",
+      "input": "Tomorrow is 10/14/2012. What is the date 2 months ago in MM/DD/YYYY?\nOptions:\n(A) 08/12/2012\n(B) 08/06/2012\n(C) 05/15/2012\n(D) 09/13/2012\n(E) 08/13/2012\n(F) 08/15/2012",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "ago"
+      }
+    },
+    {
+      "id": "date-0299",
+      "input": "Tomorrow is 1/31/1998. What is the date 2 weeks later in MM/DD/YYYY?\nOptions:\n(A) 02/06/1998\n(B) 02/15/1998\n(C) 02/14/1998\n(D) 05/14/1998\n(E) 03/16/1998\n(F) 02/13/1998",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "week",
+        "direction": "later"
+      }
+    },
+    {
+      "id": "date-0300",
+      "input": "Tomorrow is 1/16/2017. What is the date 3 months ago in MM/DD/YYYY?\nOptions:\n(A) 10/15/2016\n(B) 10/08/2016\n(C) 10/17/2016\n(D) 01/13/2017\n(E) 11/15/2016\n(F) 10/13/2016",
+      "meta": {
+        "setup": "tomorrow",
+        "unit": "month",
+        "direction": "ago"
+      }
+    }
+  ]
+}

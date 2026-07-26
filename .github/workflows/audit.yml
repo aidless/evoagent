@@ -1,0 +1,34 @@
+﻿name: audit
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install project and test dependencies
+        run: pip install -e . cryptography numpy faiss-cpu sentence-transformers transformers
+      - name: Reject private keys in trust store
+        env:
+          PYTHONPATH: src
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from evoagent.key_governance import audit_key_directory
+          result = audit_key_directory(Path('.evo/trusted-keys'))
+          print(result)
+          raise SystemExit(0 if result['valid'] else 1)
+          PY
+      - name: Compile source tree
+        run: python -m compileall -q src
+      - name: Run self-evolution test suite
+        env:
+          PYTHONPATH: src
+        run: python -m unittest discover -s tests
+      - name: Verify signed active bundle and current file integrity
+        env:
+          PYTHONPATH: src
+        run: python -m evoagent.bundle_signer promote --bundles .evo/workflow-bundles.json --signatures .evo/workflow-signatures.json --trusted .evo/trusted-keys --active .evo/active-workflow-bundle.txt

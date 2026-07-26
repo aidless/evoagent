@@ -1,0 +1,23 @@
+{
+  "baseline": "4/6",
+  "tool_agent": "5/6",
+  "delta_correct": 1,
+  "logic_tool_policy": "use only when solver returns a unique option; otherwise fallback",
+  "trace": [
+    {
+      "base_passed": false,
+      "tool_answer": "D",
+      "expected": "(D)",
+      "tool_passed": true,
+      "used": true
+    },
+    {
+      "base_passed": true,
+      "tool_answer": "C",
+      "expected": "(C)",
+      "tool_passed": true,
+      "used": true
+    }
+  ],
+  "date_tool_policy": "disabled: corpus precision 48/52 is below safety threshold"
+}

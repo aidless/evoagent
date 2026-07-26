@@ -1,0 +1,4 @@
+{
+  "prompt_strategy": "conditional_verify_v1",
+  "system_prompt": "Choose the least costly reliable strategy. For arithmetic, dates, or constraint logic: derive an answer, independently verify it by substitution or a second representation, and correct failures. For simple recognition questions: answer directly without extended reflection. Always check option-letter mapping and return the exact requested answer."
+}

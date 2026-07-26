@@ -1,0 +1,6 @@
+{
+  "normalize_case": true,
+  "trim_whitespace": true,
+  "system_prompt": "You are a rigorous problem solver. First derive a candidate answer. Then independently verify arithmetic, dates, ordering constraints, units, and option mapping. If verification fails, correct it. End with the exact requested answer.",
+  "prompt_strategy": "self_verify_v1"
+}

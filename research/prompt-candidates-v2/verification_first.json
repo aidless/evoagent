@@ -1,0 +1,4 @@
+{
+  "prompt_strategy": "verification_first_v1",
+  "system_prompt": "Before solving, form a deliberately tentative candidate answer or interpretation. Critically test that candidate against every condition, reject it if any condition fails, then solve independently. For arithmetic recompute the final value; for dates apply offsets explicitly; for ordering build the full order. Return the exact requested answer."
+}

@@ -1,0 +1,74 @@
+﻿[
+    {
+        "name":  "Qwen3",
+        "url":  "https://raw.githubusercontent.com/QwenLM/Qwen3/main/README.md",
+        "status":  "downloaded",
+        "bytes":  24732
+    },
+    {
+        "name":  "DeepSeek-V3",
+        "url":  "https://raw.githubusercontent.com/deepseek-ai/DeepSeek-V3/main/README.md",
+        "status":  "downloaded",
+        "bytes":  20851
+    },
+    {
+        "name":  "Llama-models",
+        "url":  "https://raw.githubusercontent.com/meta-llama/llama-models/main/README.md",
+        "status":  "downloaded",
+        "bytes":  10065
+    },
+    {
+        "name":  "Mistral-inference",
+        "url":  "https://raw.githubusercontent.com/mistralai/mistral-inference/main/README.md",
+        "status":  "downloaded",
+        "bytes":  17382
+    },
+    {
+        "name":  "GLM-4",
+        "url":  "https://raw.githubusercontent.com/THUDM/GLM-4/main/README.md",
+        "status":  "downloaded",
+        "bytes":  23906
+    },
+    {
+        "name":  "vLLM",
+        "url":  "https://raw.githubusercontent.com/vllm-project/vllm/main/README.md",
+        "status":  "downloaded",
+        "bytes":  5708
+    },
+    {
+        "name":  "llama.cpp",
+        "url":  "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/README.md",
+        "status":  "downloaded",
+        "bytes":  31915
+    },
+    {
+        "name":  "DSPy",
+        "url":  "https://raw.githubusercontent.com/stanfordnlp/dspy/main/README.md",
+        "status":  "downloaded",
+        "bytes":  4788
+    },
+    {
+        "name":  "OpenHands",
+        "url":  "https://raw.githubusercontent.com/All-Hands-AI/OpenHands/main/README.md",
+        "status":  "downloaded",
+        "bytes":  8497
+    },
+    {
+        "name":  "AutoGen",
+        "url":  "https://raw.githubusercontent.com/microsoft/autogen/main/README.md",
+        "status":  "downloaded",
+        "bytes":  20790
+    },
+    {
+        "name":  "SWE-agent",
+        "url":  "https://raw.githubusercontent.com/SWE-agent/SWE-agent/main/README.md",
+        "status":  "downloaded",
+        "bytes":  8158
+    },
+    {
+        "name":  "LangGraph",
+        "url":  "https://raw.githubusercontent.com/langchain-ai/langgraph/main/README.md",
+        "status":  "downloaded",
+        "bytes":  6395
+    }
+]

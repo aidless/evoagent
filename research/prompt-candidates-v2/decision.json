@@ -1,0 +1,64 @@
+{
+  "screen": {
+    "current": "3/3",
+    "verification_first": "3/3",
+    "conditional_verify": "2/3"
+  },
+  "development": {
+    "current": "4/6",
+    "verification_first": "4/6"
+  },
+  "pairwise": [
+    {
+      "suite": "gsm8k",
+      "expected": "10",
+      "current_passed": true,
+      "vf_passed": true,
+      "current_output": "To find out how many loaves of bread are sold in the afternoon, let's break down the sales process step by step:\n\n1. **Total loaves produced**: 60 loaves.\n\n2. **Morning sales**: Two-thirds of the loaves are sold in the morning.\n   - Morning sales = \\( \\frac{2}{3} \\times 60 = 40 \\) loaves.\n\n3. **Loaves left after morning**: \\( 60 - 40 = 20 \\) loaves.\n\n4. **Afternoon sales**: Half of what is left is sold equally in the afternoon and evening.\n   - Half of the remaining loaves = \\( \\frac{1}{2} \\times 20 = 10 \\) loaves.\n\nTherefore, **10 loaves of bread are sold in the afternoon**.",
+      "vf_output": "To find out how many loaves of bread are sold in the afternoon, let's break down the sales process step by step:\n\n1. **Total loaves produced**: 60 loaves.\n\n2. **Morning sales**: Two-thirds of the loaves are sold in the morning.\n   - Morning sales = \\( \\frac{2}{3} \\times 60 = 40 \\) loaves.\n\n3. **Loaves left after morning sales**: \n   - Loaves left = Total loaves - Morning sales = \\( 60 - 40 = 20 \\) loaves.\n\n4. **Afternoon sales**: Half of what is left is sold equally in the afternoon and evening.\n   - Afternoon sales = \\( \\frac{1}{2} \\times 20 = 10 \\) loaves.\n\nTherefore, 10 loaves of bread are sold in the afternoon."
+    },
+    {
+      "suite": "gsm8k",
+      "expected": "70",
+      "current_passed": true,
+      "vf_passed": true,
+      "current_output": "To find the final cost of grooming after applying a 30% discount, we first calculate the discount amount and then subtract it from the original cost.\n\n1. Calculate the discount amount:\n\\[ \\text{Discount} = \\text{Original Cost} \\times \\text{Discount Percentage} \\]\n\\[ \\text{Discount} = \\$100 \\times 30\\% = \\$100 \\times 0.30 = \\$30 \\]\n\n2. Subtract the discount from the original cost to find the final cost:\n\\[ \\text{Final Cost} = \\text{Original Cost} - \\text{Discount} \\]\n\\[ \\text{Final Cost} = \\$100 - \\$30 = \\$70 \\]\n\nTherefore, the final cost of grooming after applying the 30% discount is \\$70.",
+      "vf_output": "To find the final cost of grooming after applying a 30% discount, we first calculate the discount amount and then subtract it from the original cost.\n\nOriginal cost of grooming: $100\n\nDiscount percentage: 30%\n\nFirst, calculate the discount amount:\n\\[ \\text{Discount amount} = \\text{Original cost} \\times \\frac{\\text{Discount percentage}}{100} \\]\n\\[ \\text{Discount amount} = 100 \\times \\frac{30}{100} = 100 \\times 0.3 = 30 \\]\n\nNow, subtract the discount amount from the original cost to find the final cost:\n\\[ \\text{Final cost} = \\text{Original cost} - \\text{Discount amount} \\]\n\\[ \\text{Final cost} = 100 - 30 = 70 \\]\n\nSo, the final cost of grooming after applying the 30% discount is $70."
+    },
+    {
+      "suite": "bbh_date",
+      "expected": "(A)",
+      "current_passed": true,
+      "vf_passed": true,
+      "current_output": "(A) 08/04/1997",
+      "vf_output": "(A) 08/04/1997"
+    },
+    {
+      "suite": "bbh_date",
+      "expected": "(E)",
+      "current_passed": false,
+      "vf_passed": false,
+      "current_output": "To find the date a month ago from April 30, 2021, we need to subtract one month from this date. Since April has 30 days, moving back a month would take us to March. \n\nStarting from April 30, 2021, we count back to the last day of March, which is March 31, 2021. \n\nTherefore, the correct answer is:\n\n(D) 03/31/2021",
+      "vf_output": "(B) 03/22/2021"
+    },
+    {
+      "suite": "bbh_logic",
+      "expected": "(D)",
+      "current_passed": false,
+      "vf_passed": false,
+      "current_output": "The correct answer is (B) The cantaloupes are the third-most expensive.",
+      "vf_output": "(B) The cantaloupes are the third-most expensive"
+    },
+    {
+      "suite": "bbh_logic",
+      "expected": "(C)",
+      "current_passed": true,
+      "vf_passed": true,
+      "current_output": "(C) The peaches are the second-most expensive",
+      "vf_output": "(C) The peaches are the second-most expensive"
+    }
+  ],
+  "decision": "reject_no_gain",
+  "hidden_test_run": false,
+  "active_unchanged": true
+}

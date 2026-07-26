@@ -1,0 +1,63 @@
+﻿{
+  "verified": true,
+  "score": 0.5,
+  "passed": 3,
+  "total": 6,
+  "suites": {
+    "bbh_date": {
+      "passed": 1,
+      "total": 2,
+      "score": 0.5
+    },
+    "bbh_logic": {
+      "passed": 1,
+      "total": 2,
+      "score": 0.5
+    },
+    "gsm8k": {
+      "passed": 1,
+      "total": 2,
+      "score": 0.5
+    }
+  },
+  "seed": 271828,
+  "model": "E:\\models\\qwen2-7b-instruct-q4_k_m.gguf",
+  "details": [
+    {
+      "suite": "gsm8k",
+      "passed": false,
+      "expected": "32",
+      "output": "Trent is 28 years old."
+    },
+    {
+      "suite": "gsm8k",
+      "passed": true,
+      "expected": "114200",
+      "output": "To calculate the total amount of money John made in the year after receiving the award, we need to consider both the one-time monetary reward and the increased salary due to the 5% raise.\n\n1. **Salary Increase Calculation:**\n   - John's current weekly salary is $2000.\n   - The 5% raise on his salary is calculated as \\(2000 \\times 0.05 = 100\\).\n   - Therefore, his new weekly salary after the raise is \\(2000 + 100 = 2100\\).\n\n2. **Total Salary for the Year:**\n   - Since there are 52 weeks in a year, the total salary for the year with the raise is \\(2100 \\times 52 = 109,200\\).\n\n3. **Total Yearly Earnings Including the One-Time Reward:**\n   - The one-time monetary reward is $5000.\n   - Adding this to the total salary for the year gives \\(109,200 + 5000 = 114,200\\).\n\nTherefore, the total amount of money John made that year is **$114,200**."
+    },
+    {
+      "suite": "bbh_date",
+      "passed": false,
+      "expected": "(F)",
+      "output": "(D) 04/27/2021"
+    },
+    {
+      "suite": "bbh_date",
+      "passed": true,
+      "expected": "(E)",
+      "output": "(E) 12/29/2013"
+    },
+    {
+      "suite": "bbh_logic",
+      "passed": false,
+      "expected": "(B)",
+      "output": "(A) Dan finished second"
+    },
+    {
+      "suite": "bbh_logic",
+      "passed": true,
+      "expected": "(B)",
+      "output": "(B) The cantaloupes are the most expensive"
+    }
+  ]
+}

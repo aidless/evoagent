@@ -1,0 +1,45 @@
+﻿{
+  "verified": true,
+  "score": 0.0,
+  "passed": 0,
+  "total": 3,
+  "suites": {
+    "bbh_date": {
+      "passed": 0,
+      "total": 1,
+      "score": 0.0
+    },
+    "bbh_logic": {
+      "passed": 0,
+      "total": 1,
+      "score": 0.0
+    },
+    "gsm8k": {
+      "passed": 0,
+      "total": 1,
+      "score": 0.0
+    }
+  },
+  "seed": 8675309,
+  "model": "E:\\models\\qwen2-7b-instruct-q4_k_m.gguf",
+  "details": [
+    {
+      "suite": "gsm8k",
+      "passed": false,
+      "expected": "14",
+      "output": "To find the total points Sasha scored during both games, let's break down the information:\n\n1. **First Game**: Sasha scored 14 points.\n2. **Second Game**: Julie scored 4 fewer points than Sasha in the first game, which means Julie scored \\(14 - 4 = 10\\) points in the first game. Since Sasha scored 6 fewer points in the second game than Julie's score in the first game, Sasha scored \\(10 - 6 = 4\\) points in the second game.\n\nTo find the total points Sasha scored during both games, we add her scores from both games:\n\n\\[14 + 4 = 18\\]\n\nTherefore, Sasha scored a total of 18 points during both games."
+    },
+    {
+      "suite": "bbh_date",
+      "passed": false,
+      "expected": "(A)",
+      "output": "To find the date today given that it's Christmas Eve in 1937, we need to add one day to Christmas Eve. Christmas Eve is December 24th. So, if it's December 24, 1937, then the date today would be December 25, 1937.\n\nThe correct answer is:\n\n12/25/1937"
+    },
+    {
+      "suite": "bbh_logic",
+      "passed": false,
+      "expected": "(E)",
+      "output": "The station wagon is the third-newest."
+    }
+  ]
+}

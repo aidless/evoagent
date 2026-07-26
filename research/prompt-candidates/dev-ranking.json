@@ -1,0 +1,26 @@
+﻿[
+    {
+        "candidate":  "verify",
+        "score":  0.5,
+        "passed":  3,
+        "total":  6
+    },
+    {
+        "candidate":  "adaptive",
+        "score":  0.3333333333333333,
+        "passed":  2,
+        "total":  6
+    },
+    {
+        "candidate":  "cot",
+        "score":  0.3333333333333333,
+        "passed":  2,
+        "total":  6
+    },
+    {
+        "candidate":  "baseline",
+        "score":  0.3333333333333333,
+        "passed":  2,
+        "total":  6
+    }
+]

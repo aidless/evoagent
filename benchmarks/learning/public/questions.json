@@ -1,0 +1,269 @@
+{
+  "seed": 20260724,
+  "questions": [
+    {
+      "id": "paper-001",
+      "topic": "agent_evolution",
+      "question": "Which paper title best matches this abstract excerpt?\nLarge language models are increasingly evaluated by other models, raising a natural question: can a model predict how a judge will score its own output? We find that the ability is largely present before any targeted training: prompted few-shot, a base model already predicts an external judge's multi-attribute quality scores on open-ended responses well above chance across three benchmarks.",
+      "options": {
+        "A": "Self-Evaluation Is Already There: Eliciting Latent Judge Calibration in Base LLMs with Minimal Data",
+        "B": "The Red Queen G枚del Machine: Co-Evolving Agents and Their Evaluators",
+        "C": "A2Eval: Agentic and Automated Evaluation for Embodied Brain",
+        "D": "Hyperagents"
+      }
+    },
+    {
+      "id": "paper-002",
+      "topic": "ml_reproducibility",
+      "question": "Which paper title best matches this abstract excerpt?\nData leakage -- contamination of a model with information unavailable at baseline -- is the dominant reproducibility failure in machine-learning-based science, yet detection tools require training code, external data, or domain expertise. None operates on the artifact an auditor most often holds: the model's output.",
+      "options": {
+        "A": "Fine-Grained Traceability for Transparent ML Pipelines",
+        "B": "A prior-free blind detection of information leakage from model predictions",
+        "C": "Unlearning Evaluation through Subset Statistical Independence",
+        "D": "Reproducibility of Machine Learning-Based Fault Detection and Diagnosis for HVAC Systems in Buildings: An Empirical Study"
+      }
+    },
+    {
+      "id": "paper-003",
+      "topic": "test_time_scaling",
+      "question": "Which paper title best matches this abstract excerpt?\nToken-to-token (T2T) editing lets LLaDA2.1 revise committed tokens during block-diffusion decoding. The released recipe trains this editor on random vocabulary corruptions, but at inference the editor sees the model's own fluent, high-confidence draft errors instead.",
+      "options": {
+        "A": "A Probabilistic Inference Scaling Theory for LLM Self-Correction",
+        "B": "CyberCorrect: A Cybernetic Framework for Closed-Loop Self-Correction in Large Language Models",
+        "C": "LATTS: Locally Adaptive Test-Time Scaling",
+        "D": "Self-Generated Error Training for Token Editing in Diffusion Language Models"
+      }
+    },
+    {
+      "id": "paper-004",
+      "topic": "llm_evaluation",
+      "question": "Which paper title best matches this abstract excerpt?\nWith the advent of Large Language Models (LLMs), general-purpose agents have seen fundamental advancements. However, evaluating these agents presents unique challenges that distinguish them from static QA benchmarks.",
+      "options": {
+        "A": "ResearchGym: Evaluating Language Model Agents on Real-World AI Research",
+        "B": "The Necessity of a Unified Framework for LLM-Based Agent Evaluation",
+        "C": "AgentGym2: Benchmarking Large Language Model Agents in De-Idealized Real-World Environments",
+        "D": "GAIA-v2-LILT: Multilingual Adaptation of Agent Benchmark beyond Translation"
+      }
+    },
+    {
+      "id": "paper-005",
+      "topic": "ml_reproducibility",
+      "question": "Which paper title best matches this abstract excerpt?\nEvaluating machine unlearning remains challenging, as existing methods typically require retraining reference models or performing membership inference attacks, both of which rely on prior access to training configuration or supervision labels, making them impractical in realistic scenarios. Motivated by the fact that most unlearning algorithms remove a small, random subset of the training data, we propose a subset-level evaluation framework based on statistical independence.",
+      "options": {
+        "A": "Reproducibility of Machine Learning-Based Fault Detection and Diagnosis for HVAC Systems in Buildings: An Empirical Study",
+        "B": "Unlearning Evaluation through Subset Statistical Independence",
+        "C": "A prior-free blind detection of information leakage from model predictions",
+        "D": "Fine-Grained Traceability for Transparent ML Pipelines"
+      }
+    },
+    {
+      "id": "paper-006",
+      "topic": "uncertainty",
+      "question": "Which paper title best matches this abstract excerpt?\nTransformers have had a profound impact on the field of artificial intelligence, especially on large language models and their variants. However, as was the case with neural networks, their black-box nature limits trust and deployment in high-stakes settings.",
+      "options": {
+        "A": "Quantifying Epistemic Predictive Uncertainty in Conformal Prediction",
+        "B": "Beyond Surface Statistics: Robust Conformal Prediction for LLMs via Internal Representations",
+        "C": "Uncertainty-Aware Transformers: Conformal Prediction for Language Models",
+        "D": "Geometry-Calibrated Conformal Abstention for Language Models"
+      }
+    },
+    {
+      "id": "paper-007",
+      "topic": "ml_reproducibility",
+      "question": "Which paper title best matches this abstract excerpt?\nReproducibility is a cornerstone of scientific research, enabling independent verification and validation of empirical findings. The topic gained prominence in fields such as psychology and medicine, where concerns about non - replicable results sparked ongoing discussions about research practices.",
+      "options": {
+        "A": "Reproducibility of Machine Learning-Based Fault Detection and Diagnosis for HVAC Systems in Buildings: An Empirical Study",
+        "B": "Unlearning Evaluation through Subset Statistical Independence",
+        "C": "A prior-free blind detection of information leakage from model predictions",
+        "D": "Fine-Grained Traceability for Transparent ML Pipelines"
+      }
+    },
+    {
+      "id": "paper-008",
+      "topic": "rag_retrieval",
+      "question": "Which paper title best matches this abstract excerpt?\nRetrieval-augmented generation (RAG) is routinely extended with methods meant to improve retrieval: query expansion, hierarchical and cross-document summarization, graph-based expansion, per-query routing, rank fusion, and corrective re-retrieval. The benefits reported for these methods come almost exclusively from homogeneous corpora, predominantly Wikipedia prose.",
+      "options": {
+        "A": "Beyond Relevance: Utility-Centric Retrieval in the LLM Era",
+        "B": "Beyond the Reranker: Do RAG Retrieval Enhancements Help Once a Strong Reranker Is Present?",
+        "C": "Optimizing RAG Rerankers with LLM Feedback via Reinforcement Learning",
+        "D": "Understanding the Behaviors of Environment-aware Information Retrieval"
+      }
+    },
+    {
+      "id": "paper-009",
+      "topic": "reasoning_rl",
+      "question": "Which paper title best matches this abstract excerpt?\nReinforcement Learning with Verifiable Rewards (RLVR) has advanced the reasoning capabilities of Large Language Models (LLMs) by leveraging direct outcome verification instead of learned reward models. Building on this paradigm, Group Relative Policy Optimization (GRPO) eliminates the need for critic models but suffers from indiscriminate credit assignment for intermediate steps, which limits its ability to identify effective reasoning strategies and incurs overthinking.",
+      "options": {
+        "A": "GRPO-VPS: Enhancing Group Relative Policy Optimization with Verifiable Process Supervision for Effective Reasoning",
+        "B": "Verifiable Process Rewards for Agentic Reasoning",
+        "C": "Decoupling Reasoning and Confidence: Resurrecting Calibration in Reinforcement Learning from Verifiable Rewards",
+        "D": "Knowledge-to-Verification: Exploring RLVR for LLMs in Knowledge-Intensive Domains"
+      }
+    },
+    {
+      "id": "paper-010",
+      "topic": "uncertainty",
+      "question": "Which paper title best matches this abstract excerpt?\nWhen language models lack relevant knowledge for a given query, they frequently generate plausible responses that can be hallucinations, rather than admitting being agnostic about the answer. Retraining models to reward admitting ignorance can lead to overly conservative behaviors and poor generalization due to scarce evaluation benchmarks.",
+      "options": {
+        "A": "Quantifying Epistemic Predictive Uncertainty in Conformal Prediction",
+        "B": "Uncertainty-Aware Transformers: Conformal Prediction for Language Models",
+        "C": "Beyond Surface Statistics: Robust Conformal Prediction for LLMs via Internal Representations",
+        "D": "Geometry-Calibrated Conformal Abstention for Language Models"
+      }
+    },
+    {
+      "id": "paper-011",
+      "topic": "code_agents",
+      "question": "Which paper title best matches this abstract excerpt?\nLLM-powered coding agents are redefining how real-world software is developed. To drive the research towards better coding agents, we require challenging benchmarks that can rigorously evaluate the ability of such agents to perform various software engineering tasks.",
+      "options": {
+        "A": "PACE: A Proxy for Agentic Capability Evaluation",
+        "B": "SWE-Chain: Benchmarking Coding Agents on Chained Release-Level Package Upgrades",
+        "C": "OmniCode: A Benchmark for Evaluating Software Engineering Agents",
+        "D": "ProjDevBench: Benchmarking AI Coding Agents on End-to-End Project Development"
+      }
+    },
+    {
+      "id": "paper-012",
+      "topic": "agent_evolution",
+      "question": "Which paper title best matches this abstract excerpt?\nSelf-improving agents are state-of-the-art (SOTA) on agentic coding benchmarks and have recently been extended to general domains. However, their search methods generally assume a stationary evaluation criterion: a fixed verifier, benchmark, or labeled dataset that remains valid as the agent improves.",
+      "options": {
+        "A": "A2Eval: Agentic and Automated Evaluation for Embodied Brain",
+        "B": "Self-Evaluation Is Already There: Eliciting Latent Judge Calibration in Base LLMs with Minimal Data",
+        "C": "Hyperagents",
+        "D": "The Red Queen G枚del Machine: Co-Evolving Agents and Their Evaluators"
+      }
+    },
+    {
+      "id": "paper-013",
+      "topic": "uncertainty",
+      "question": "Which paper title best matches this abstract excerpt?\nWe study the problem of quantifying epistemic predictive uncertainty (EPU) -- that is, uncertainty faced at prediction time due to the existence of multiple plausible predictive models -- within the framework of conformal prediction (CP). To expose the implicit model multiplicity underlying CP, we build on recent results showing that, under a mild assumption, any full CP procedure induces a set of closed and convex predictive distributions, commonly referred to as a credal set.",
+      "options": {
+        "A": "Geometry-Calibrated Conformal Abstention for Language Models",
+        "B": "Quantifying Epistemic Predictive Uncertainty in Conformal Prediction",
+        "C": "Uncertainty-Aware Transformers: Conformal Prediction for Language Models",
+        "D": "Beyond Surface Statistics: Robust Conformal Prediction for LLMs via Internal Representations"
+      }
+    },
+    {
+      "id": "paper-014",
+      "topic": "test_time_scaling",
+      "question": "Which paper title best matches this abstract excerpt?\nLarge Language Models (LLMs) have demonstrated the capability to refine their generated answers through self-correction, enabling continuous performance improvement over multiple rounds. However, the mechanisms underlying how and why accuracy evolves during this iterative process remain unexplored.",
+      "options": {
+        "A": "A Probabilistic Inference Scaling Theory for LLM Self-Correction",
+        "B": "LATTS: Locally Adaptive Test-Time Scaling",
+        "C": "CyberCorrect: A Cybernetic Framework for Closed-Loop Self-Correction in Large Language Models",
+        "D": "Self-Generated Error Training for Token Editing in Diffusion Language Models"
+      }
+    },
+    {
+      "id": "paper-015",
+      "topic": "code_agents",
+      "question": "Which paper title best matches this abstract excerpt?\nEvaluating LLM agents on benchmarks like SWE-Bench and GAIA can be expensive, time-consuming, and requires complex infrastructure. A single evaluation can cost thousands of dollars and take days to complete.",
+      "options": {
+        "A": "PACE: A Proxy for Agentic Capability Evaluation",
+        "B": "ProjDevBench: Benchmarking AI Coding Agents on End-to-End Project Development",
+        "C": "SWE-Chain: Benchmarking Coding Agents on Chained Release-Level Package Upgrades",
+        "D": "OmniCode: A Benchmark for Evaluating Software Engineering Agents"
+      }
+    },
+    {
+      "id": "paper-016",
+      "topic": "uncertainty",
+      "question": "Which paper title best matches this abstract excerpt?\nLarge language models are increasingly deployed in settings where reliability matters, yet output-level uncertainty signals such as token probabilities, entropy, and self-consistency can become brittle under calibration--deployment mismatch. Conformal prediction provides finite-sample validity under exchangeability, but its practical usefulness depends on the quality of the nonconformity score.",
+      "options": {
+        "A": "Quantifying Epistemic Predictive Uncertainty in Conformal Prediction",
+        "B": "Uncertainty-Aware Transformers: Conformal Prediction for Language Models",
+        "C": "Beyond Surface Statistics: Robust Conformal Prediction for LLMs via Internal Representations",
+        "D": "Geometry-Calibrated Conformal Abstention for Language Models"
+      }
+    },
+    {
+      "id": "paper-017",
+      "topic": "rag_retrieval",
+      "question": "Which paper title best matches this abstract excerpt?\nRerankers play a pivotal role in refining retrieval results for Retrieval-Augmented Generation. However, current reranking models are typically optimized on static human annotated relevance labels in isolation, decoupled from the downstream generation process.",
+      "options": {
+        "A": "Optimizing RAG Rerankers with LLM Feedback via Reinforcement Learning",
+        "B": "Beyond the Reranker: Do RAG Retrieval Enhancements Help Once a Strong Reranker Is Present?",
+        "C": "Beyond Relevance: Utility-Centric Retrieval in the LLM Era",
+        "D": "Understanding the Behaviors of Environment-aware Information Retrieval"
+      }
+    },
+    {
+      "id": "paper-018",
+      "topic": "ml_reproducibility",
+      "question": "Which paper title best matches this abstract excerpt?\nModern machine learning systems are increasingly realised as multistage pipelines, yet existing transparency mechanisms typically operate at a model level: they describe what a system is and why it behaves as it does, but not how individual data samples are operationally recorded, tracked, and verified as they traverse the pipeline. This absence of verifiable, sample-level traceability leaves practitioners and users unable to determine whether a specific sample was used, when it was processed, or whether the corresponding records remain intact over time.",
+      "options": {
+        "A": "A prior-free blind detection of information leakage from model predictions",
+        "B": "Unlearning Evaluation through Subset Statistical Independence",
+        "C": "Fine-Grained Traceability for Transparent ML Pipelines",
+        "D": "Reproducibility of Machine Learning-Based Fault Detection and Diagnosis for HVAC Systems in Buildings: An Empirical Study"
+      }
+    },
+    {
+      "id": "paper-019",
+      "topic": "llm_evaluation",
+      "question": "Which paper title best matches this abstract excerpt?\nAgent benchmarks remain largely English-centric, while their multilingual versions are often built with machine translation (MT) and limited post-editing. We argue that, for agentic tasks, this minimal workflow can easily break benchmark validity through query-answer misalignment or culturally off-target context.",
+      "options": {
+        "A": "ResearchGym: Evaluating Language Model Agents on Real-World AI Research",
+        "B": "The Necessity of a Unified Framework for LLM-Based Agent Evaluation",
+        "C": "GAIA-v2-LILT: Multilingual Adaptation of Agent Benchmark beyond Translation",
+        "D": "AgentGym2: Benchmarking Large Language Model Agents in De-Idealized Real-World Environments"
+      }
+    },
+    {
+      "id": "paper-020",
+      "topic": "agent_evolution",
+      "question": "Which paper title best matches this abstract excerpt?\nCurrent embodied VLM evaluation relies on static, expert-defined, manually annotated benchmarks that exhibit severe redundancy and coverage imbalance. This labor intensive paradigm drains computational and annotation resources, inflates costs, and distorts model rankings, ultimately stifling iterative development.",
+      "options": {
+        "A": "A2Eval: Agentic and Automated Evaluation for Embodied Brain",
+        "B": "Self-Evaluation Is Already There: Eliciting Latent Judge Calibration in Base LLMs with Minimal Data",
+        "C": "The Red Queen G枚del Machine: Co-Evolving Agents and Their Evaluators",
+        "D": "Hyperagents"
+      }
+    },
+    {
+      "id": "paper-021",
+      "topic": "ml_reproducibility",
+      "question": "Which paper title best matches this abstract excerpt?\nMachine learning components are now central to AI-infused software systems, from recommendations and code assistants to clinical decision support. As regulations and governance frameworks increasingly require deleting sensitive data from deployed models, machine unlearning is emerging as a practical alternative to full retraining.",
+      "options": {
+        "A": "A prior-free blind detection of information leakage from model predictions",
+        "B": "Towards Reliable Testing of Machine Unlearning",
+        "C": "Unlearning Evaluation through Subset Statistical Independence",
+        "D": "Reproducibility of Machine Learning-Based Fault Detection and Diagnosis for HVAC Systems in Buildings: An Empirical Study"
+      }
+    },
+    {
+      "id": "paper-022",
+      "topic": "uncertainty",
+      "question": "Which paper title best matches this abstract excerpt?\nConformal prediction (CP) gives distribution-free coverage for modern vision and language models, but it is often forced to make a ranking decision from a single unstable nonconformity score. Standard CP uses one realization, while average-then-calibrate variants smooth multiple realizations into a point estimate.",
+      "options": {
+        "A": "Geometry-Calibrated Conformal Abstention for Language Models",
+        "B": "Uncertainty-Aware Transformers: Conformal Prediction for Language Models",
+        "C": "Quantifying Epistemic Predictive Uncertainty in Conformal Prediction",
+        "D": "Empirical Bayes Conformal Prediction for Vision and Language Models"
+      }
+    },
+    {
+      "id": "paper-023",
+      "topic": "test_time_scaling",
+      "question": "Which paper title best matches this abstract excerpt?\nLarge language model (LLM) self-correction -- the ability to detect and fix errors in generated outputs -- remains largely ad hoc, relying on generic prompts such as \"please reconsider your answer\" without systematic error analysis or convergence guarantees. We propose CyberCorrect, a framework that formalizes LLM self-correction as a closed-loop control system grounded in cybernetic theory.",
+      "options": {
+        "A": "CyberCorrect: A Cybernetic Framework for Closed-Loop Self-Correction in Large Language Models",
+        "B": "A Probabilistic Inference Scaling Theory for LLM Self-Correction",
+        "C": "Self-Generated Error Training for Token Editing in Diffusion Language Models",
+        "D": "LATTS: Locally Adaptive Test-Time Scaling"
+      }
+    },
+    {
+      "id": "paper-024",
+      "topic": "agent_evolution",
+      "question": "Which paper title best matches this abstract excerpt?\nSelf-improving AI systems aim to reduce reliance on human engineering by learning to improve their own learning and problem-solving processes. Existing approaches to self-improvement rely on fixed, handcrafted meta-level mechanisms, fundamentally limiting how fast such systems can improve.",
+      "options": {
+        "A": "Hyperagents",
+        "B": "The Red Queen G枚del Machine: Co-Evolving Agents and Their Evaluators",
+        "C": "Self-Evaluation Is Already There: Eliciting Latent Judge Calibration in Base LLMs with Minimal Data",
+        "D": "A2Eval: Agentic and Automated Evaluation for Embodied Brain"
+      }
+    }
+  ]
+}

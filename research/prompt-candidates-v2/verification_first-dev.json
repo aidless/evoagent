@@ -1,0 +1,63 @@
+﻿{
+  "verified": true,
+  "score": 0.6666666666666666,
+  "passed": 4,
+  "total": 6,
+  "suites": {
+    "bbh_date": {
+      "passed": 1,
+      "total": 2,
+      "score": 0.5
+    },
+    "bbh_logic": {
+      "passed": 1,
+      "total": 2,
+      "score": 0.5
+    },
+    "gsm8k": {
+      "passed": 2,
+      "total": 2,
+      "score": 1.0
+    }
+  },
+  "seed": 161803,
+  "model": "E:\\models\\qwen2-7b-instruct-q4_k_m.gguf",
+  "details": [
+    {
+      "suite": "gsm8k",
+      "passed": true,
+      "expected": "10",
+      "output": "To find out how many loaves of bread are sold in the afternoon, let's break down the sales process step by step:\n\n1. **Total loaves produced**: 60 loaves.\n\n2. **Morning sales**: Two-thirds of the loaves are sold in the morning.\n   - Morning sales = \\( \\frac{2}{3} \\times 60 = 40 \\) loaves.\n\n3. **Loaves left after morning sales**: \n   - Loaves left = Total loaves - Morning sales = \\( 60 - 40 = 20 \\) loaves.\n\n4. **Afternoon sales**: Half of what is left is sold equally in the afternoon and evening.\n   - Afternoon sales = \\( \\frac{1}{2} \\times 20 = 10 \\) loaves.\n\nTherefore, 10 loaves of bread are sold in the afternoon."
+    },
+    {
+      "suite": "gsm8k",
+      "passed": true,
+      "expected": "70",
+      "output": "To find the final cost of grooming after applying a 30% discount, we first calculate the discount amount and then subtract it from the original cost.\n\nOriginal cost of grooming: $100\n\nDiscount percentage: 30%\n\nFirst, calculate the discount amount:\n\\[ \\text{Discount amount} = \\text{Original cost} \\times \\frac{\\text{Discount percentage}}{100} \\]\n\\[ \\text{Discount amount} = 100 \\times \\frac{30}{100} = 100 \\times 0.3 = 30 \\]\n\nNow, subtract the discount amount from the original cost to find the final cost:\n\\[ \\text{Final cost} = \\text{Original cost} - \\text{Discount amount} \\]\n\\[ \\text{Final cost} = 100 - 30 = 70 \\]\n\nSo, the final cost of grooming after applying the 30% discount is $70."
+    },
+    {
+      "suite": "bbh_date",
+      "passed": true,
+      "expected": "(A)",
+      "output": "(A) 08/04/1997"
+    },
+    {
+      "suite": "bbh_date",
+      "passed": false,
+      "expected": "(E)",
+      "output": "(B) 03/22/2021"
+    },
+    {
+      "suite": "bbh_logic",
+      "passed": false,
+      "expected": "(D)",
+      "output": "(B) The cantaloupes are the third-most expensive"
+    },
+    {
+      "suite": "bbh_logic",
+      "passed": true,
+      "expected": "(C)",
+      "output": "(C) The peaches are the second-most expensive"
+    }
+  ]
+}
