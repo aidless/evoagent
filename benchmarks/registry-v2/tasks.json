@@ -1,0 +1,6 @@
+{
+  "schema_version": 2,
+  "redacted": true,
+  "reason": "candidate workspace must not expose hidden task inputs or answers",
+  "manifest_sha256": "7371fcb4e36ee2336574c8904175b20652e61ffdf914c3be0ce42efb0a698c89"
+}
