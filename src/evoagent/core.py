@@ -5,6 +5,7 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 import tempfile
 import time
 from dataclasses import dataclass
@@ -40,6 +41,23 @@ def candidate_id(data: dict[str, Any]) -> str:
     return hashlib.sha256(canonical(data).encode()).hexdigest()[:12]
 
 
+def normalize_command(command: str) -> str:
+    """Resolve the interpreter token to the running Python.
+
+    Config files historically spell evaluator/intelligence commands as
+    ``python ...``. On machines where only ``python3`` exists (most Linux
+    distros) the bare ``python`` token fails and every evaluation silently
+    scores 0. Rewriting the leading token to ``sys.executable`` keeps
+    existing Windows configs working unchanged.
+    """
+    text = command.strip()
+    if text == "python":
+        return f'"{sys.executable}"'
+    if text.startswith("python "):
+        return f'"{sys.executable}"' + text[len("python"):]
+    return command
+
+
 def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8-sig"))
 
@@ -54,7 +72,7 @@ def save_json(path: Path, data: Any) -> None:
 def evaluate(root: Path, candidate: dict[str, Any]) -> EvalResult:
     config = load_json(root / "evo.json")
     cases = load_json(root / config["benchmark"])["cases"]
-    command = config["evaluator_command"]
+    command = normalize_command(config["evaluator_command"])
     timeout = float(config.get("timeout_seconds", 10))
     started = time.monotonic()
     passed, failures, outcomes = 0, [], []
@@ -99,6 +117,7 @@ def propose(root: Path, incumbent: dict[str, Any], failures: tuple[str, ...]) ->
     config = load_json(root / "evo.json")
     proposer = config.get("proposer_command")
     if proposer:
+        proposer = normalize_command(proposer)
         env = os.environ.copy()
         env["EVO_INCUMBENT"] = canonical(incumbent)
         env["EVO_FAILURES"] = json.dumps(failures)
@@ -184,6 +203,7 @@ def evolve(root: Path) -> dict[str, Any]:
               "version_level": "provisional" if promoted else None}
     intelligence_command = config.get("post_evolution_intelligence_command")
     if intelligence_command:
+        intelligence_command = normalize_command(intelligence_command)
         try:
             check = subprocess.run(intelligence_command, cwd=root, shell=True,
                                    capture_output=True, text=True,

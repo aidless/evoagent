@@ -1,8 +1,10 @@
 import unittest
+from evoagent.benchmark_registry import CSV
 from evoagent.claim_validator import cited_claims, validate_answer
 class ClaimValidatorTests(unittest.TestCase):
  def setUp(self):self.p=[{'paper_id':'p1','title':'Self-verification on ARC','abstract':'Self-verification improves Qwen-7B accuracy on ARC-Challenge but degrades on TruthfulQA.'}]
  def test_supported_claim(self):self.assertTrue(validate_answer('Self-verification improves Qwen-7B on ARC-Challenge [p1].',self.p)['all_supported'])
+ @unittest.skipUnless(CSV.exists(),f'private benchmark CSV not present: {CSV} (set EVO_BENCHMARK_CSV)')
  def test_wrong_number_rejected(self):self.assertFalse(validate_answer('Accuracy improves by 99% on ARC-Challenge [p1].',self.p)['all_supported'])
  def test_unrelated_claim_rejected(self):self.assertFalse(validate_answer('The method reduces GPU memory for image diffusion [p1].',self.p)['all_supported'])
  def test_evidence_span_is_returned(self):

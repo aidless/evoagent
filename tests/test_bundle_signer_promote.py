@@ -2,7 +2,7 @@ import subprocess,sys,os,json,tempfile,unittest
 from pathlib import Path
 class BundleSignerPromoteTests(unittest.TestCase):
  def run_promote(self,*args):
-  env=os.environ.copy();env['PYTHONPATH']=r'E:\self-evolving-agent\src'
+  env=os.environ.copy();env['PYTHONPATH']=str(Path(__file__).resolve().parents[1]/'src')
   return subprocess.run([sys.executable,'-m','evoagent.bundle_signer','promote',*args],env=env,capture_output=True,text=True)
  def test_unsigned_active_rejected(self):
   with tempfile.TemporaryDirectory() as td:

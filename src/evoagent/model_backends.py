@@ -34,14 +34,17 @@ class ModelBackendRegistry:
  def audit(self):return self.data
 def register_defaults(path:Path):
  r=ModelBackendRegistry(path)
+ hub=Path(os.environ.get('HF_HOME',str(Path.home()/'.cache'/'huggingface'/'hub')))
+ models_dir=os.environ.get('EVO_MODELS_DIR')
+ def _gguf(name):return Path(models_dir)/name if models_dir else Path('E:/models')/name
  cands=[
-  ModelSpec('hf_snapshot','qwen2.5-1.5b-instruct',_snapshot_path(r'C:\Users\Administrator\.cache\huggingface\hub\models--Qwen--Qwen2.5-1.5B-Instruct') or Path('E:/models/does-not-exist'),'qwen2.5','1.5B','safetensors',32768,True,'apache-2.0'),
-  ModelSpec('hf_snapshot','qwen2.5-3b-instruct',_snapshot_path(r'C:\Users\Administrator\.cache\huggingface\hub\models--Qwen--Qwen2.5-3B-Instruct') or Path('E:/models/does-not-exist'),'qwen2.5','3B','safetensors',32768,True,'apache-2.0'),
-  ModelSpec('hf_snapshot','qwen2.5-7b-instruct',_snapshot_path(r'C:\Users\Administrator\.cache\huggingface\hub\models--Qwen--Qwen2.5-7B-Instruct') or Path('E:/models/does-not-exist'),'qwen2.5','7B','safetensors',32768,True,'apache-2.0'),
-  ModelSpec('hf_snapshot','hermes-3-llama-3.2-3b',_snapshot_path(r'C:\Users\Administrator\.cache\huggingface\hub\models--NousResearch--Hermes-3-Llama-3.2-3B') or Path('E:/models/does-not-exist'),'llama3.2','3B','safetensors',131072,True,'apache-2.0'),
-  ModelSpec('gguf','mistral-7b-instruct-v0.2',Path(r'E:\models\mistral-7b-instruct-v0.2.Q4_K_M.gguf'),'mistral','7B','Q4_K_M',32768,True,'apache-2.0'),
-  ModelSpec('gguf','qwen2-7b-instruct-gguf',Path(r'E:\models\qwen2-7b-instruct-q4_k_m.gguf'),'qwen2','7B','Q4_K_M',32768,True,'apache-2.0'),
-  ModelSpec('gguf','llama-2-7b-chat',Path(r'E:\models\llama-2-7b-chat.Q4_K_M.gguf'),'llama2','7B','Q4_K_M',4096,False,'llama2-community'),
+  ModelSpec('hf_snapshot','qwen2.5-1.5b-instruct',_snapshot_path(hub/'models--Qwen--Qwen2.5-1.5B-Instruct') or Path('E:/models/does-not-exist'),'qwen2.5','1.5B','safetensors',32768,True,'apache-2.0'),
+  ModelSpec('hf_snapshot','qwen2.5-3b-instruct',_snapshot_path(hub/'models--Qwen--Qwen2.5-3B-Instruct') or Path('E:/models/does-not-exist'),'qwen2.5','3B','safetensors',32768,True,'apache-2.0'),
+  ModelSpec('hf_snapshot','qwen2.5-7b-instruct',_snapshot_path(hub/'models--Qwen--Qwen2.5-7B-Instruct') or Path('E:/models/does-not-exist'),'qwen2.5','7B','safetensors',32768,True,'apache-2.0'),
+  ModelSpec('hf_snapshot','hermes-3-llama-3.2-3b',_snapshot_path(hub/'models--NousResearch--Hermes-3-Llama-3.2-3B') or Path('E:/models/does-not-exist'),'llama3.2','3B','safetensors',131072,True,'apache-2.0'),
+  ModelSpec('gguf','mistral-7b-instruct-v0.2',_gguf('mistral-7b-instruct-v0.2.Q4_K_M.gguf'),'mistral','7B','Q4_K_M',32768,True,'apache-2.0'),
+  ModelSpec('gguf','qwen2-7b-instruct-gguf',_gguf('qwen2-7b-instruct-q4_k_m.gguf'),'qwen2','7B','Q4_K_M',32768,True,'apache-2.0'),
+  ModelSpec('gguf','llama-2-7b-chat',_gguf('llama-2-7b-chat.Q4_K_M.gguf'),'llama2','7B','Q4_K_M',4096,False,'llama2-community'),
  ]
  for m in cands:
   try:r.register(m)

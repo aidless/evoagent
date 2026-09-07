@@ -1,9 +1,9 @@
 ﻿from __future__ import annotations
-import argparse, hashlib, json, subprocess, time
+import argparse, hashlib, json, os, subprocess, sys, time
 from pathlib import Path
 
-KB=Path(r'E:\peS2o_kb_faiss')
-PY=KB/'.venv/Scripts/python.exe'
+KB=Path(os.environ.get('EVO_KB_DIR',r'E:\peS2o_kb_faiss'))
+PY=Path(os.environ.get('EVO_KB_PYTHON',sys.executable))
 
 def search(query:str,n:int=10,year_min:int|None=None):
     cmd=[str(PY),'-X','utf8',str(KB/'kb_query_json.py'),query,'-n',str(n)]

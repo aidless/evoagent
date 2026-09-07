@@ -20,7 +20,8 @@ class BenchmarkAggregator:
     if k.isalpha():f[k]+=1
   return dict(f)
 if __name__=='__main__':
-  p=Path(r'F:\test\2026-07-24-08-36-33\kb\benchmarks.csv')
+  import os
+  p=Path(os.environ.get('EVO_BENCHMARK_CSV',str(Path(__file__).resolve().parents[2]/'benchmarks'/'benchmarks.csv')))
   a=BenchmarkAggregator(p)
   print(json.dumps(a.summary(),indent=2,ensure_ascii=False))
   print('family counts',a.by_family())

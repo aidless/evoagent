@@ -10,7 +10,7 @@ class VersionAuditCLITests(unittest.TestCase):
         self.t.cleanup()
     def invoke_cli(self,*args):
         env=os.environ.copy()
-        env['PYTHONPATH']=r'E:\self-evolving-agent\src'
+        env['PYTHONPATH']=str(Path(__file__).resolve().parents[1]/'src')
         proc=subprocess.run([sys.executable,'-m','evoagent.version_audit',*args,'--registry',str(self.registry_path)],env=env,capture_output=True,text=True,check=True)
         return json.loads(proc.stdout)
     def _init_registry(self):

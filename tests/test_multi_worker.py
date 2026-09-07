@@ -6,7 +6,7 @@ from evoagent.event_log import EventLog
 from evoagent.lease import acquire
 from evoagent.supervisor import WorkerSupervisor
 
-ROOT=Path(r"E:\self-evolving-agent")
+ROOT=Path(__file__).resolve().parents[1]
 
 class MultiWorkerTests(unittest.TestCase):
  def setUp(self):self.t=tempfile.TemporaryDirectory();self.r=Path(self.t.name);self.r.joinpath("runs").mkdir(parents=True,exist_ok=True)
