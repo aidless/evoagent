@@ -1,0 +1,2 @@
+# Normalize line endings to LF on checkout (Windows CRLF artifact cleanup).
+* text=auto
