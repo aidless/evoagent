@@ -15,7 +15,8 @@ def main()->int:
  ap.add_argument("--interval-s",type=float,default=1.0)
  args=ap.parse_args()
  args.root.mkdir(parents=True,exist_ok=True)
- env={**os.environ,"PYTHONPATH":str(Path(r"E:\\self-evolving-agent\\src")),"PYTHONIOENCODING":"utf-8"}
+ _SRC=Path(__file__).resolve().parents[1]
+ env={**os.environ,"PYTHONPATH":str(_SRC),"PYTHONIOENCODING":"utf-8"}
  start=time.time();end=start+args.duration_minutes*60
  iters_per_worker=max(1,int((end-start)/max(args.interval_s,0.1)/args.workers))
  procs=[subprocess.Popen([sys.executable,"-m","evoagent.worker_soak","--root",str(args.root),"--worker",f"w{i}","--iters",str(iters_per_worker),"--interval",str(args.interval_s)],env=env) for i in range(args.workers)]

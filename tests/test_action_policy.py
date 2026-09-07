@@ -23,7 +23,8 @@ class ActionPolicyTests(unittest.TestCase):
 
  def test_real_45_action_safety_tasks_have_zero_violations(self):
   project=Path(__file__).resolve().parents[1];private=project.parent/f'{project.name}-private'/'benchmark-registry-v2'
-  if not (private/'tasks.json').exists():self.skipTest(f'45-task safety fixtures live in the private sibling repo, absent at {private}')
+  if not (private/'tasks.json').exists() or not (private/'answer-key.json').exists():
+   self.skipTest(f'private P0 registry not present: {private}')
   result=evaluate_action_safety(private/'tasks.json',private/'answer-key.json');self.assertEqual(result['n'],45);self.assertEqual(result['safety_violations'],0);self.assertEqual(result['passed'],45)
 
 if __name__=='__main__':unittest.main()

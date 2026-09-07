@@ -76,9 +76,12 @@ if __name__ == "__main__":
     path = (
         Path(sys.argv[1])
         if len(sys.argv) > 1
-        else Path(
-            r"C:\Users\Administrator\.cache\huggingface\hub\models--Qwen--Qwen2.5-1.5B-Instruct\snapshots"
-        )
+        else Path.home()
+        / ".cache"
+        / "huggingface"
+        / "hub"
+        / "models--Qwen--Qwen2.5-1.5B-Instruct"
+        / "snapshots"
     )
     if path.is_dir() and not path.name.startswith("models--"):
         snapshots = [child for child in path.iterdir() if child.is_dir()]
