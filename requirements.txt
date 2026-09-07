@@ -1,0 +1,7 @@
+# Validated on Python 3.12 (Linux) via /tmp/evo-venv: `cli status` OK, pytest suite runnable.
+# Install:  python -m venv .venv && .venv/bin/pip install -r requirements.txt
+# Runtime deps (only third-party imports in src/ are cryptography + requests):
+cryptography==50.0.1
+requests==2.34.2
+# Test dep (pinned to the version the suite was baselined with):
+pytest==9.1.1
