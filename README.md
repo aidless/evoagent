@@ -37,6 +37,10 @@ python -m unittest discover -s tests -v
 
 
 ## P0 ???????2026-07-25?
+> ⚠️ **本节编码受损**：中文内容在源文件中已全部变成 `?`，无法原样恢复。可辨认的技术事实：
+> 2026-07-25 · Benchmark Registry v2（L3 评测）· 360 任务（Development 120 / Hidden Confirmation 80 / Trigger Safety 60 / Shadow 100）·
+> `self_verify_v2_l3` 135/135 passed（失败 0）· Qwen2-7B 45 任务 40.0% vs 33.3%（Coverage 10 任务口径）· 数据目录 `E:\self-evolving-agent-private`。
+> 待从本地源文件恢复原文后移除本提示。
 
 ??? Benchmark Registry v2???????? L3 ?????????
 
