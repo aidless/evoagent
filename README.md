@@ -1,5 +1,7 @@
 # EvoAgent：受评测约束的自进化闭环
 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)  [![CI](https://github.com/aidless/evoagent/actions/workflows/audit.yml/badge.svg)](https://github.com/aidless/evoagent/actions/workflows/audit.yml/badge.svg)
+
 这不是“让模型随意改写自己”，而是一个可审计的改进控制器。候选策略只有在固定基准集上优于当前版本、通过安全门且达到最小增益时，才会成为活动版本；每次晋升都保留回滚快照。
 
 ## 闭环
