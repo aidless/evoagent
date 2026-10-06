@@ -10,7 +10,10 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install project and test dependencies
-        run: pip install -e . cryptography numpy faiss-cpu sentence-transformers transformers
+        # Read the dependency list from pyproject.toml instead of repeating it here --
+        # the hand-maintained copy had drifted and omitted `requests`, which two
+        # src modules import at module level.
+        run: pip install -e .
       - name: Reject private keys in trust store
         env:
           PYTHONPATH: src

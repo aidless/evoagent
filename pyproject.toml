@@ -7,6 +7,29 @@ name = "evoagent"
 version = "0.1.0"
 description = "Auditable, evaluation-gated self-improvement loop for agents"
 requires-python = ">=3.10"
+# Declared because src/evoagent/research_harvest.py and research_batch.py import
+# requests at module level, so `pip install -e .` produced a package that could not
+# import two of its own modules. CI hid this by hardcoding the install list in the
+# workflow instead of reading it from here; tests/test_research_hundred.py failed
+# with ModuleNotFoundError until the dependency was actually declared.
+dependencies = [
+    "requests>=2.28",
+    "cryptography>=41",
+]
+
+[project.optional-dependencies]
+# Heavy model backends. Kept out of the base install: torch alone is several GB and
+# nothing in the core loop needs it.
+models = [
+    "torch>=2.0",
+    "transformers>=4.40",
+    "accelerate>=0.30",
+    "peft>=0.10",
+]
+# bitsandbytes is Windows/CUDA-only in practice, so it is not in the `models` extra.
+quantization = [
+    "bitsandbytes>=0.43",
+]
 
 [project.scripts]
 evoagent = "evoagent.cli:main"
