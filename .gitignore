@@ -23,3 +23,7 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 *.tmp
+# Editable-install metadata: `pip install -e .` writes src/evoagent.egg-info/,
+# which otherwise shows up as an untracked change in every workflow that
+# installs the package (including the mutation-control job).
+*.egg-info/

@@ -161,6 +161,10 @@ jobs:
           git checkout -- src/evoagent/key_governance.py
           find . -type d -name __pycache__ -prune -exec rm -rf {} + 2>/dev/null || true
           find . -type f -name '*.py[co]' -delete 2>/dev/null || true
+          # `pip install -e .` writes src/evoagent.egg-info/; it is now gitignored,
+          # but remove it anyway so the cleanliness assertion is about the tree and
+          # not about which ignore rules happen to cover build metadata.
+          rm -rf src/*.egg-info ./*.egg-info
 
           if [ -n "$(git status --porcelain)" ]; then
             echo "::error::working tree not clean after restore"
