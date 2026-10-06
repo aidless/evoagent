@@ -32,6 +32,19 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install the package under test
+        # Required, and its absence is exactly what this job caught on its first
+        # run. audit.yml installs `pip install -e .` before its test step, so the
+        # suite passes there; without the same install here, nine signing/policy
+        # test modules failed to import (`cryptography` and `requests` are declared
+        # dependencies of the package, not stdlib) and the fail-closed baseline
+        # refused to proceed. A control that silently installed a different
+        # environment than the gate it measures would be measuring nothing.
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          pip install -e .
+
       - name: Purge every bytecode cache in the tree
         # 缓存陷阱不是 boilerplate, 见下面 mutated 步骤的长注释。
         run: |
