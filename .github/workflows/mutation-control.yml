@@ -1,0 +1,166 @@
+name: mutation-control
+
+# 反向证明: 故意注入一个确定失败的变异, 断言 audit.yml 里的真门真的返回非零。
+# 目的不是抓 bug, 而是抓"假绿门"——CI 里 `|| true` / `|| echo` / 删测试让门变安静。
+# 如果 audit.yml 的 unittest 步骤被改成吞错误版, 本 job 必须变红。
+#
+# 真门 = "Run self-evolution test suite" (audit.yml:30-33):
+#     PYTHONPATH=src python -m unittest discover -s tests
+# 不用 compileall 当门: 本变异是语义变异(仍可编译), compileall 天然抓不到,
+# 所以本 job 证明的是测试套件有牙, 而不是编译器有牙。
+#
+# 故意不打 bundle_signer 那一步: .evo/ 被 gitignore (.gitignore:2), 干净 clone 上
+# 该步骤被 `if: hashFiles(...)` 门控跳过 (audit.yml:40), 在那里注入变异毫无意义。
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mutation-control:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Purge every bytecode cache in the tree
+        # 缓存陷阱不是 boilerplate, 见下面 mutated 步骤的长注释。
+        run: |
+          set -euo pipefail
+          find . -type d -name __pycache__ -prune -exec rm -rf {} + 2>/dev/null || true
+          find . -type f -name '*.py[co]' -delete 2>/dev/null || true
+          find . -type d -name .pytest_cache -prune -exec rm -rf {} + 2>/dev/null || true
+
+      - name: Fail-closed baseline — assert the real gate is green before mutating
+        # 变异结果只有在干净树基线通过时才有意义。基线红了立刻退出。
+        env:
+          PYTHONPATH: src
+        run: |
+          set -euo pipefail
+          set +e
+          python -m unittest discover -s tests
+          rc=$?
+          set -e
+          echo "baseline exit=$rc"
+          if [ "$rc" -ne 0 ]; then
+            echo "::error title=Baseline red, mutation meaningless::unittest exited $rc on a clean tree. Fix audit.yml's real gate first; a failing mutation proves nothing here."
+            exit 1
+          fi
+
+      - name: Inject deterministic mutation into the trust-store audit predicate
+        # 变异: key_governance.audit_key_directory 的私钥后缀集合里把 ".priv" 改成
+        # ".prib"。语义等价于"私钥检测被悄悄摘掉"——最典型的假绿来源。
+        # 字节长度完全相同 (538 == 538), 这是故意的: .pyc 头里同时存了 mtime 和 size,
+        # 只有 size 也变了才可能靠 size 察觉。详见下一步的 purge。
+        # 完全可逆: 纯字节替换, 无时间/随机/网络依赖, 结束后 git checkout 还原。
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import pathlib
+          p = pathlib.Path("src/evoagent/key_governance.py")
+          orig = p.read_bytes()
+          mut = orig.replace(b'{".priv", ".key", ".pem"}', b'{".prib", ".key", ".pem"}')
+          if mut == orig:
+              raise SystemExit(
+                  "::error::mutation anchor not found -- src/evoagent/key_governance.py "
+                  "has drifted. Re-derive the mutation; do NOT silently skip."
+              )
+          if len(mut) != len(orig):
+              raise SystemExit("::error::mutation is no longer byte-length-identical")
+          p.write_bytes(mut)
+          print(f"injected: {len(orig)} -> {len(mut)} bytes (identical length, .priv -> .prib)")
+          PY
+
+      - name: Assert the real gate returns NON-ZERO on the mutated tree
+        # 缓存陷阱 (本 job 的核心):
+        # CPython 的 .pyc 头记录源文件的 mtime(秒级)和 size。干净 checkout 后
+        # __pycache__ 不存在, 但 audit.yml 的 compileall 步骤 (audit.yml:28-29) 会
+        # 生成它; 若注入变异的动作与 .pyc 的 mtime 落在同一秒, 且长度未变,
+        # 解释器会直接复用旧 .pyc, 变异对测试完全不可见。
+        # 本地实测 (见交付说明): 同一变异 + 伪造 mtime + 保留 __pycache__ => rc=0
+        # (静默漏过); 同一变异 + 先 purge => rc=1 (被抓到)。
+        # 所以注入之后必须清缓存, 再跑门。
+        env:
+          PYTHONPATH: src
+        run: |
+          set -euo pipefail
+          find . -type d -name __pycache__ -prune -exec rm -rf {} + 2>/dev/null || true
+          find . -type f -name '*.py[co]' -delete 2>/dev/null || true
+
+          set +e
+          python -m unittest discover -s tests
+          rc=$?
+          set -e
+          echo "mutated exit=$rc"
+
+          if [ "$rc" -eq 0 ]; then
+            echo "::error title=Mutation not detected::unittest exited 0 on a mutated tree. The gate is fake-green (a swallowed \`|| true\`, a deleted test, or a narrowed test selector). This is exactly the failure mode this job exists to catch."
+            exit 1
+          fi
+          if [ "$rc" -gt 128 ]; then
+            echo "::error title=Suspicious exit code::$rc looks like a signal (128+n), not a test failure. A SIGPIPE from \`grep -q\`/\`head -N\` in the gate would do this."
+            exit 1
+          fi
+          echo "real gate returned $rc as required"
+
+      - name: Reverse sanity control — the same assertion must reject a swallowed gate
+        # 反向对照: 门换成吞错误版 (`|| true`), 断言逻辑仍必须抓到它。
+        # 做法: 在注入态下跑 `cmd || true`, 拿到 rc=0, 再喂给同一个断言,
+        # 断言必须以非零退出。若这个 step 反而绿了, 说明 mutation-control 自己没牙。
+        env:
+          PYTHONPATH: src
+        run: |
+          set -euo pipefail
+
+          # 吞错误版: 退出码被 || true 吃掉, 一定是 0
+          set +e
+          python -m unittest discover -s tests > /tmp/swallowed.log 2>&1 || true
+          swallowed_rc=$?
+          set -e
+          echo "swallowed gate exit=$swallowed_rc"
+
+          if [ "$swallowed_rc" -ne 0 ]; then
+            echo "::error::swallowed gate returned $swallowed_rc; the reverse control is not exercising what it claims"
+            exit 1
+          fi
+
+          # 把这个 0 喂给与上面完全相同的判据
+          rc="$swallowed_rc"
+          if [ "$rc" -eq 0 ]; then
+            echo "::notice title=reverse control::swallowed gate returns 0 on the mutated tree, i.e. it WOULD have gone green in CI. Our assertion rejects 0, so this job would go red. Teeth confirmed."
+            exit 0
+          fi
+          echo "::error::assertion accepted a zero exit code"
+          exit 1
+
+      - name: Restore the tree and assert the gate is green again
+        run: |
+          set -euo pipefail
+          git checkout -- src/evoagent/key_governance.py
+          find . -type d -name __pycache__ -prune -exec rm -rf {} + 2>/dev/null || true
+          find . -type f -name '*.py[co]' -delete 2>/dev/null || true
+
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "::error::working tree not clean after restore"
+            git status --porcelain
+            exit 1
+          fi
+
+          set +e
+          PYTHONPATH=src python -m unittest discover -s tests
+          rc=$?
+          set -e
+          if [ "$rc" -ne 0 ]; then
+            echo "::error::gate still red after restore (rc=$rc); the mutation was not fully reversible"
+            exit 1
+          fi
+          echo "mutation-control: baseline=0 mutation=nonzero reverse-control=caught restored=$rc"
