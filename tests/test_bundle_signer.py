@@ -1,11 +1,13 @@
-﻿import unittest
+import unittest
 from pathlib import Path
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 import base64,subprocess,sys
 from evoagent.signing import generate_keypair,verify_envelope
 class BundleSignerCLITests(unittest.TestCase):
  def setUp(self):self.t=self.p=Path
- def _run(self,args):return subprocess.check_call([sys.executable,'-m','evoagent.bundle_signer',*args],cwd='E:/self-evolving-agent',env={'PYTHONPATH':'E:/self-evolving-agent/src','PATH':__import__('os').environ.get('PATH','')})
+ def _run(self,args):
+  _root=Path(__file__).resolve().parents[1];_env=__import__('os').environ.copy();_env['PYTHONPATH']=str(_root/'src')
+  return subprocess.check_call([sys.executable,'-m','evoagent.bundle_signer',*args],cwd=str(_root),env=_env)
  def test_request_payload_matches_canonical(self):
   bundle={'bundle_id':'b@1','sha256':'h'}
   out=Path(self.t.mkdtemp()) if hasattr(self.t,'mkdtemp') else Path(__import__('tempfile').mkdtemp())

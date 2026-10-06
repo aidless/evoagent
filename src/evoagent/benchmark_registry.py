@@ -1,8 +1,9 @@
-﻿from __future__ import annotations
-import csv,re
+from __future__ import annotations
+import csv,os,re
 from functools import lru_cache
 from pathlib import Path
-CSV=Path(r'F:\test\2026-07-24-08-36-33\kb\benchmarks.csv')
+_REPO=Path(__file__).resolve().parents[2]
+CSV=Path(os.environ.get('EVO_BENCHMARKS_CSV')or _REPO/'benchmarks/registry-v2/benchmarks.csv')
 def norm(s):return re.sub(r'[^a-z0-9]+',' ',(s or '').lower()).strip()
 @lru_cache
 def load():

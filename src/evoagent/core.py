@@ -5,6 +5,7 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 import tempfile
 import time
 from dataclasses import dataclass
@@ -32,6 +33,18 @@ class EvalResult:
                 "outcomes": list(self.outcomes)}
 
 
+
+def expand_interpreter(command):
+    """Substitute ``{python}`` with the interpreter running evoagent.
+
+    A config that hardcodes a bare ``python`` works on a Windows dev box and
+    silently scores 0.0 everywhere else, because every candidate evaluation dies
+    with "command not found" and the failure is swallowed into a zero score.
+    """
+    if not command:
+        return command
+    return command.replace("{python}", sys.executable)
+
 def canonical(data: dict[str, Any]) -> str:
     return json.dumps(data, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 
@@ -54,7 +67,7 @@ def save_json(path: Path, data: Any) -> None:
 def evaluate(root: Path, candidate: dict[str, Any]) -> EvalResult:
     config = load_json(root / "evo.json")
     cases = load_json(root / config["benchmark"])["cases"]
-    command = config["evaluator_command"]
+    command = expand_interpreter(config["evaluator_command"])
     timeout = float(config.get("timeout_seconds", 10))
     started = time.monotonic()
     passed, failures, outcomes = 0, [], []
@@ -97,7 +110,7 @@ def evaluate(root: Path, candidate: dict[str, Any]) -> EvalResult:
 
 def propose(root: Path, incumbent: dict[str, Any], failures: tuple[str, ...]) -> list[dict[str, Any]]:
     config = load_json(root / "evo.json")
-    proposer = config.get("proposer_command")
+    proposer = expand_interpreter(config.get("proposer_command"))
     if proposer:
         env = os.environ.copy()
         env["EVO_INCUMBENT"] = canonical(incumbent)
@@ -182,7 +195,7 @@ def evolve(root: Path) -> dict[str, Any]:
               "active_score": best_result.score if promoted else baseline.score,
               "legacy_promoted": legacy_promoted, "statistical_decision": statistical_decision,
               "version_level": "provisional" if promoted else None}
-    intelligence_command = config.get("post_evolution_intelligence_command")
+    intelligence_command = expand_interpreter(config.get("post_evolution_intelligence_command"))
     if intelligence_command:
         try:
             check = subprocess.run(intelligence_command, cwd=root, shell=True,

@@ -1,6 +1,6 @@
-﻿import sys,unittest
+import sys,unittest
 from pathlib import Path
-sys.path.insert(0,r'E:\self-evolving-agent\src')
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
 from evoagent.workflow import Plan,Step,execute_plan,StepResult
 def ok(s,c):return StepResult(s.id,True,output='ok')
 class ActiveBundleGate(unittest.TestCase):

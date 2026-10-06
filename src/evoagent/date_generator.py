@@ -1,4 +1,5 @@
-﻿from __future__ import annotations
+from __future__ import annotations
+import os
 import calendar,hashlib,json,random
 from datetime import date,timedelta
 from pathlib import Path
@@ -23,6 +24,6 @@ def generate(seed=2026072402,n=300):
   opts=list(opts);rng.shuffle(opts);letter=chr(65+opts.index(correct));text=stem+' '+q+'\nOptions:\n'+'\n'.join(f'({chr(65+j)}) {v}' for j,v in enumerate(opts));rows.append({'id':f'date-{i+1:04d}','input':text,'target':f'({letter})','meta':{'setup':setup,'unit':unit,'direction':direction}})
  return {'version':1,'seed':seed,'cases':rows}
 def main():
- root=Path(r'E:\self-evolving-agent');data=generate();pub=root/'benchmarks/generated_date/questions.json';key=root/'benchmarks/generated_date/hidden-key.json';pub.parent.mkdir(parents=True,exist_ok=True);q={'version':1,'seed':data['seed'],'cases':[{k:x[k] for k in ('id','input','meta')} for x in data['cases']]};pub.write_text(json.dumps(q,indent=2)+'\n');key.write_text(json.dumps({'questions_sha256':hashlib.sha256(pub.read_bytes()).hexdigest(),'answers':[{'id':x['id'],'target':x['target']} for x in data['cases']]},indent=2)+'\n');print(pub,key)
+ root=Path(os.environ.get('EVO_WORKSPACE')or Path(__file__).resolve().parents[2]);data=generate();pub=root/'benchmarks/generated_date/questions.json';key=root/'benchmarks/generated_date/hidden-key.json';pub.parent.mkdir(parents=True,exist_ok=True);q={'version':1,'seed':data['seed'],'cases':[{k:x[k] for k in ('id','input','meta')} for x in data['cases']]};pub.write_text(json.dumps(q,indent=2)+'\n');key.write_text(json.dumps({'questions_sha256':hashlib.sha256(pub.read_bytes()).hexdigest(),'answers':[{'id':x['id'],'target':x['target']} for x in data['cases']]},indent=2)+'\n');print(pub,key)
 if __name__=='__main__':main()
 

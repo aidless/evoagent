@@ -1,4 +1,5 @@
-﻿from __future__ import annotations
+from __future__ import annotations
+import os
 import hashlib,json,random
 from pathlib import Path
 ITEMS=['amber','birch','cedar','denim','elm']
@@ -20,5 +21,5 @@ def generate(seed=2026072401,n=200):
   stem=('Five tokens are arranged in a fixed order. ' if kind=='spatial' else 'Five competitors have distinct finishing ranks. ')+' '.join(statements);text=stem+'\nOptions:\n'+'\n'.join(f'({chr(65+k)}) {v}' for k,v in enumerate(options));rows.append({'id':f'gen-{i+1:04d}','kind':kind,'input':text,'target':f'({answer})'})
  return {'version':1,'seed':seed,'generator':'independent_permutation_v1','cases':rows}
 def main():
- root=Path(r'E:\self-evolving-agent');data=generate();pub=root/'benchmarks/generated_logic/questions.json';key=root/'benchmarks/generated_logic/hidden-key.json';pub.parent.mkdir(parents=True,exist_ok=True);questions={'version':1,'seed':data['seed'],'cases':[{'id':x['id'],'kind':x['kind'],'input':x['input']} for x in data['cases']]};pub.write_text(json.dumps(questions,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');key.write_text(json.dumps({'questions_sha256':hashlib.sha256(pub.read_bytes()).hexdigest(),'answers':[{'id':x['id'],'target':x['target']} for x in data['cases']]},ensure_ascii=False,indent=2)+'\n',encoding='utf-8');print(pub,key)
+ root=Path(os.environ.get('EVO_WORKSPACE')or Path(__file__).resolve().parents[2]);data=generate();pub=root/'benchmarks/generated_logic/questions.json';key=root/'benchmarks/generated_logic/hidden-key.json';pub.parent.mkdir(parents=True,exist_ok=True);questions={'version':1,'seed':data['seed'],'cases':[{'id':x['id'],'kind':x['kind'],'input':x['input']} for x in data['cases']]};pub.write_text(json.dumps(questions,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');key.write_text(json.dumps({'questions_sha256':hashlib.sha256(pub.read_bytes()).hexdigest(),'answers':[{'id':x['id'],'target':x['target']} for x in data['cases']]},ensure_ascii=False,indent=2)+'\n',encoding='utf-8');print(pub,key)
 if __name__=='__main__':main()

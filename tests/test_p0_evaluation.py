@@ -10,6 +10,8 @@ class P0EvaluationTests(unittest.TestCase):
     def setUpClass(cls):
         project = Path(__file__).resolve().parents[1]
         root = project.parent / f"{project.name}-private" / "benchmark-registry-v2"
+        if not (root / "tasks.json").exists():
+            raise unittest.SkipTest(f"frozen P0 registry lives in the private sibling repo, absent at {root}")
         cls.registry = BenchmarkRegistryV2.load(root / "tasks.json", root / "answer-key.json")
 
     def test_real_deterministic_runner_uses_frozen_stage(self):

@@ -1,4 +1,4 @@
-﻿name: audit
+name: audit
 on: [push, pull_request, workflow_dispatch]
 jobs:
   audit:
@@ -29,6 +29,16 @@ jobs:
           PYTHONPATH: src
         run: python -m unittest discover -s tests
       - name: Verify signed active bundle and current file integrity
+        # `.evo/` holds local evolution state, private evidence and the signing
+        # key material, so it is gitignored by design (.gitignore:2) and is never
+        # present on a fresh checkout. The gate below is meaningless without it:
+        # `promote` exits 2 with `active_file_missing` on every clean clone.
+        # Run it only when the operator has deliberately published evidence.
+        if: hashFiles('.evo/workflow-bundles.json') != ''
         env:
           PYTHONPATH: src
         run: python -m evoagent.bundle_signer promote --bundles .evo/workflow-bundles.json --signatures .evo/workflow-signatures.json --trusted .evo/trusted-keys --active .evo/active-workflow-bundle.txt
+      - name: Report that the bundle gate was skipped
+        if: hashFiles('.evo/workflow-bundles.json') == ''
+        run: >-
+          echo "::notice title=Bundle gate skipped::.evo/ is gitignored (private evidence + key material), so the signed-bundle gate has nothing to verify on a clean checkout. Run it locally after an evidence-producing round: python -m evoagent.bundle_signer promote --bundles .evo/workflow-bundles.json --signatures .evo/workflow-signatures.json --trusted .evo/trusted-keys --active .evo/active-workflow-bundle.txt"

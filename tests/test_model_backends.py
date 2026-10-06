@@ -1,4 +1,4 @@
-﻿import unittest,tempfile,json
+import unittest,tempfile,json
 from pathlib import Path
 from evoagent.model_backends import ModelSpec,ModelBackendRegistry,register_defaults
 class ModelBackendTests(unittest.TestCase):
@@ -12,5 +12,8 @@ class ModelBackendTests(unittest.TestCase):
   r=ModelBackendRegistry(self.p/'m.json')
   with self.assertRaises(FileNotFoundError):r.register(ModelSpec('gguf','m1',self.p/'nope','fam','1B','Q4_K_M',4096,True,'apache-2.0'))
  def test_register_defaults_loads_available(self):
+  from evoagent.model_backends import default_specs
+  if not any(spec.path.exists() for spec in default_specs()):
+   self.skipTest('no default model weights on this machine (HF cache / E:\\models not present)')
   r=register_defaults(self.p/'m.json');self.assertGreaterEqual(len(r.list()),1)
 if __name__=='__main__':unittest.main()

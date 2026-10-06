@@ -70,6 +70,8 @@ class BenchmarkRegistryV2Tests(unittest.TestCase):
     def test_frozen_p0_registry_has_required_360_split(self):
         project = Path(__file__).resolve().parents[1]
         root = project.parent / f"{project.name}-private" / "benchmark-registry-v2"
+        if not (root / "tasks.json").exists():
+            self.skipTest(f"frozen P0 registry lives in the private sibling repo, absent at {root}")
         registry = BenchmarkRegistryV2.load(root / "tasks.json", root / "answer-key.json")
         summary = registry.summary()
         self.assertEqual(summary["tasks"], 360)
