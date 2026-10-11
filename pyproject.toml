@@ -13,7 +13,7 @@ requires-python = ">=3.10"
 # workflow instead of reading it from here; tests/test_research_hundred.py failed
 # with ModuleNotFoundError until the dependency was actually declared.
 dependencies = [
-    "requests>=2.28",
+    "requests>=2.34.2",
     "cryptography>=41",
 ]
 
