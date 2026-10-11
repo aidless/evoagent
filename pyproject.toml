@@ -24,7 +24,7 @@ models = [
     "torch>=2.0",
     "transformers>=4.40",
     "accelerate>=0.30",
-    "peft>=0.10",
+    "peft>=0.21.2",
 ]
 # bitsandbytes is Windows/CUDA-only in practice, so it is not in the `models` extra.
 quantization = [
