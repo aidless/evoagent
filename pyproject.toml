@@ -28,7 +28,7 @@ models = [
 ]
 # bitsandbytes is Windows/CUDA-only in practice, so it is not in the `models` extra.
 quantization = [
-    "bitsandbytes>=0.43",
+    "bitsandbytes>=0.50.2",
 ]
 
 [project.scripts]
