@@ -30,7 +30,7 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       - name: Install the package under test
         # Required, and its absence is exactly what this job caught on its first

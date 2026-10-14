@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
       - name: Install project and test dependencies
         # Read the dependency list from pyproject.toml instead of repeating it here --
         # the hand-maintained copy had drifted and omitted `requests`, which two
