@@ -23,3 +23,23 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 *.tmp
+
+
+# --- added by WorkBuddy takeover 2026-10-21 ---
+!.env.example
+!.env.template
+node_modules/
+*.pyc
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+.DS_Store
+*.log
+data/
+models/
+.regression_tmp/
+*.bak
+
+*.bak*
