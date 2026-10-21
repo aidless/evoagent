@@ -27,3 +27,23 @@ __pycache__/
 # which otherwise shows up as an untracked change in every workflow that
 # installs the package (including the mutation-control job).
 *.egg-info/
+
+# --- added by WorkBuddy takeover 2026-10-21 ---
+# 依赖与构建产物
+node_modules/
+.venv/
+venv/
+dist/
+build/
+# 编辑器与日志
+.DS_Store
+*.log
+# 本地大体数据与模型（不入库）
+data/
+models/
+# 回归临时区与备份文件
+.regression_tmp/
+*.bak*
+# 示例 env 文件豁免（在 .env / .env.* 忽略规则之后生效）
+!.env.example
+!.env.template
