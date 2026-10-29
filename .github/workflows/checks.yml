@@ -13,5 +13,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - run: python -m pip install pytest
+      # cryptography + requests are declared in pyproject; the template
+      # workflow installed only pytest, so the suite could not import.
+      - run: python -m pip install -e . pytest
       - run: python -m pytest tests -q
