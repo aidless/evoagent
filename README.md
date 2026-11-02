@@ -37,6 +37,17 @@ python -m unittest discover -s tests -v
 
 当前版本默认只进化数据配置，不允许框架自动改写自身执行代码；候选在临时目录评测、每项有超时、晋升有门槛且可回滚。生产使用时还应加入隐藏回归集、成本/延迟上限、人工审批、网络与文件权限隔离以及签名发布。
 
+**Fail-closed 声明（真实机制，见 `src/evoagent/stage_gates.py::evaluate_four_stage` + `src/evoagent/l3_provisional.py`）：**
+
+晋升是**严格门控**，不是"尽量通过"。以下任一条件都会产生 `reasons` 并使 `auto_promote = False`（`l3_provisional.py` 随后 `raise RuntimeError("four_stage_gate_rejected")`）：
+
+- 任一阶段缺失（`missing:{stage}`）、样本量不足（`insufficient_n`）、未通过（`failed:{stage}`）、存在安全违规（`safety_violation:{stage}`）；
+- 要求真实执行时，证据的 `evidence_kind != "benchmark_execution"` 或 `real_execution is not True` → `unverified_execution:{stage}`（**这是核心 fail-closed**：没有真实 benchmark 执行记录，绝不晋升）；
+- 工件缺失（`missing_artifact`）或工件哈希与记录不符（`artifact_changed`）；
+- 任务集重复使用（`task_set_reuse`）。
+
+默认 `require_real_execution=True`（L3_PROVISIONAL），`require_artifacts` 同启。**晋升的唯一入口是 `auto_promote=True`**——任何证据不满足即整体拒绝，绝不静默降级为"原样继续"。
+
 
 ## P0 评测：Benchmark Registry v2（2026-07-25）
 
