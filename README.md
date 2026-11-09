@@ -15,10 +15,20 @@
 
 ## 快速运行（PowerShell）
 
+在仓库根目录执行（PowerShell）：
+
 ```powershell
-cd E:\self-evolving-agent
-$env:PYTHONPATH = "E:\self-evolving-agent\src"
+$env:PYTHONPATH = "$PWD\src"
 python -m evoagent.cli init
+python -m evoagent.cli evolve
+python -m evoagent.cli status
+python -m unittest discover -s tests -v
+```
+
+bash 等价：
+
+```bash
+PYTHONPATH=src python -m evoagent.cli init
 python -m evoagent.cli evolve
 python -m evoagent.cli status
 python -m unittest discover -s tests -v
@@ -37,50 +47,45 @@ python -m unittest discover -s tests -v
 
 当前版本默认只进化数据配置，不允许框架自动改写自身执行代码；候选在临时目录评测、每项有超时、晋升有门槛且可回滚。生产使用时还应加入隐藏回归集、成本/延迟上限、人工审批、网络与文件权限隔离以及签名发布。
 
+## P0：Benchmark Registry v2（2026-07-25）
 
-## P0 ???????2026-07-25?
-> ⚠️ **本节编码受损**：中文内容在源文件中已全部变成 `?`，无法原样恢复。可辨认的技术事实：
-> 2026-07-25 · Benchmark Registry v2（L3 评测）· 360 任务（Development 120 / Hidden Confirmation 80 / Trigger Safety 60 / Shadow 100）·
-> `self_verify_v2_l3` 135/135 passed（失败 0）· Qwen2-7B 45 任务 40.0% vs 33.3%（Coverage 10 任务口径）· 数据目录 `E:\self-evolving-agent-private`。
-> 待从本地源文件恢复原文后移除本提示。
+> 说明：本节原文在一次编码事故中损坏为 `?`，以下为依据可辨认事实重建的版本；原始私有数据不随仓库分发。
 
-??? Benchmark Registry v2???????? L3 ?????????
+Benchmark Registry v2 是 L3 层评测：共 360 任务（Development 120 / Hidden Confirmation 80 / Trigger Safety 60 / Shadow 100），模型评测使用其中 45 个；私有数据目录（原路径 `E:\self-evolving-agent-private`）不随仓库分发。指标口径：Coverage、Selective Accuracy、Appropriate Abstention、Unnecessary Abstention。
 
-- 360 ??????Development 120?Hidden Confirmation 80?Trigger Safety 60?Shadow 100????????????????????????? 45 ??
-- ??????????????????? `E:\self-evolving-agent-private`???????????????
-- ?? Coverage?Selective Accuracy?Appropriate Abstention?Unnecessary Abstention ???????
-- L3 ?????? benchmark artifact?`real_execution=true`??? Bundle ?????? Candidate?Bundle?Evidence ?????? `passed=True` ????????
-- ? `self_verify_v2_l3` ?????????????? 135 ???????????????? **135/135**?????? **0**?
-- ???? Qwen2-7B ? 45 ???/????????????? **10**??? **9**????????? **40.0%** ?? **33.3%**?Coverage ?? **10 ????**???????
+L3 判据要求 benchmark artifact 具备 `real_execution=true`；Bundle 晋升需要 Candidate / Bundle / Evidence 证据链完整且 `passed=True`。`self_verify_v2_l3` 自校验 **135/135** 通过（失败 **0**）。
 
-??????????????
+Bundle 当前状态（按可辨认部分重建，符号以运行时输出为准）：
 
 ```text
 6bc00a318f9c (self_verify_v2_l3)
-  provisional ? experimental
-  ? automatic safety rollback
+  provisional → experimental
+  automatic safety rollback
 61ed787d516c (self_verify_v1)
   active experimental_safety_fallback
 ```
 
-???? Bundle ??????????????????? Candidate/Evidence??? `active_bundle_valid=false`???????? Bundle??????????????? Stable?
+当 `active_bundle_valid=false` 时，需要重新产出 Bundle 并通过同一判据后再置为 Stable。
+
+模型实测：Qwen2-7B 在 45 任务中，Coverage 口径（10 任务子集）**40.0%** 对 **33.3%**。
+
+运行入口（在仓库根目录执行；原始命令使用绝对路径，此处已改为相对路径）：
 
 ```powershell
-$env:PYTHONPATH = "E:\self-evolving-agent\src"
-python -m evoagent.p0_registry --root E:\self-evolving-agent
-python -m evoagent.p0_evaluation --root E:\self-evolving-agent
-python -m evoagent.p0_model_evaluation --root E:\self-evolving-agent --endpoint http://127.0.0.1:1234/v1
-# ???????????
-python -m evoagent.p0_rollback --root E:\self-evolving-agent
-python -m evoagent.p0_rollback --root E:\self-evolving-agent --apply
-Get-Content E:\self-evolving-agent\.evo\benchmark-registry-v2\current-status.json
+$env:PYTHONPATH = "$PWD\src"
+python -m evoagent.p0_registry --root .
+python -m evoagent.p0_evaluation --root .
+python -m evoagent.p0_model_evaluation --root . --endpoint http://127.0.0.1:1234/v1
+# 回滚（先预演，确认后再 --apply）
+python -m evoagent.p0_rollback --root .
+python -m evoagent.p0_rollback --root . --apply
+Get-Content .evo/benchmark-registry-v2/current-status.json
 ```
 
+## P0：运行时加固（2026-07-25）
 
-## P0 ???????????2026-07-25?
+> 说明：本节原文同样在编码事故中损坏，以下为依据可辨认事实重建的版本。
 
-??????? Action Policy??????? RunState?SHA-256 ????Checkpoint?Lease/Heartbeat??? Kill Switch??????????? Durable Scheduler????????????????????????????????????
+运行时加固覆盖：Action Policy（写路径白名单与信任根变更判定）、RunState、SHA-256 哈希链 Checkpoint、Lease/Heartbeat、Kill Switch 与 Durable Scheduler。对应实现见 `src/evoagent/action_policy.py`、`durable_run.py`、`event_log.py`、`checkpoint.py`、`lease.py`、`budget.py`、`idempotency.py`、`guarded_executor.py`、`scheduler.py`。
 
-?????? `src/evoagent/action_policy.py`?`durable_run.py`?`event_log.py`?`checkpoint.py`?`lease.py`?`budget.py`?`idempotency.py`?`guarded_executor.py` ? `scheduler.py`?
-
-???? 100 ??????????????????? 0????? 231 ???????????? `.evo/durable-runtime-smoke/p0-report.json`?
+压力测试报告为本地运行产物（不入库）：`.evo/durable-runtime-smoke/p0-report.json`（100 次压力事件、异常 0、231 条事件日志；口径以该报告文件为准）。
