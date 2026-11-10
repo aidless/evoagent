@@ -21,7 +21,7 @@ dependencies = [
 # Heavy model backends. Kept out of the base install: torch alone is several GB and
 # nothing in the core loop needs it.
 models = [
-    "torch>=2.0",
+    "torch>=2.14.1",
     "transformers>=4.40",
     "accelerate>=0.30",
     "peft>=0.10",
