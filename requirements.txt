@@ -4,4 +4,4 @@
 cryptography==50.0.1
 requests==2.34.2
 # Test dep (pinned to the version the suite was baselined with):
-pytest==9.1.1
+pytest==9.2.0
