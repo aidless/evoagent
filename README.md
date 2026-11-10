@@ -1,5 +1,7 @@
 # EvoAgent：受评测约束的自进化闭环
 
+> **English TL;DR**: An auditable self-improvement loop for agent policies: candidates are evaluated on a frozen benchmark in an isolated temp dir, must clear a safety gate and beat the incumbent by `min_gain` before an atomic promote — every promotion keeps a rollback snapshot. Zero runtime dependencies; the demo seed goes 1/4 → 4/4. Stated boundary: the shipped loop evolves data configs only, never its own execution code; `benchmarks/raw/` model-eval data is private and not distributed.
+
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)  [![CI](https://github.com/aidless/evoagent/actions/workflows/audit.yml/badge.svg)](https://github.com/aidless/evoagent/actions/workflows/audit.yml/badge.svg)
 
 这不是“让模型随意改写自己”，而是一个可审计的改进控制器。候选策略只有在固定基准集上优于当前版本、通过安全门且达到最小增益时，才会成为活动版本；每次晋升都保留回滚快照。
@@ -35,6 +37,20 @@ python -m unittest discover -s tests -v
 ```
 
 示例种子只能通过 1/4 用例；闭环会评测三个候选，并将同时支持大小写归一化和空白清理的候选晋升到 4/4。运行记录位于 `.evo/runs/`，历史版本位于 `.evo/history/`。
+
+## 实测验证（2026-11-10，Python 3.12.3，本机实录）
+
+```bash
+PYTHONPATH=src python3 -m unittest discover -s tests
+# Ran 245 tests in 18.228s — OK (skipped=10)
+```
+
+init → evolve → status 全链实跑：`init` 正常产出 `.evo/active.json`；闭环评测与晋升路径按设计走通（示例种子 1/4 → 4/4）。
+
+## Limits（如实边界）
+
+- `evolve`/`status` 中的 intelligence 自评子步依赖 `benchmarks/raw/gsm8k-test.jsonl`——该目录是私有评测数据，不随仓库分发；无此文件时该子步报 `FileNotFoundError` 并 `verified:false`，其余子步（评测、晋升、回滚）不受影响。
+- P0 两节的数字（360 任务、135/135、40.0% vs 33.3%、100 次压力事件）引自 2026-07-25 的原始运行记录，本仓库不含可复跑这些数字的私有数据；Bundle 哈希以运行时输出为准。
 
 ## 接入真实 Agent
 
