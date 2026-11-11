@@ -120,6 +120,8 @@ def reconcile(base: Run, cand: Run, edits: tuple[ChangeEdit, ...]) -> dict[str, 
             hit_total += len(hits)
 
         edits_out[edit.edit_id] = {
+            "edit_id": edit.edit_id,
+            "kind": edit.kind,
             "verdict": verdict,
             "files": tuple(edit.target_files),
             "predicted_fix": list(edit.predicted_fix),
@@ -134,6 +136,8 @@ def reconcile(base: Run, cand: Run, edits: tuple[ChangeEdit, ...]) -> dict[str, 
         "prediction_precision": (hit_total / predicted_total) if predicted_total else None,
         "total_predicted": predicted_total,
         "total_hit": hit_total,
+        "predicted_total": predicted_total,
+        "hit_total": hit_total,
     }
     return {"valid": True, "edits": edits_out, "campaign": campaign}
 

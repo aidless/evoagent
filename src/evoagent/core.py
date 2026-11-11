@@ -17,6 +17,7 @@ from .promotion_gate import evaluate_promotion
 from .version_registry import VersionRegistry
 from .candidate_schema import validate_candidate
 from .change_manifest import ChangeEdit, build_rollback_plan, reconcile
+from .verdict_history import append_verdicts
 
 
 @dataclass(frozen=True)
@@ -265,6 +266,8 @@ def evolve(root: Path) -> dict[str, Any]:
         except (subprocess.TimeoutExpired, json.JSONDecodeError) as exc:
             report["intelligence"] = {"verified": False, "reason": type(exc).__name__}
     save_json(state_dir / "runs" / f"{run_id}.json", report)
+    # per-edit 判定按 run 追加到 append-only 信任账本，供 P3/P4 跨 run 消费
+    append_verdicts(state_dir, run_id, records)
     return report
 
 
