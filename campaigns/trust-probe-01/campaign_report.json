@@ -1,0 +1,31 @@
+{
+  "prereg": "PREREG.md",
+  "rounds_total": 12,
+  "completed_rounds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    9,
+    10,
+    11
+  ],
+  "failed_rounds": [
+    6,
+    8
+  ],
+  "verdicts_rows": 30,
+  "kind_counts": {
+    "tool": 10,
+    "prompt": 10,
+    "middleware": 10,
+    "memory": 10,
+    "workflow": 10,
+    "subagent": 10
+  },
+  "wall_clock_s": 244.62,
+  "resumed": false
+}

@@ -1,0 +1,511 @@
+{
+  "ledger": "verdicts.jsonl",
+  "rows": 30,
+  "baseline": {
+    "verdict": "BLOCK",
+    "levels": {
+      "memory": "L3",
+      "middleware": "L3",
+      "prompt": "L2",
+      "subagent": "L3",
+      "tool": "L1",
+      "workflow": "L3"
+    }
+  },
+  "sweeps": {
+    "MIN_EDITS": {
+      "original": 5,
+      "grid": [
+        1,
+        3,
+        5,
+        6,
+        8,
+        10,
+        11,
+        20
+      ],
+      "records": [
+        {
+          "value": 1,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 3,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 5,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 6,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 8,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 10,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 11,
+          "verdict": "WARN",
+          "levels": {
+            "memory": "NOT_ASSESSED",
+            "middleware": "NOT_ASSESSED",
+            "prompt": "NOT_ASSESSED",
+            "subagent": "NOT_ASSESSED",
+            "tool": "NOT_ASSESSED",
+            "workflow": "NOT_ASSESSED"
+          },
+          "changed_vs_baseline": true
+        },
+        {
+          "value": 20,
+          "verdict": "WARN",
+          "levels": {
+            "memory": "NOT_ASSESSED",
+            "middleware": "NOT_ASSESSED",
+            "prompt": "NOT_ASSESSED",
+            "subagent": "NOT_ASSESSED",
+            "tool": "NOT_ASSESSED",
+            "workflow": "NOT_ASSESSED"
+          },
+          "changed_vs_baseline": true
+        }
+      ],
+      "flip_values": [
+        11,
+        20
+      ],
+      "discriminating": true
+    },
+    "REGRESSION_BLOCK_RATE": {
+      "original": 0.3,
+      "grid": [
+        0.0,
+        0.1,
+        0.3,
+        0.5,
+        0.9,
+        1.0
+      ],
+      "records": [
+        {
+          "value": 0.0,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L3",
+            "subagent": "L3",
+            "tool": "L3",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": true
+        },
+        {
+          "value": 0.1,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 0.3,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 0.5,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 0.9,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 1.0,
+          "verdict": "WARN",
+          "levels": {
+            "memory": "L2",
+            "middleware": "L2",
+            "prompt": "L2",
+            "subagent": "L2",
+            "tool": "L1",
+            "workflow": "L2"
+          },
+          "changed_vs_baseline": true
+        }
+      ],
+      "flip_values": [
+        0.0,
+        1.0
+      ],
+      "discriminating": true
+    },
+    "PRECISION_TRUST_FLOOR": {
+      "original": 0.5,
+      "grid": [
+        0.2,
+        0.35,
+        0.5,
+        0.6,
+        0.75,
+        0.9
+      ],
+      "records": [
+        {
+          "value": 0.2,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L1",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": true
+        },
+        {
+          "value": 0.35,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 0.5,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 0.6,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 0.75,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 0.9,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L2",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": true
+        }
+      ],
+      "flip_values": [
+        0.2,
+        0.9
+      ],
+      "discriminating": true
+    },
+    "PRECISION_BLIND_FLOOR": {
+      "original": 0.2,
+      "grid": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.5
+      ],
+      "records": [
+        {
+          "value": 0.0,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 0.1,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 0.2,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 0.3,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L3",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": true
+        },
+        {
+          "value": 0.5,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L3",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": true
+        }
+      ],
+      "flip_values": [
+        0.3,
+        0.5
+      ],
+      "discriminating": true
+    },
+    "REGRESSION_TRUST_CEIL": {
+      "original": 0.1,
+      "grid": [
+        0.0,
+        0.05,
+        0.1,
+        0.5,
+        0.9,
+        1.0
+      ],
+      "records": [
+        {
+          "value": 0.0,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L2",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": true
+        },
+        {
+          "value": 0.05,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L2",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": true
+        },
+        {
+          "value": 0.1,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 0.5,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 0.9,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        },
+        {
+          "value": 1.0,
+          "verdict": "BLOCK",
+          "levels": {
+            "memory": "L3",
+            "middleware": "L3",
+            "prompt": "L2",
+            "subagent": "L3",
+            "tool": "L1",
+            "workflow": "L3"
+          },
+          "changed_vs_baseline": false
+        }
+      ],
+      "flip_values": [
+        0.0,
+        0.05
+      ],
+      "discriminating": true
+    }
+  }
+}
