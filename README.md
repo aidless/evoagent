@@ -152,4 +152,8 @@ as results. `decision: reject_no_gain` means the candidate did not clear the
 `min_gain` bar — the loop kept the incumbent policy, which is the intended
 fail-closed behavior, not a passing result.
 
+**NOT YET MEASURED in this pass**: any replay of the private gsm8k hidden split or of the
+P0 historical record. The raw split (`benchmarks/raw/gsm8k-test.jsonl`) is not
+distributed, so only the committed JSON above is claimed as a result; see `Limits`.
+
 <!-- figure: pending real measurement -->
