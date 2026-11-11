@@ -105,3 +105,51 @@ Get-Content .evo/benchmark-registry-v2/current-status.json
 运行时加固覆盖：Action Policy（写路径白名单与信任根变更判定）、RunState、SHA-256 哈希链 Checkpoint、Lease/Heartbeat、Kill Switch 与 Durable Scheduler。对应实现见 `src/evoagent/action_policy.py`、`durable_run.py`、`event_log.py`、`checkpoint.py`、`lease.py`、`budget.py`、`idempotency.py`、`guarded_executor.py`、`scheduler.py`。
 
 压力测试报告为本地运行产物（不入库）：`.evo/durable-runtime-smoke/p0-report.json`（100 次压力事件、异常 0、231 条事件日志；口径以该报告文件为准）。
+
+## U1 results table (recomputed 2026-11-11)
+
+Numbers below come only from committed JSON files in this repository, recomputed
+locally. The private `benchmarks/raw/gsm8k-test.jsonl` data and the P0 historical
+records are **not** used here (see `Limits` above).
+
+| Result | Value | Source (path:line) |
+|---|---|---|
+| Hidden verification flag | `true` | `research/prompt-candidates/verify-hidden-result.json:2` |
+| Hidden cases passed | **4/6** | `research/prompt-candidates/verify-hidden-result.json:4` |
+| Hidden score | 0.6666666666666666 | `research/prompt-candidates/verify-hidden-result.json:3` |
+| Candidate decision | `reject_no_gain` | `research/prompt-candidates-v2/decision.json:61` |
+| Hidden test run | `false` | `research/prompt-candidates-v2/decision.json:62` |
+| Active policy unchanged | `true` | `research/prompt-candidates-v2/decision.json:63` |
+| Pairwise comparisons recorded | 6 | `research/prompt-candidates-v2/decision.json:11` |
+
+Per-suite hidden verification (same file):
+
+| Suite | Passed / total | Source (path:line) |
+|---|---|---|
+| `bbh_date` | 1/2 | `research/prompt-candidates/verify-hidden-result.json:7` |
+| `bbh_logic` | 1/2 | `research/prompt-candidates/verify-hidden-result.json:12` |
+| `gsm8k` | 2/2 | `research/prompt-candidates/verify-hidden-result.json:17` |
+
+Public benchmark question counts (recomputed from committed question files):
+
+| File | Questions | Source (path:line) |
+|---|---|---|
+| `benchmarks/generated_date/questions.json` | 3 | `benchmarks/generated_date/questions.json:1-2706` |
+| `benchmarks/generated_logic/questions.json` | 3 | `benchmarks/generated_logic/questions.json:1-1006` |
+| `benchmarks/learning/public/questions.json` | 24 | `benchmarks/learning/public/questions.json:1-269` |
+
+**Quickstart command actually executed for this pass**:
+
+```bash
+PYTHONPATH=src python3 -m unittest discover -s tests -q
+# Ran 245 tests in 20.696s
+# OK (skipped=10)
+```
+
+The wall-clock differs from the historical 18.228s run recorded above; both are
+separate executions of the same suite, and only the test/skip counts are claimed
+as results. `decision: reject_no_gain` means the candidate did not clear the
+`min_gain` bar — the loop kept the incumbent policy, which is the intended
+fail-closed behavior, not a passing result.
+
+<!-- figure: pending real measurement -->
