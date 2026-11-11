@@ -16,6 +16,7 @@ from .protocol import Outcome, Run
 from .promotion_gate import evaluate_promotion
 from .version_registry import VersionRegistry
 from .candidate_schema import validate_candidate
+from .change_manifest import ChangeEdit, build_rollback_plan, reconcile
 
 
 @dataclass(frozen=True)
@@ -164,6 +165,36 @@ def _as_run(run_id: str, cid: str, result: EvalResult) -> Run:
     return Run(run_id, cid, task_hash, outcomes)
 
 
+def _reconcile_manifest(baseline: EvalResult, cand_result: EvalResult,
+                        candidate: dict[str, Any]) -> dict[str, Any] | None:
+    """对带 change_manifest 块的候选做 AHE 式 per-edit 对账。
+
+    候选里的 change_manifest 形如 {"edits": [{edit_id, kind, target_files,
+    predicted_fix, predicted_regression, rationale}, ...]}。没有该块的候选
+    返回 None（行为与旧版完全一致）；块畸形返回 fail-closed 判定。
+    """
+    block = candidate.get("change_manifest")
+    if block is None:
+        return None
+    raw = block.get("edits") if isinstance(block, dict) else None
+    if not isinstance(raw, list):
+        return {"valid": False, "reasons": ["change_manifest_malformed"], "edits": {}}
+    edits = []
+    for item in raw:
+        if not isinstance(item, dict):
+            return {"valid": False, "reasons": ["change_manifest_malformed"], "edits": {}}
+        edits.append(ChangeEdit(
+            edit_id=str(item.get("edit_id", "")),
+            kind=str(item.get("kind", "")),
+            target_files=tuple(str(f) for f in item.get("target_files", ())),
+            predicted_fix=tuple(str(t) for t in item.get("predicted_fix", ())),
+            predicted_regression=tuple(str(t) for t in item.get("predicted_regression", ())),
+            rationale=str(item.get("rationale", ""))))
+    base_run = _as_run("manifest-base", "base", baseline)
+    cand_run = _as_run("manifest-cand", "cand", cand_result)
+    return reconcile(base_run, cand_run, tuple(edits))
+
+
 def evolve(root: Path) -> dict[str, Any]:
     config = load_json(root / "evo.json")
     state_dir = root / ".evo"
@@ -172,13 +203,18 @@ def evolve(root: Path) -> dict[str, Any]:
     baseline = evaluate(root, incumbent)
     records = []
     best, best_result = incumbent, baseline
+    best_manifest_verdict: dict[str, Any] | None = None
     for candidate in propose(root, incumbent, baseline.failures):
         safe, reason = safety_check(candidate, config)
         result = evaluate(root, candidate) if safe else EvalResult(0, 0, baseline.total, (reason,), 0)
+        # AHE 式 per-edit 对账：只对通过安全门的候选做，无 manifest 的候选保持 None
+        manifest_verdict = _reconcile_manifest(baseline, result, candidate) if safe else None
         records.append({"id": candidate_id(candidate), "candidate": candidate,
-                        "safe": safe, "reason": reason, "evaluation": result.as_dict()})
+                        "safe": safe, "reason": reason, "evaluation": result.as_dict(),
+                        "change_verdict": manifest_verdict})
         if safe and result.score > best_result.score:
             best, best_result = candidate, result
+            best_manifest_verdict = manifest_verdict
     min_gain = float(config.get("min_gain", 0.01))
     run_id = time.strftime("%Y%m%d-%H%M%S")
     legacy_promoted = best_result.score >= baseline.score + min_gain
@@ -213,6 +249,9 @@ def evolve(root: Path) -> dict[str, Any]:
               "active_score": best_result.score if promoted else baseline.score,
               "legacy_promoted": legacy_promoted, "statistical_decision": statistical_decision,
               "version_level": "provisional" if promoted else None}
+    # 最优候选带 manifest 时，把文件粒度回滚计划一并入报告（晋升与否都给）
+    if best_manifest_verdict is not None:
+        report["change_rollback_plan"] = build_rollback_plan(best_manifest_verdict)
     intelligence_command = expand_interpreter(config.get("post_evolution_intelligence_command"))
     if intelligence_command:
         intelligence_command = normalize_command(intelligence_command)

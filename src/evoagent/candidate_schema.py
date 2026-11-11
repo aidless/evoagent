@@ -41,6 +41,11 @@ SCHEMAS = {
     },
 }
 
+# change_manifest：候选可附带 AHE 式 per-edit 自声明预测块（跨 kind 通用，
+# 不进 IMMUTABLE_KEYS——它是声明数据不是治理开关，治理键嵌在它里面仍会被拦）
+for _schema in SCHEMAS.values():
+    _schema["allowed"] = _schema["allowed"] | {"change_manifest"}
+
 IMMUTABLE_KEYS = {
     "safety_gate",
     "promotion_gate",
