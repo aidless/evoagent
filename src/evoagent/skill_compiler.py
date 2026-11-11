@@ -113,13 +113,18 @@ def compile_entries(trajectories: Iterable[dict[str, Any]]) -> list[GuidanceEntr
             merged[key] = entry
             order.append(key)
 
-    entries: list[GuidanceEntry] = []
-    for key in order:
-        entry = merged[key]
-        if entry.support >= 2:
-            entry = replace(entry, layer="general", task_type="", scope="cross-task")
-        entries.append(entry)
-    return entries
+    return [_promote_if_repeated(merged[key]) for key in order]
+
+
+def _promote_if_repeated(entry: GuidanceEntry) -> GuidanceEntry:
+    """分层口径唯一实现：support >= 2 升 general，否则留 topic。
+
+    compile 与 evolve_harness 都必须走这里，否则同一条教训在两处会得到
+    不同的 layer（下游按 layer 过滤时读到不一致的证据）。
+    """
+    if entry.support >= 2:
+        return replace(entry, layer="general", task_type="", scope="cross-task")
+    return replace(entry, layer="topic", scope=entry.task_type or "cross-task")
 
 
 def select_entries(task_text: str, entries: Sequence[GuidanceEntry],
@@ -169,12 +174,12 @@ def evolve_harness(harness: Sequence[GuidanceEntry],
         if key in index:
             position = index[key]
             old = current[position]
-            current[position] = replace(
+            current[position] = _promote_if_repeated(replace(
                 old,
                 support=old.support + candidate.support,
                 trace_ids=old.trace_ids + candidate.trace_ids,
                 evidence=old.evidence + candidate.evidence,
-            )
+            ))
             operations.append({"op": "revise", "lesson": candidate.lesson,
                                "support": current[position].support})
         else:

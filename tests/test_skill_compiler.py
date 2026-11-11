@@ -102,6 +102,16 @@ class EvolveHarnessTests(unittest.TestCase):
         self.assertEqual(len(second["harness"]), 1)
         self.assertEqual(second["harness"][0].support, 2)
 
+    def test_revise_promotes_to_general(self):
+        # GREEN：Revise 把 support 推到 2 时，层必须同步升 general——
+        # 分层口径只在 compile 里算会让同一条教训出现两套层，下游读到不一致
+        first = evolve_harness((), compile_entries((TRAJ_DIVZERO_1,)))
+        self.assertEqual(first["harness"][0].layer, "topic")
+        second = evolve_harness(first["harness"], compile_entries((TRAJ_DIVZERO_2,)))
+        self.assertEqual(second["harness"][0].support, 2)
+        self.assertEqual(second["harness"][0].layer, "general")
+        self.assertEqual(second["harness"][0].task_type, "")
+
     def test_skip_low_signal(self):
         # RED 对照：无失败批次 → Skip，harness 原样
         first = evolve_harness((), compile_entries((TRAJ_DIVZERO_1,)))
