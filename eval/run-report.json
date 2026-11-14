@@ -1,0 +1,129 @@
+{
+ "total": 20,
+ "passed": 20,
+ "failed": 0,
+ "selftest": false,
+ "failed_by_axis": {},
+ "results": [
+  {
+   "id": "schema-prompt-valid",
+   "axis": "schema",
+   "ok": true,
+   "detail": "True"
+  },
+  {
+   "id": "schema-immutable-nested",
+   "axis": "schema",
+   "ok": true,
+   "detail": "candidate_schema_violation"
+  },
+  {
+   "id": "schema-unknown-top-key",
+   "axis": "schema",
+   "ok": true,
+   "detail": "unknown_top_level:bogus"
+  },
+  {
+   "id": "manifest-empty-edit-violations",
+   "axis": "manifest",
+   "ok": true,
+   "detail": "4"
+  },
+  {
+   "id": "manifest-regression-verdict",
+   "axis": "manifest",
+   "ok": true,
+   "detail": "regression"
+  },
+  {
+   "id": "manifest-unanticipated-bucket",
+   "axis": "manifest",
+   "ok": true,
+   "detail": "t3"
+  },
+  {
+   "id": "stagegate-missing-stages",
+   "axis": "stagegate",
+   "ok": true,
+   "detail": "3"
+  },
+  {
+   "id": "stagegate-task-set-reuse",
+   "axis": "stagegate",
+   "ok": true,
+   "detail": "True"
+  },
+  {
+   "id": "stagegate-unknown-stage-raises",
+   "axis": "stagegate",
+   "ok": true,
+   "detail": "raised ValueError"
+  },
+  {
+   "id": "promote-mean-gain",
+   "axis": "promotion",
+   "ok": true,
+   "detail": "1.0"
+  },
+  {
+   "id": "promote-mcnemar-p",
+   "axis": "promotion",
+   "ok": true,
+   "detail": "0.125"
+  },
+  {
+   "id": "promote-cost-regression",
+   "axis": "promotion",
+   "ok": true,
+   "detail": "2.0"
+  },
+  {
+   "id": "policy-readonly-tool",
+   "axis": "policy",
+   "ok": true,
+   "detail": "read_only"
+  },
+  {
+   "id": "policy-trust-root-deny",
+   "axis": "policy",
+   "ok": true,
+   "detail": "deny"
+  },
+  {
+   "id": "policy-irreversible-rm",
+   "axis": "policy",
+   "ok": true,
+   "detail": "irreversible"
+  },
+  {
+   "id": "budget-token-killswitch",
+   "axis": "budget",
+   "ok": true,
+   "detail": "tokens"
+  },
+  {
+   "id": "budget-negative-charge-raises",
+   "axis": "budget",
+   "ok": true,
+   "detail": "raised ValueError"
+  },
+  {
+   "id": "calibration-coverage",
+   "axis": "calibration",
+   "ok": true,
+   "detail": "0.5"
+  },
+  {
+   "id": "calibration-unnecessary-abstention",
+   "axis": "calibration",
+   "ok": true,
+   "detail": "0.333"
+  },
+  {
+   "id": "data-question-set-size",
+   "axis": "data",
+   "ok": true,
+   "detail": "300"
+  }
+ ]
+}

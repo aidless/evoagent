@@ -19,6 +19,7 @@ EVO_DESELECT = \
 	--deselect tests/test_multi_worker.py::MultiWorkerTests::test_subprocess_competition_one_succeeds_one_fails
 
 eval:
+	python3 eval/run_cases.py
 	cd src && PYTHONPATH=. python3 -m pytest ../tests -q $(EVO_DESELECT)
 
 ci-eval:

@@ -223,8 +223,8 @@ Public benchmark question counts (recomputed from committed question files):
 
 | File | Questions | Source (path:line) |
 |---|---|---|
-| `benchmarks/generated_date/questions.json` | 3 | `benchmarks/generated_date/questions.json:1-2706` |
-| `benchmarks/generated_logic/questions.json` | 3 | `benchmarks/generated_logic/questions.json:1-1006` |
+| `benchmarks/generated_date/questions.json` | 300 | `benchmarks/generated_date/questions.json:1-2706` |
+| `benchmarks/generated_logic/questions.json` | 200 | `benchmarks/generated_logic/questions.json:1-1006` |
 | `benchmarks/learning/public/questions.json` | 24 | `benchmarks/learning/public/questions.json:1-269` |
 
 **Quickstart command actually executed for this pass**:
@@ -252,3 +252,66 @@ distributed, so only the committed JSON above is claimed as a result; see `Limit
 ## 本机可重跑性
 
 `make eval` 跑 `tests/` 共 268 条（cwd=src + `PYTHONPATH=.`），deselect 的 3 条（`tests/test_bundle_signer.py` 2 条、`tests/test_multi_worker.py` 1 条）只在本工作区红：目录名 `F:\deepseek` 含 ':'，会把测试交给子进程的绝对 `PYTHONPATH` 按 POSIX 分隔符切开；同一份树放到无冒号路径下跑 `python3 -m unittest discover -s tests` 是 `Ran 280 tests / OK (skipped=10)`。完整 CI 命令见 `make ci-eval`。
+
+## 验收判据：可执行题库 `eval/cases.jsonl`（2026-11-13）
+
+`eval/cases.jsonl` 共 n = 20 条，覆盖 8 个 axis（schema / manifest / stagegate / promotion /
+policy / budget / calibration / data），其中 `expr` 17 条、`raises` 3 条。每条都真调本仓 API 或
+真解析本仓数据（`from src.evoagent...`、`benchmarks/generated_date/questions.json`），期望值由
+当前实现现算，改一行实现就可能变红。运行器 `eval/run_cases.py` 与其它仓逐字节同源，逻辑零改动。
+
+**验收判据（Pass criteria）**：`python3 eval/run_cases.py` 必须 **20/20 全过，通过率 = 100%**；
+`python3 eval/run_cases.py --selftest` 必须变红（19/20，退出码仍为 0，证明不是装饰）；
+`make eval` 返回码必须为 0。任一条件不满足即判为未通过，不接受"大部分通过"。
+
+```
+$ python3 eval/run_cases.py | tail -1
+20/20 cases passed
+$ python3 eval/run_cases.py --selftest | tail -1
+SELFTEST: 期望变红；若上面仍全绿则这套题无效
+```
+
+### 失败归因（按 axis，不只报 pass_rate）
+
+`run_cases.py` 失败时按 axis 汇总失败 id，`--save` 把同一份归因写进 `eval/run-report.json`
+（字段 `failed_by_axis`）。`--selftest` 的真实归因输出（实测）：
+
+```
+19/20 cases passed
+失败归因（按 axis）：
+  schema: 1 条 —— schema-prompt-valid
+```
+
+即自检篡改的是 schema 轴第一条（`validate_candidate` 的 `valid` 期望），坏了对应
+`src/evoagent/candidate_schema.py`。各 axis 与失败时该先看的模块：
+
+| axis | 失败先看 | 题库里的越界点 |
+|---|---|---|
+| schema | `src/evoagent/candidate_schema.py` | 白名单外顶层键 / 嵌套治理键 |
+| manifest | `src/evoagent/change_manifest.py` | `regression` vs `unanticipated_regressions` 桶 |
+| stagegate | `src/evoagent/stage_gates.py` | `missing:*` / `task_set_reuse` |
+| promotion | `src/evoagent/promotion_gate.py` | `mean_gain` / mcnemar `p_value` / `cost_increase` |
+| policy | `src/evoagent/action_policy.py` | `read_only` / `trust_root_change` / `irreversible` |
+| budget | `src/evoagent/budget.py` | `tokens` 上限与负增量 |
+| calibration | `src/evoagent/calibration.py` | `coverage` / `unnecessary_abstention_rate` |
+| data | `benchmarks/generated_date/questions.json` | 题库条数与 id 唯一性 |
+
+仓内另有两套同口径的按类归因，可直接按桶计数：`change_manifest.reconcile` 的 per-edit 四桶
+（`regression` / `effective_fix` / `no_effect` / `invalid_prediction`，以及没有被任何 edit 预测到的
+`unanticipated_regressions`），和 `stage_gates.evaluate_four_stage` 的 reasons 前缀桶
+（`missing:` / `insufficient_n:` / `identity_mismatch:` / `artifact_changed:` / `task_set_reuse`）。
+落盘位置：`.evo/verdicts.jsonl` 与 `.evo/stage-gates/<candidate_id>.json`。
+
+### 本次实跑读数（本机，2026-11-13）
+
+| 读数 | 值 | 来源命令 / 文件 |
+|---|---|---|
+| 题库条数 / axis 数 | 20 / 8 | `wc -l eval/cases.jsonl`；`eval/run-report.json` 的 `results[].axis` |
+| 全过 | 20/20 | `python3 eval/run_cases.py` |
+| 自检变红 | 19/20，exit 0 | `python3 eval/run_cases.py --selftest` |
+| 复算报告 | `eval/run-report.json` | `python3 eval/run_cases.py --save` |
+| 单次墙钟 | 0.14 s（全过）、0.15 s（`--selftest`） | `/usr/bin/time -f "wall=%e s" python3 eval/run_cases.py` |
+
+题库里的 300 条 date 题目来自 `benchmarks/generated_date/questions.json`（300 个唯一 `id`，
+现数得到）；`benchmarks/generated_logic/questions.json` 为 200 条。本节的数字没有一个是抄的：
+每条都能用上表的命令重跑一遍核对。
