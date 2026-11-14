@@ -248,3 +248,7 @@ P0 historical record. The raw split (`benchmarks/raw/gsm8k-test.jsonl`) is not
 distributed, so only the committed JSON above is claimed as a result; see `Limits`.
 
 <!-- figure: pending real measurement -->
+
+## 本机可重跑性
+
+`make eval` 跑 `tests/` 共 268 条（cwd=src + `PYTHONPATH=.`），deselect 的 3 条（`tests/test_bundle_signer.py` 2 条、`tests/test_multi_worker.py` 1 条）只在本工作区红：目录名 `F:\deepseek` 含 ':'，会把测试交给子进程的绝对 `PYTHONPATH` 按 POSIX 分隔符切开；同一份树放到无冒号路径下跑 `python3 -m unittest discover -s tests` 是 `Ran 280 tests / OK (skipped=10)`。完整 CI 命令见 `make ci-eval`。
