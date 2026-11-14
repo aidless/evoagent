@@ -1,7 +1,6 @@
 import unittest
 from pathlib import Path
-from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
-import base64,os,subprocess,sys
+import subprocess,sys
 _ROOT=Path(__file__).resolve().parents[1]
 from evoagent.signing import generate_keypair,verify_envelope
 class BundleSignerCLITests(unittest.TestCase):

@@ -29,8 +29,6 @@ class BundleSignerPromoteTests(unittest.TestCase):
   from evoagent.signing import SignatureRegistry,generate_keypair,sign_bundle
   with tempfile.TemporaryDirectory() as td:
    p=Path(td);bundles=p/'b.json';signatures=p/'s.json';trusted=p/'t';trusted.mkdir();active=p/'a.txt'
-   from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
-   from cryptography.hazmat.primitives.serialization import Encoding,PublicFormat,PrivateFormat,NoEncryption
    priv,pub=generate_keypair();Path(p/'t'/'ci.pub').write_bytes(pub);(p/'k.bin').write_bytes(priv)
    active.write_text('signed-bundle@1')
    bundles.write_text(json.dumps({'bundles':{'signed-bundle@1':{'bundle_id':'signed-bundle@1','sha256':'abc','manifest':{'name':'x','active_skills':{},'files':{}},'created_at':'2026-07-24'}}}))

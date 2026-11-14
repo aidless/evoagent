@@ -4,7 +4,6 @@ import argparse
 import gzip
 import json
 import random
-import re
 from pathlib import Path
 from typing import Any
 

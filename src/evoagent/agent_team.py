@@ -3,7 +3,7 @@ import argparse,hashlib,json
 from dataclasses import replace
 from pathlib import Path
 from typing import Any
-from .durable_run import RunState,RunStore,TERMINAL_STATUSES
+from .durable_run import RunState,RunStore
 from .event_log import EventLog
 from .idempotency import IdempotencyRegistry
 

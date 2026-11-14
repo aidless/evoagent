@@ -15,7 +15,6 @@ from typing import Any
 from .protocol import Outcome, Run
 from .promotion_gate import evaluate_promotion
 from .version_registry import VersionRegistry
-from .candidate_schema import validate_candidate
 from .change_manifest import ChangeEdit, build_rollback_plan, reconcile
 from .verdict_history import append_verdicts
 

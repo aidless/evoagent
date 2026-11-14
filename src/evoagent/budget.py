@@ -1,7 +1,7 @@
 from __future__ import annotations
 import time
 from dataclasses import replace
-from .durable_run import RunState, RunUsage
+from .durable_run import RunState
 
 
 def charge(state: RunState, *, tokens: int = 0, cost_usd: float = 0.0, tool_calls: int = 0, retry: bool = False, failure: bool = False) -> RunState:

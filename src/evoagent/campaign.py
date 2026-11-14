@@ -1,5 +1,5 @@
 ﻿from __future__ import annotations
-import argparse, hashlib, json, os, random, subprocess, sys, time
+import argparse, hashlib, json, random, subprocess, sys, time
 from pathlib import Path
 
 CLAUSES=[

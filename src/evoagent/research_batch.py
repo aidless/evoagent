@@ -1,5 +1,5 @@
 from __future__ import annotations
-import argparse,json,hashlib,os,re,subprocess,time
+import argparse,json,hashlib,os,subprocess
 from pathlib import Path
 from collections import Counter
 import requests

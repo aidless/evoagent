@@ -36,7 +36,7 @@ class ModelBackendRegistry:
  def _save(self):self.path.parent.mkdir(parents=True,exist_ok=True);t=self.path.with_suffix('.tmp');t.write_text(json.dumps(self.data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');os.replace(t,self.path)
  def _hash(self,p):
   if p.is_file():b=p.read_bytes()
-  elif p.is_dir():import hashlib as h;b=b''
+  elif p.is_dir():b=b''
   else:return ''
   return hashlib.sha256(b).hexdigest() if len(b)<2**30 else hashlib.sha256(b[:2**20]).hexdigest()
  def register(self,spec:ModelSpec,level='experimental'):

@@ -1,6 +1,5 @@
 ﻿from __future__ import annotations
 import math,random
-from dataclasses import dataclass
 from .protocol import Run
 
 def binom_tail_two_sided(b,c):

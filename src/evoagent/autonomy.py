@@ -1,13 +1,11 @@
 from __future__ import annotations
 
 import hashlib
-import json
-import os
 import shutil
 import time
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Callable, Iterable
+from typing import Any, Callable
 
 from .core import EvalResult, candidate_id, load_json, save_json, safety_check
 from .promotion_gate import evaluate_promotion

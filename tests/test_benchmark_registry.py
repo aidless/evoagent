@@ -1,6 +1,5 @@
-import os,unittest
-from pathlib import Path
-from evoagent.benchmark_registry import CSV,load,query,validate_fact,validate_quantitative_claim
+import unittest
+from evoagent.benchmark_registry import CSV,load,validate_fact,validate_quantitative_claim
 
 # The 155-row benchmarks.csv lives in a personal knowledge base and was never
 # committed. Point EVO_BENCHMARKS_CSV at a copy to exercise these locally.

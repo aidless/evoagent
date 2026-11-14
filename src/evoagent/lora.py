@@ -1,6 +1,6 @@
 ﻿from __future__ import annotations
-import hashlib,json,os,time
-from dataclasses import asdict,dataclass,field
+import hashlib,json,time
+from dataclasses import asdict,dataclass
 from pathlib import Path
 from .attestation import hash_file
 @dataclass

@@ -9,7 +9,6 @@ class AttestationTests(unittest.TestCase):
  def test_bundle_hash_is_stable(self):self.assertEqual(hash_paths([self.f])[0],hash_paths([self.f])[0])
  def test_missing_attestation(self):self.assertFalse(self.r.verify('none')['valid'])
  def test_tamper_detected(self):
-  import evoagent.router as router
   self.r.attest('router@1','evoagent.router:route',tests=[self.f]);self.assertTrue(self.r.verify('router@1')['valid']);self.f.write_text('changed');v=self.r.verify('router@1');self.assertFalse(v['valid']);self.assertEqual(v['reason'],'artifact_changed')
  def test_unapproved_entrypoint_rejected(self):
   with self.assertRaises(ValueError):self.r.attest('x@1','os:path')

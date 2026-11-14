@@ -1,6 +1,5 @@
 ﻿import json,base64
 from datetime import datetime,timezone
-from pathlib import Path
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey,Ed25519PublicKey
 from cryptography.hazmat.primitives.serialization import Encoding,PrivateFormat,PublicFormat,NoEncryption
 def canonical_payload(bundle_id,bundle_sha256,signer,signed_at,expires_at):return json.dumps({'bundle_id':bundle_id,'bundle_sha256':bundle_sha256,'signer':signer,'signed_at':signed_at,'expires_at':expires_at},sort_keys=True,separators=(',',':')).encode()

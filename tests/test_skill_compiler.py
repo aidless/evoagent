@@ -4,7 +4,7 @@
 import unittest
 
 from evoagent.skill_compiler import (
-    GuidanceEntry, compile_entries, select_entries, evolve_harness,
+    compile_entries, select_entries, evolve_harness,
 )
 
 # 两条失败轨迹：同类失败（除零）重复两次，第三条是任务特有失败（格式解析）

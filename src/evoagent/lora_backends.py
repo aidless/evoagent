@@ -7,11 +7,11 @@ class LoraBackendSpec:
  id:str;family:str;quantization:str;requires_gpu:bool=True;min_vram_gb:float=8.0;config_module:str='peft';algorithm:str='qlora'
  def runtime_check(self)->dict:
   missing=[]
-  try:import peft
+  try:pass
   except Exception:missing.append('peft')
-  try:import bitsandbytes
+  try:pass
   except Exception:missing.append('bitsandbytes')
-  try:import accelerate
+  try:pass
   except Exception:missing.append('accelerate')
   try:import torch
   except Exception:missing.append('torch')

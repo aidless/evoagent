@@ -1,4 +1,4 @@
-import unittest,tempfile,json
+import unittest,tempfile
 from pathlib import Path
 from evoagent.model_backends import ModelSpec,ModelBackendRegistry,register_defaults
 class ModelBackendTests(unittest.TestCase):

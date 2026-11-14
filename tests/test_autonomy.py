@@ -1,11 +1,10 @@
-import json
 import tempfile
 import unittest
 from pathlib import Path
 
 from evoagent.autonomy import EvolutionPolicy, evolve_autonomously
 from evoagent.cli import init
-from evoagent.core import EvalResult, load_json, propose, save_json
+from evoagent.core import EvalResult, load_json, save_json
 
 
 class AutonomousEvolutionTests(unittest.TestCase):
