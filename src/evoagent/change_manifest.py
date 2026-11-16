@@ -82,62 +82,98 @@ def reconcile(base: Run, cand: Run, edits: tuple[ChangeEdit, ...]) -> dict[str, 
 
     fixed, regressed = _flips(base, cand)
     all_task_ids = set(b)
-    # 盲区对账：没有任何编辑预测到的回归 = campaign 级盲区，
-    # 按 AHE 纪律必须显眼——记在所有在场编辑头上（shared blame）。
+    # 盲区对账：没有任何编辑预测到的回归 = campaign 级盲区。
+    # 能归因时（候选内唯一非 invalid 编辑）per-edit 记账；不能归因时 shared blame
+    # 但必须显式打标，不能和“确实是这笔 edit 造成的回归”混在同一口径里。
     covered = set().union(*(set(e.predicted_regression) for e in edits)) if edits else set()
     unanticipated = regressed - covered
     edits_out: dict[str, Any] = {}
     hit_total, predicted_total = 0, 0
+    n_regression_edits = 0
+    valid_edit_ids: list[str] = []
 
+    # 预扫描：统计 valid 编辑数，决定 unanticipated 能否归因
+    pre_valid: dict[str, tuple[list[str], list[str], list[str], int, list[str]]] = {}
     for edit in edits:
         violations = validate_edit(edit)
         unknown = [t for t in (*edit.predicted_fix, *edit.predicted_regression)
                    if t not in all_task_ids]
         if violations or unknown:
             edits_out[edit.edit_id] = {
+                "edit_id": edit.edit_id,
+                "kind": edit.kind,
                 "verdict": "invalid_prediction",
+                "files": tuple(edit.target_files),
                 "violations": violations,
                 "unknown_task_ids": unknown,
             }
             continue
-
-        # 回归对账：本编辑预测到的回归（own）与全局盲区（shared）分开记
         anticipated = sorted(set(edit.predicted_regression) & regressed)
         hits = sorted(set(edit.predicted_fix) & fixed)
+        predicted_n = len(edit.predicted_fix)
+        pre_valid[edit.edit_id] = (anticipated, hits, list(edit.predicted_fix), predicted_n, list(edit.predicted_regression))
+        valid_edit_ids.append(edit.edit_id)
+        if predicted_n:
+            predicted_total += predicted_n
+            hit_total += len(hits)
 
-        if anticipated:
+    attributable_unanticipated = sorted(unanticipated) if (unanticipated and len(valid_edit_ids) == 1) else []
+    shared_unanticipated = sorted(unanticipated) if (unanticipated and len(valid_edit_ids) != 1) else []
+
+    for edit in edits:
+        if edit.edit_id in edits_out:  # invalid_prediction 已写入
+            continue
+        anticipated, hits, predicted_fix_list, predicted_n, _pred_reg = pre_valid[edit.edit_id]
+
+        attributed_here = list(attributable_unanticipated) if attributable_unanticipated else []
+        shared_here = list(shared_unanticipated) if shared_unanticipated else []
+        regression_attribution = "none"
+        if anticipated or attributed_here:
+            regression_attribution = "attributed"
+        elif shared_here:
+            regression_attribution = "shared"
+
+        if anticipated or attributed_here:
             verdict = "regression"
-        elif unanticipated:
-            verdict = "regression"  # 盲区回归：在场编辑共同承担，不允许静默
+        elif shared_here:
+            verdict = "regression"  # 盲区回归：不能归因时 shared blame，显式打标
         elif hits:
             verdict = "effective_fix"
         else:
             verdict = "no_effect"
 
-        predicted_n = len(edit.predicted_fix)
-        if predicted_n:
-            predicted_total += predicted_n
-            hit_total += len(hits)
+        if verdict == "regression":
+            n_regression_edits += 1
 
+        # 兼容旧字段：unanticipated_regressions 仍给出本次未被任何 edit 预测到的回归全集
+        # （shared 与 attributed 场景都可见）；新增字段区分归因方式。
         edits_out[edit.edit_id] = {
             "edit_id": edit.edit_id,
             "kind": edit.kind,
             "verdict": verdict,
             "files": tuple(edit.target_files),
-            "predicted_fix": list(edit.predicted_fix),
+            "predicted_fix": predicted_fix_list,
             "hits": hits,
             "prediction_precision": (len(hits) / predicted_n) if predicted_n else None,
             "anticipated_regressions": anticipated,
+            "attributed_regressions": attributed_here,
+            "shared_unanticipated_regressions": shared_here,
+            "regression_attribution": regression_attribution,
             "unanticipated_regressions": sorted(unanticipated),
         }
 
-    # campaign 级聚合：全 campaign 的 fix 预测精度（AHE 实测 33.7%，随机基线 6.5%）
+    n_valid_edits = len(valid_edit_ids)
+    # campaign 级聚合：fix 预测精度（AHE 随机基线 6.5%）+ 候选级/编辑级双回归率
     campaign = {
         "prediction_precision": (hit_total / predicted_total) if predicted_total else None,
         "total_predicted": predicted_total,
         "total_hit": hit_total,
         "predicted_total": predicted_total,
         "hit_total": hit_total,
+        "candidate_regression_rate": 1.0 if regressed else 0.0,
+        "edit_regression_rate": (n_regression_edits / n_valid_edits) if n_valid_edits else 0.0,
+        "regressed_edits": n_regression_edits,
+        "valid_edits": n_valid_edits,
     }
     return {"valid": True, "edits": edits_out, "campaign": campaign}
 

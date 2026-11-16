@@ -61,6 +61,36 @@ class AppendReadTests(unittest.TestCase):
         self.assertEqual(row["edits"][0]["kind"], "tool")
         self.assertEqual(row["edits"][0]["verdict"], "effective_fix")
         self.assertAlmostEqual(row["prediction_precision"], 0.5)
+        # dual regression rates persisted when provided by campaign (backward-compat: absent -> None)
+        self.assertIsNone(row.get("candidate_regression_rate"))
+        self.assertIsNone(row.get("edit_regression_rate"))
+
+
+
+    def test_campaign_regression_rates_persisted(self):
+        # GREEN：候选级/编辑级双回归率随 campaign 一起落盘，供 P4 判别力使用
+        record = {
+            "id": "cand-r", "safe": True,
+            "change_verdict": {
+                "valid": True,
+                "edits": {
+                    "e1": {"edit_id": "e1", "kind": "tool", "files": ["a.py"],
+                           "verdict": "regression", "hits": [],
+                           "prediction_precision": 1.0,
+                           "predicted_fix": ["t1"], "predicted_regression": []},
+                    "e2": {"edit_id": "e2", "kind": "prompt", "files": ["b.md"],
+                           "verdict": "effective_fix", "hits": ["t2"],
+                           "prediction_precision": 1.0,
+                           "predicted_fix": ["t2"], "predicted_regression": []},
+                },
+                "campaign": {"prediction_precision": 1.0, "predicted_total": 2, "hit_total": 2,
+                             "candidate_regression_rate": 1.0, "edit_regression_rate": 0.5},
+            },
+        }
+        append_verdicts(self.state, "run-r", (record,))
+        row = read_verdicts(self.root)[0]
+        self.assertAlmostEqual(row["candidate_regression_rate"], 1.0)
+        self.assertAlmostEqual(row["edit_regression_rate"], 0.5)
 
     def test_malformed_recorded_as_invalid(self):
         # GREEN：fail-closed 的畸形 manifest 也要留痕（P4 要能看见被拦的次数）

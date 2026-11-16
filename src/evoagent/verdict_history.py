@@ -58,6 +58,8 @@ def append_verdicts(state_dir: Path, run_id: str,
                 "predicted_total": campaign.get(
                     "predicted_total", campaign.get("total_predicted", 0)),
                 "hit_total": campaign.get("hit_total", campaign.get("total_hit", 0)),
+                "candidate_regression_rate": campaign.get("candidate_regression_rate"),
+                "edit_regression_rate": campaign.get("edit_regression_rate"),
                 "edits": edits,
             }
             fh.write(json.dumps(row, ensure_ascii=False) + "\n")

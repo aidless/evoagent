@@ -135,5 +135,49 @@ class RollbackPlanTests(unittest.TestCase):
         self.assertEqual(len(plan["rollback"]), 2)
 
 
+# ---- TDD RED tests for per-edit attribution & dual regression rates ----
+class AttributionTests(unittest.TestCase):
+    def test_single_edit_unanticipated_regression_is_attributed(self):
+        # GREEN target: only 1 edit present -> unanticipated regression attributable to it
+        base = make_run("base", passed_ids=("t1", "t4"), failed_ids=("t2", "t3"))
+        cand = make_run("cand", passed_ids=("t1", "t2", "t3"), failed_ids=("t4",))
+        edits = (ChangeEdit(edit_id="e1", kind="tool", target_files=("a.py",),
+                            predicted_fix=("t2", "t3"), predicted_regression=()),)
+        r = reconcile(base, cand, edits)
+        self.assertTrue(r["valid"])
+        self.assertEqual(r["edits"]["e1"]["verdict"], "regression")
+        self.assertEqual(r["edits"]["e1"].get("attributed_regressions"), ["t4"])
+        self.assertEqual(r["edits"]["e1"].get("shared_unanticipated_regressions"), [])
+        self.assertEqual(r["edits"]["e1"].get("regression_attribution"), "attributed")
+
+    def test_multi_edit_unanticipated_regression_is_shared_blame_marked(self):
+        # GREEN target: cannot attribute -> shared blame but explicitly marked
+        base = make_run("base", passed_ids=("t1", "t4"), failed_ids=("t2", "t3"))
+        cand = make_run("cand", passed_ids=("t1", "t2", "t3"), failed_ids=("t4",))
+        edits = make_edits(e2=ChangeEdit(
+            edit_id="e2", kind="prompt", target_files=("prompts/system.md",),
+            predicted_fix=("t3",), predicted_regression=()))
+        r = reconcile(base, cand, edits)
+        self.assertEqual(r["edits"]["e1"]["verdict"], "regression")
+        self.assertEqual(r["edits"]["e2"]["verdict"], "regression")
+        self.assertEqual(r["edits"]["e1"].get("shared_unanticipated_regressions"), ["t4"])
+        self.assertEqual(r["edits"]["e2"].get("shared_unanticipated_regressions"), ["t4"])
+        self.assertEqual(r["edits"]["e1"].get("regression_attribution"), "shared")
+        self.assertEqual(r["edits"]["e2"].get("regression_attribution"), "shared")
+        # attributed lists empty for shared blame
+        self.assertEqual(r["edits"]["e1"].get("attributed_regressions", []), [])
+
+    def test_campaign_carries_candidate_and_edit_regression_rates(self):
+        # e1 fixes t2, e2 causes anticipated regression t4 -> 1 regression edit / 2 edits
+        base = make_run("base", passed_ids=("t1", "t4"), failed_ids=("t2", "t3"))
+        cand = make_run("cand", passed_ids=("t1", "t2", "t3"), failed_ids=("t4",))
+        r = reconcile(base, cand, make_edits())
+        campaign = r["campaign"]
+        self.assertIn("edit_regression_rate", campaign)
+        self.assertIn("candidate_regression_rate", campaign)
+        self.assertAlmostEqual(campaign["edit_regression_rate"], 0.5)  # e2 regressed
+        self.assertAlmostEqual(campaign["candidate_regression_rate"], 1.0)  # candidate had regression
+
+
 if __name__ == "__main__":
     unittest.main()
