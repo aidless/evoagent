@@ -9,6 +9,12 @@
 - **唯一变量**：每候选 1 笔 edit（probe-01 为 2 笔）；proposer prompt/校验相应收紧。
 - 不变量：bench/6 开关/seed/`min_gain 2.0`/statistical_gate off/模型 `workbuddy/deepseek-v4.1-flash` T=0.7/12 轮/失败不编造/detached+checkpoint。
 
+## 先读这条（2026-11-16 补）
+本目录的 kind 轮转公式有缺陷（`(round*6+j)%6` ≡ `j%6`，只覆盖 tool/prompt/middleware 三类），
+已修并在 [../trust-probe-04b-attribution-kinds/](../trust-probe-04b-attribution-kinds/) 重跑出 6 类各 6 笔。
+本目录**保留不动作为留档**：它的结论只可用于「归因字段能落盘」，不可用于 kind 级判断。
+缺陷与修法记录见 [../trust-probe-01/CALIBRATION.md](../trust-probe-01/CALIBRATION.md) §12。
+
 ## 结果（本次实跑）
 见 [campaign_report.json](campaign_report.json)、[verdicts.jsonl](verdicts.jsonl)。
 - 12/12 completed, 0 failed, 36 行/36 edits, wall_clock 187.38s。

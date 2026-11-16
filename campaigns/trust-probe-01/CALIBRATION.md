@@ -161,3 +161,90 @@ RED 用的是合成夹具。它属于"读 schema 发现的潜在缺陷"，不是
 - probe-01 缺候选级率（30 行）：candidate 口径在合并分析中对这 30 行退化为 edit 口径并标记 `candidate_rate_missing`。
 - 单 bench（12 例字符串规范化）、kind 由脚本确定性轮转而非 LLM 真实选择、6 类均为 32 笔；`tool` 稳定 L1 而其余五类高回归率的格局可能反映 bench/开关设计而非通用 kind 性质。
 - **仍是机制 probe，不是科学结论**；不得据此改动论文数字。
+
+## 10. 稠密网格重扫 v3：同代代码 + 候选率全覆盖 + 归因落盘（2026-11-16）
+
+v2 的两处数据缺陷在 v3 里被关掉：`regression_attribution` 全空、`candidate_regression_rate`
+仅 66/96 行覆盖。为此新建三份**同代代码**账本并重跑，再用新参数 `--ledgers/--out`
+（`evoagent/tests/test_calibrate_basis_cli.py` 测 CLI 契约）合并扫描。
+
+合并集（5 份，全部同 bench/同开关，共 **168 行**，每类 **50 笔**）：
+
+| 账本 | 用途 | 行/编辑 | kind 各 | 候选率覆盖 | 归因分布 |
+| --- | --- | ---: | ---: | ---: | --- |
+| `trust-probe-01-rerun-c4badd0` | 同代重跑（2 edit/候选） | 36/72 | 12 | 36/36 | none 22 / shared 33 / attributed 17 |
+| `trust-probe-04b-attribution-kinds` | 1 edit/候选 × **6 类全覆盖** | 36/36 | 6 | 36/36 | none 10 / attributed 26 / shared 0 |
+| `trust-probe-05-single-endpoint` | 单端点去噪（首跑） | 30/60 | 10 | 30/30 | none 22 / shared 24 / attributed 14 |
+| `trust-probe-05b-single-endpoint` | 同设置复跑 #2 | 33/66 | 11 | 33/33 | — |
+| `trust-probe-05c-single-endpoint` | 同设置复跑 #3 | 33/66 | 11 | 33/33 | — |
+
+v3 扫描（`calibrate_basis.py --ledgers ... --out calibration_basis_v3.json`）：
+
+| 阈值 | 原值 | edit 口径：边界 / distinct | candidate 口径：边界 / distinct | 原值区间 |
+| --- | --- | --- | --- | --- |
+| `MIN_EDITS` | 5 | [51] / 2 | [51] / 2 | (None, 51) |
+| `REGRESSION_BLOCK_RATE` | 0.30 | [0.1, 0.9, 0.999, 1.0] / 5 | [0.1, 0.9, 1.0] / 4 | (0.1, 0.9) |
+| `PRECISION_TRUST_FLOOR` | 0.50 | [0.9] / 2 | [0.9] / 2 | (None, 0.9) |
+| `PRECISION_BLIND_FLOOR` | 0.20 | [0.1] / 2 | [0.1] / 2 | (0.1, None) |
+| `REGRESSION_TRUST_CEIL` | 0.10 | [0.1] / 2 | [0.1] / 2 | (None, None) |
+
+### 10.1 v3 的结论
+
+1. **`REGRESSION_BLOCK_RATE=0.30` 的稳定区间变宽了**：v2 是 (0.045,0.999)/(0.05,1.0)，
+   v3 是 (0.1,0.9)/(0.1,0.9)，两侧余量各 ≥0.2——原值仍不在边上，**证据更强**。
+   边界从 0.045 抬到 0.1 的原因可复算：合并集里再也没有单类回归率落在
+   (0.045, 0.1] 这段窄带（每类样本量从 32 涨到 50，均值被拉平）。
+2. **`MIN_EDITS=5` 仍在 (None, 51) 的宽区间内部**，唯一边界是「最大单类笔数 50 → 51」，
+   即判据只在样本量本身处翻转——这是机械边界，不是拟合出来的。
+3. **五阈值依旧不改**。v3 提供的是「同代数据 + 候选率全覆盖后仍不改结论」的证据。
+
+### 10.2 仪器缺陷修正：MIN_EDITS 网格没跨过样本量（v3 抓到的第二次同类问题）
+
+v3 首跑时 `MIN_EDITS` 报 `distinct=1 / discriminating=NO`，原因与 v1/v2 同型：
+`GRID["MIN_EDITS"]` 只铺到 50，而合并集每类正好 50 笔 → **所有格点都在样本量之下**，
+扫描自然看不到边界。修法把网格改成自适应：`min_edits_grid(rows)` 取**最大单类笔数**
+及其 +1 铺进网格（`evoagent/tests/test_calibrate_basis_cli.py::test_min_edits_grid_crosses_per_kind_sample_size`，
+含 `test_min_edits_grid_never_empty_without_rows` 守卫）。修后边界 `[51]`、distinct=2。
+这是同一类失效第二次出现（第一次是每类 32 笔、网格止于 20），所以它被写成**函数**而不是再手改常量。
+
+## 11. 同设置复跑分布：哪些 kind 的 level 可复现（2026-11-16）
+
+`trust-probe-05-single-endpoint/variance_table.py`（TDD：`evoagent/tests/test_variance_table.py`
+5 条，含「同账本跑两遍必须 STABLE」假阳守卫与「level 不同必须 UNSTABLE」方向测）把
+**同模型 `workbuddy/deepseek-v4.1-flash` + T=0.7 + 同 bench** 的 5 次跑摊成分布：
+
+| kind | 分布 | 判定 |
+| --- | --- | --- |
+| tool | L1×5 | STABLE |
+| **prompt** | **L2×1, L3×4** | **UNSTABLE** |
+| middleware | L3×5 | STABLE |
+| memory | L3×5 | STABLE |
+| workflow | L3×5 | STABLE |
+| subagent | L3×5 | STABLE |
+
+产物：[`../trust-probe-05-single-endpoint/PROMPT_VARIANCE.md`](../trust-probe-05-single-endpoint/PROMPT_VARIANCE.md)、
+`prompt_variance.json`。
+
+结论（可引用）：
+- **`tool` 稳定落 L1**（5/5，mean_precision 0.75–0.95），`middleware/memory/workflow/subagent`
+  稳定落 L3（5/5）——这五类在本 bench 上的 level 判定可复现。
+- **`prompt` 的 level 不可复现**（L2 1 次、L3 4 次）。之前把 probe-02 的 prompt L3 归因于
+  「路由池混杂」是过度解释：同端点的 probe-01/01-rerun/05/05b/05c 里 4/5 也是 L3。
+  正确说法是 **prompt 处在低精度盲区（mean_precision 0.00–0.20），level 判定在该区抖动**，
+  单跑不得把 prompt 的 L2/L3 当 kind 性质引用。
+- 机制 probe：不改阈值、不改论文数字。
+
+## 12. 一处已修的实现缺陷留档：1-edit 变体的 kind 轮转
+
+`trust-probe-04-attribution` 的 `proposer.py` 曾写
+`KINDS[(round_no * 6 + j) % len(KINDS)]`。`round_no * 6` 恒被 6 整除 → 退化为 `KINDS[j % 6]`，
+j 只取 0/1/2，于是 36 笔只覆盖 tool/prompt/middleware（该目录 `verdicts.jsonl` 实测
+`{tool:12, prompt:12, middleware:12}`）。
+
+- 修法：抽出 `kind_for(round_no, candidate_index) = KINDS[(round_no * 3 + candidate_index) % 6]`。
+- 反证：`evoagent/tests/test_campaign_proposer_kind_rotation.py::test_old_rotation_formula_would_fail_this_assertion`
+  把旧公式算出来断言它只有 3 类（本组断言能红）。
+- 重跑：`trust-probe-04b-attribution-kinds`，`kind_counts = {tool:6, prompt:6, middleware:6,
+  memory:6, workflow:6, subagent:6}`，`regression_attribution = attributed 26 / none 10 / shared 0`。
+- **旧 `trust-probe-04-attribution/` 保留不动**（留档），其结论只可用于「归因字段能落盘」，
+  不可用于 kind 级判断。

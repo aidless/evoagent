@@ -1,0 +1,8 @@
+{
+  "trim_whitespace": false,
+  "collapse_spaces": false,
+  "strip_punct": false,
+  "normalize_case": false,
+  "dedupe_words": false,
+  "reverse_words": false
+}

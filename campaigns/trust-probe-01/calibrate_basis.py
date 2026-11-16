@@ -27,7 +27,9 @@ v1（`calibrate.py`）把 `changed_vs_baseline`（与基线 **RBR=0.30** 的差�
 """
 from __future__ import annotations
 
+import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -54,6 +56,30 @@ GRID = {
     "REGRESSION_TRUST_CEIL": [0.0, 0.03, 0.045, 0.05, 0.1, 0.3, 0.5, 1.0],
 }
 BASES = ("edit", "candidate")
+
+
+def min_edits_grid(rows) -> list[int]:
+    """MIN_EDITS 网格必须**跨过每类样本量本身**，否则扫描报假「无判别力」。
+
+    历史：v1/v2 每类 32 笔而网格止于 20；v3 合并到 168 行（每类 50 笔）时网格
+    又只铺到 50，于是全格点都在样本量之下、`distinct=1`。判据是「网格里要有
+    跨过边界的两点」，所以把 `n_max` 与 `n_max+1` 都铺进去。
+    """
+    base = list(GRID["MIN_EDITS"])
+    counts: dict[str, int] = {}
+    for row in rows:
+        if not row.get("valid", True):
+            continue
+        for edit in row.get("edits") or ():
+            if isinstance(edit, dict):
+                kind = str(edit.get("kind") or "unknown")
+                counts[kind] = counts.get(kind, 0) + 1
+    if counts:
+        # 真正决定判据的是**最大单类笔数**：MIN_EDITS 超过它，该 kind 一律
+        # 落到 insufficient/n_edits 门槛判定，边界就在这个数上
+        n_max = max(counts.values())
+        base += [n_max, n_max + 1]
+    return sorted({int(v) for v in base})
 
 
 def _levels(rows, basis):
@@ -95,19 +121,44 @@ def sweep_threshold(name, grid, rows, basis):
     }
 
 
-def main() -> None:
-    ledgers = [p for p in LEDGERS if p.exists()]
+def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="P4 阈值判别力扫描 v2（稠密网格 + regression_basis 双口径）")
+    parser.add_argument("--ledgers", nargs="+", default=None,
+                        help="要合并的账本路径（默认 probe-01/02/03 三份）")
+    parser.add_argument("--out", default=None,
+                        help="产物路径（默认本目录 calibration_basis.json）")
+    return parser.parse_args(argv)
+
+
+def main(argv: list[str] | None = None) -> None:
+    args = _parse_args(argv)
+    if args.ledgers:
+        ledgers = [Path(p) for p in args.ledgers]
+    else:
+        ledgers = list(LEDGERS)
+    missing = [p for p in ledgers if not p.exists()]
+    if missing:
+        # 缺账本必须 fail-loud：静默跳过会写出「小样本 → 无判别力」的假结论
+        raise SystemExit("no ledgers found: " + ", ".join(str(p) for p in missing))
     if not ledgers:
         raise SystemExit("no ledgers found")
+
     rows = []
     for p in ledgers:
         rows += trust.load_verdicts(p)
     if not rows:
         raise SystemExit("ledgers empty")
 
+    out_path = Path(args.out) if args.out else (ROOT / "calibration_basis.json")
+    rel = []
+    for p in ledgers:
+        # 锚定到工作区根的**相对**路径：绝对路径会让 publish gate（禁止 /home、
+        # /data1 等个人绝对路径）拒绝整份产物，也让人无法判断账本到底在哪
+        rel.append(os.path.relpath(p.resolve(), ROOT.parents[2].resolve()))
+
     print(f"# ledgers: {len(ledgers)}  rows: {len(rows)}\n")
-    out = {"ledgers": [str(p.relative_to(ROOT.parents[2])) for p in ledgers],
-           "rows": len(rows), "sweeps": {}}
+    out = {"ledgers": rel, "rows": len(rows), "sweeps": {}}
 
     for basis in BASES:
         base_verdict, base_levels = _levels(rows, basis)
@@ -116,6 +167,8 @@ def main() -> None:
               + " ".join(f"{k}={v}" for k, v in base_levels))
         block = {}
         for name, grid in GRID.items():
+            if name == "MIN_EDITS":
+                grid = min_edits_grid(rows)
             res = sweep_threshold(name, grid, rows, basis)
             block[name] = res
             mark = "YES" if res["discriminating"] else "NO "
@@ -129,10 +182,11 @@ def main() -> None:
                                 "thresholds": block}
         print()
 
-    (ROOT / "calibration_basis.json").write_text(
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(
         json.dumps(out, ensure_ascii=False, indent=2, sort_keys=False) + "\n",
         encoding="utf-8")
-    print("wrote calibration_basis.json")
+    print(f"wrote {out_path.name}")
 
 
 if __name__ == "__main__":

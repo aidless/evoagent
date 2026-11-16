@@ -1,0 +1,130 @@
+{
+  "basis": "edit",
+  "min_edits": 5,
+  "summary": {
+    "tool": {
+      "levels": [
+        "L1"
+      ],
+      "counts": {
+        "L1": 5
+      },
+      "status": "STABLE",
+      "n_runs": 5
+    },
+    "prompt": {
+      "levels": [
+        "L2",
+        "L3"
+      ],
+      "counts": {
+        "L2": 1,
+        "L3": 4
+      },
+      "status": "UNSTABLE",
+      "n_runs": 5
+    },
+    "middleware": {
+      "levels": [
+        "L3"
+      ],
+      "counts": {
+        "L3": 5
+      },
+      "status": "STABLE",
+      "n_runs": 5
+    },
+    "memory": {
+      "levels": [
+        "L3"
+      ],
+      "counts": {
+        "L3": 5
+      },
+      "status": "STABLE",
+      "n_runs": 5
+    },
+    "workflow": {
+      "levels": [
+        "L3"
+      ],
+      "counts": {
+        "L3": 5
+      },
+      "status": "STABLE",
+      "n_runs": 5
+    },
+    "subagent": {
+      "levels": [
+        "L3"
+      ],
+      "counts": {
+        "L3": 5
+      },
+      "status": "STABLE",
+      "n_runs": 5
+    }
+  },
+  "runs": {
+    "trust-probe-01": {
+      "rows": 30,
+      "overall": "BLOCK",
+      "levels": {
+        "tool": "L1",
+        "prompt": "L2",
+        "middleware": "L3",
+        "memory": "L3",
+        "workflow": "L3",
+        "subagent": "L3"
+      }
+    },
+    "trust-probe-01-rerun-c4badd0": {
+      "rows": 36,
+      "overall": "BLOCK",
+      "levels": {
+        "tool": "L1",
+        "prompt": "L3",
+        "middleware": "L3",
+        "memory": "L3",
+        "workflow": "L3",
+        "subagent": "L3"
+      }
+    },
+    "trust-probe-05-single-endpoint": {
+      "rows": 30,
+      "overall": "BLOCK",
+      "levels": {
+        "tool": "L1",
+        "prompt": "L3",
+        "middleware": "L3",
+        "memory": "L3",
+        "workflow": "L3",
+        "subagent": "L3"
+      }
+    },
+    "trust-probe-05b-single-endpoint": {
+      "rows": 33,
+      "overall": "BLOCK",
+      "levels": {
+        "tool": "L1",
+        "prompt": "L3",
+        "middleware": "L3",
+        "memory": "L3",
+        "workflow": "L3",
+        "subagent": "L3"
+      }
+    },
+    "trust-probe-05c-single-endpoint": {
+      "rows": 33,
+      "overall": "BLOCK",
+      "levels": {
+        "tool": "L1",
+        "prompt": "L3",
+        "middleware": "L3",
+        "memory": "L3",
+        "workflow": "L3",
+        "subagent": "L3"
+      }
+    }
+  }
+}

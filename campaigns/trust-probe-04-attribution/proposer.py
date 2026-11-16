@@ -45,6 +45,18 @@ def _log(message: str) -> None:
     print(f"[proposer] {message}", file=sys.stderr, flush=True)
 
 
+def kind_for(round_no: int, candidate_index: int) -> str:
+    """kind 轮转：保证 12 轮 × 3 候选完整覆盖 6 类、每类 6 笔。
+
+    曾经写成 `KINDS[(round_no * 6 + candidate_index) % len(KINDS)]` —— 因为
+    `round_no * 6` 恒被 6 整除，它退化成 `KINDS[candidate_index % 6]`，而这里
+    candidate_index 只取 0/1/2，于是 36 笔只落到 tool/prompt/middleware 三类
+    （2026-11-16 实测 verdicts.jsonl kind 计数 {tool:12, prompt:12, middleware:12}）。
+    正确步长是 3（每轮推进 3 个 kind），见 tests/test_campaign_proposer_kind_rotation.py。
+    """
+    return KINDS[(round_no * 3 + candidate_index) % len(KINDS)]
+
+
 def _emit(proposals: list) -> None:
     print(json.dumps(proposals, ensure_ascii=False))
     sys.exit(0)
@@ -164,7 +176,7 @@ def _sanitize(raw: list, case_ids: set[str], round_no: int) -> list[dict]:
                 continue
             if not fix and not regression:
                 continue
-            kind = KINDS[(round_no * 6 + j) % len(KINDS)]
+            kind = kind_for(round_no, j)
             edits.append({
                 "edit_id": f"r{round_no:02d}c{j}e0",
                 "kind": kind,

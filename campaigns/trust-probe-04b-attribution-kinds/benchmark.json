@@ -1,0 +1,16 @@
+{
+  "cases": [
+    {"id": "c01", "input": "hello", "expected": "hello"},
+    {"id": "c02", "input": "alpha", "expected": "alpha"},
+    {"id": "c03", "input": "beta", "expected": "beta"},
+    {"id": "c04", "input": "gamma", "expected": "gamma"},
+    {"id": "c05", "input": "AB", "expected": "AB"},
+    {"id": "c06", "input": "x.y", "expected": "x.y"},
+    {"id": "c07", "input": "a  b", "expected": "a  b"},
+    {"id": "c08", "input": "one one", "expected": "one one"},
+    {"id": "c09", "input": "  world  ", "expected": "world"},
+    {"id": "c10", "input": "HeLLo", "expected": "hello"},
+    {"id": "c11", "input": "wow!!!", "expected": "wow"},
+    {"id": "c12", "input": "beta alpha", "expected": "alpha beta"}
+  ]
+}
