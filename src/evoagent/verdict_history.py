@@ -38,7 +38,7 @@ def append_verdicts(state_dir: Path, run_id: str,
                 continue
             edits = []
             for edit_id, edit in (verdict.get("edits") or {}).items():
-                edits.append({
+                row_edit = {
                     "edit_id": edit.get("edit_id", edit_id),
                     "kind": edit.get("kind", ""),
                     "files": list(edit.get("files") or ()),
@@ -47,7 +47,14 @@ def append_verdicts(state_dir: Path, run_id: str,
                     "prediction_precision": edit.get("prediction_precision"),
                     "predicted_fix": list(edit.get("predicted_fix") or ()),
                     "predicted_regression": list(edit.get("predicted_regression") or ()),
-                })
+                }
+                # 归因细节（reconcile 可选输出）：兼容旧账本，缺失则不写伪值
+                for key in ("attributed_regressions", "shared_unanticipated_regressions",
+                            "regression_attribution", "unanticipated_regressions",
+                            "anticipated_regressions"):
+                    if key in edit:
+                        row_edit[key] = edit.get(key)
+                edits.append(row_edit)
             campaign = verdict.get("campaign") or {}
             row = {
                 "run_id": run_id,

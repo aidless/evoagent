@@ -77,11 +77,21 @@ class AppendReadTests(unittest.TestCase):
                     "e1": {"edit_id": "e1", "kind": "tool", "files": ["a.py"],
                            "verdict": "regression", "hits": [],
                            "prediction_precision": 1.0,
-                           "predicted_fix": ["t1"], "predicted_regression": []},
+                           "predicted_fix": ["t1"], "predicted_regression": [],
+                           "regression_attribution": "attributed",
+                           "attributed_regressions": ["t9"],
+                           "shared_unanticipated_regressions": [],
+                           "unanticipated_regressions": ["t9"],
+                           "anticipated_regressions": []},
                     "e2": {"edit_id": "e2", "kind": "prompt", "files": ["b.md"],
                            "verdict": "effective_fix", "hits": ["t2"],
                            "prediction_precision": 1.0,
-                           "predicted_fix": ["t2"], "predicted_regression": []},
+                           "predicted_fix": ["t2"], "predicted_regression": [],
+                           "regression_attribution": "none",
+                           "attributed_regressions": [],
+                           "shared_unanticipated_regressions": [],
+                           "unanticipated_regressions": ["t9"],
+                           "anticipated_regressions": []},
                 },
                 "campaign": {"prediction_precision": 1.0, "predicted_total": 2, "hit_total": 2,
                              "candidate_regression_rate": 1.0, "edit_regression_rate": 0.5},
@@ -91,6 +101,13 @@ class AppendReadTests(unittest.TestCase):
         row = read_verdicts(self.root)[0]
         self.assertAlmostEqual(row["candidate_regression_rate"], 1.0)
         self.assertAlmostEqual(row["edit_regression_rate"], 0.5)
+        e1 = next(e for e in row["edits"] if e["edit_id"] == "e1")
+        e2 = next(e for e in row["edits"] if e["edit_id"] == "e2")
+        self.assertEqual(e1["regression_attribution"], "attributed")
+        self.assertEqual(e1["attributed_regressions"], ["t9"])
+        self.assertEqual(e1["shared_unanticipated_regressions"], [])
+        self.assertEqual(e2["regression_attribution"], "none")
+
 
     def test_malformed_recorded_as_invalid(self):
         # GREEN：fail-closed 的畸形 manifest 也要留痕（P4 要能看见被拦的次数）
