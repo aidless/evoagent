@@ -93,3 +93,67 @@ RED 用的是合成夹具。它属于"读 schema 发现的潜在缺陷"，不是
 合成 bench（12 条字符串规范化用例）、单模型（`workbuddy/deepseek-v4.1-flash`）、
 单温度（0.7）、10 轮、2 轮失败未补。**这是机制 probe，不是科学结论**，
 不得被引用为"P4 阈值已经过真实数据验证"，也不得据此改动任何论文数字。
+
+## 8. v2：按口径重扫 + 稠密网格（2026-11-16）
+
+### 8.1 v1 仪器的两处缺陷（先修尺再读数）
+
+| 缺陷 | v1 实际做法 | 后果 | v2 修法 |
+| --- | --- | --- | --- |
+| 「翻转」定义错 | `changed_vs_baseline`：与基线 `RBR=0.30` 不同就记翻转 | 把「与基线不同」和「跨过数据边界」混为一谈；稀疏网格 `[0,0.1,0.3,0.5,0.9,1.0]` 恰好跳过 0.045 边界，于是 0.1/0.3/0.5 被误判成不可分辨区间 | 按**相邻格点**是否改变 level 向量定边界，稠密网格定位真实边界位置 |
+| MIN_EDITS 网格未过样本量 | 最大只扫到 20，而每类实测 32 笔 | 全格点都在样本量之下 → 机械地显示 0 判别力 | 网格扩到 1–50，跨过 32→33 的功效边界 |
+
+这些是 v1 扫描脚本/网格的仪器缺陷，不是账本缺陷；修正后 v1 第 3 节「NO_DISCRIMINATION」结论**不再成立**。
+
+### 8.2 数据与口径
+
+- 账本：`trust-probe-01` + `trust-probe-02-rerun-qwenflash` + `trust-probe-03-rerun-temp05`，合计 96 行 / 192 笔有效编辑，每类 32 笔。
+- `candidate_regression_rate` 覆盖：probe-01 为 30 行 **0** 覆盖（旧账本）、probe-02/03 各 33 行全覆盖；合计 66/96 行有候选级率。
+- 两种回归率口径（`eval_meta.trust.score_kind(..., regression_basis=...)`）：
+  - `edit`：`该类 verdict==regression 的编辑数 / 该类编辑数`（旧口径，受 shared blame 压平）。
+  - `candidate`：含该类编辑的行上 `candidate_regression_rate` 的均值；缺该键的行**不计入分母**并打 `candidate_rate_missing`（兼容旧账本，不静默改口径）。
+
+实测 per-kind 读数（合并 96 行）：
+
+| kind | edit_rate | cand_mean（有率 22 行） | p(mean) | L(edit/cand) |
+| --- | --- | --- | --- | --- |
+| memory | 1.0000 | 1.0000 | 0.250 | L3/L3 |
+| middleware | 0.9688 | 1.0000 | 0.604 | L3/L3 |
+| prompt | 0.0625 | 0.0455 | 0.063 | L3/L3 |
+| subagent | 1.0000 | 1.0000 | 0.328 | L3/L3 |
+| tool | 0.0312 | 0.0455 | 0.891 | L1/L1 |
+| workflow | 1.0000 | 1.0000 | 0.776 | L3/L3 |
+
+在当前 66 行有候选级率的子集上，`candidate_regression_rate` 取值仅 {0.0, 1.0}（每行/每候选仍是二值）；`edit_regression_rate` 出现了 0.5（2 行混合 verdict），但 `trust.score_kind` 的阈值门控消费的是回归率均值而非混合度。
+
+### 8.3 稠密网格扫描结果（脚本 `calibrate_basis.py`，产物 `calibration_basis.json`）
+
+| 阈值 | 原值 | edit 口径：边界 / distinct | candidate 口径：边界 / distinct | 原值所处区间 |
+| --- | --- | --- | --- | --- |
+| `MIN_EDITS` | 5 | [33] / 2 | [33] / 2 | (None, 33) |
+| `REGRESSION_BLOCK_RATE` | 0.30 | [0.045, 0.999, 1.0] / 4 | [0.05, 1.0] / 3 | (0.045, 0.999) / (0.05, 1.0) |
+| `PRECISION_TRUST_FLOOR` | 0.50 | [0.9] / 2 | [0.9] / 2 | (None, 0.9) |
+| `PRECISION_BLIND_FLOOR` | 0.20 | [0.1] / 2 | [0.1] / 2 | (0.1, None) |
+| `REGRESSION_TRUST_CEIL` | 0.10 | [0.045] / 2 | [0.045] / 2 | (0.045, None) |
+
+逐 campaign 的 RBR 扫描补充：probe-02 在 candidate 口径下出现 `RBR=0.1` 处的额外翻转（tool 从 L3 升 L1，distinct=3）而 edit 口径在该点无翻转（distinct=2），说明**候选级口径在单次复跑上能揭示被 shared blame 掩盖的分级变化**；合并三份账本后该差异被 1.0 类主导而收敛。
+
+### 8.4 结论（可复算、可引用的部分）
+
+1. **五个阈值在稠密网格上均有判别力**（distinct≥2）：v1 的「RBR/PRECISION_BLIND_FLOOR 无判别力」被证伪，成因是稀疏网格+翻转定义错，不是阈值本身退化。
+2. **`REGRESSION_BLOCK_RATE=0.30` 仍可保留**：在 edit/candidate 两种口径下都落在宽稳定区间内部（到下边界余量 ≥0.25，到上边界余量 ≥0.7），并非贴边过拟合。
+3. **candidate 口径是有意义的独立读数**，但在当前数据上**未翻转任何阈值的原值结论**：它改变了边界结构（尤其 probe-02 单跑），而非改变 `0.30` 这个默认值的可接受性。
+4. **真正限制判别力的仍是数据形态**：66 行有候选级率的记录里 `candidate_regression_rate` 只取 0/1，`edit_regression_rate` 仅 2 行出现 0.5，且账本无 per-edit 归因字段（`regression_attribution` 全为 None）。要让 candidate 口径发挥完整判别力，需要把 `reconcile()` 的 per-edit 归因结果真正落入 ledger 行（`verdict_history` 已支持透传，但现有三份账本产于该修复之前且该 bench 的开关作用为全局态、难产生可分离归因）。
+
+### 8.5 决定
+
+- **五条阈值继续保持不变**（`MIN_EDITS=5, REGRESSION_BLOCK_RATE=0.30, PRECISION_TRUST_FLOOR=0.50, PRECISION_BLIND_FLOOR=0.20, REGRESSION_TRUST_CEIL=0.10`）。v2 提供的是「原值落在稳定区间内」的证据，而非「应调参」的证据。
+- `eval_meta.trust` 新增 `regression_basis ∈ {edit,candidate}` 参数与 `--regression-basis` CLI，默认仍为 `edit` 以保持旧行为/旧账本兼容；candidate 口径作为可选对照读数保留。
+- v1 第 3 节「NO_DISCRIMINATION」与第 4 节「不可辨识」的表述以本节为准（已被 v2 仪器修正推翻）。
+
+## 9. 仍未关闭的缺口（诚实边界）
+
+- 无 per-edit 归因落盘：三份真账本 `regression_attribution` 全空、`candidate_regression_rate` 仅二值 → candidate 口径的"候选内细粒度"优势尚未在数据上兑现。
+- probe-01 缺候选级率（30 行）：candidate 口径在合并分析中对这 30 行退化为 edit 口径并标记 `candidate_rate_missing`。
+- 单 bench（12 例字符串规范化）、kind 由脚本确定性轮转而非 LLM 真实选择、6 类均为 32 笔；`tool` 稳定 L1 而其余五类高回归率的格局可能反映 bench/开关设计而非通用 kind 性质。
+- **仍是机制 probe，不是科学结论**；不得据此改动论文数字。
