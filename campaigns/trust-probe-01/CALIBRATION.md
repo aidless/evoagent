@@ -1,5 +1,9 @@
 # P4 阈值校准记录（trust-probe-01）
 
+> **现行结论（v2）**：见下方 [§8 候选级视角](#8-候选级视角calibration_basispy--regression_basis) 与 [§9 稠密网格重扫（v2，当前结论）](#9-稠密网格重扫v2当前结论)。v2 合并 96 行/192 编辑（probe-01/02/03）、按**相邻格点**稠密扫描并引入 `regression_basis={edit,candidate}`：五阈值均有判别力，`REGRESSION_BLOCK_RATE=0.30` 落宽稳定区间（edit (0.045,0.999)/cand (0.05,1.0)）→ **原五阈值保持不变**。  
+> **§3/§4 保留为 v1 留档**：其“`NO_DISCRIMINATION`/翻转定义错+网格稀疏跳过 0.045”已被 v2 仪器修正推翻；保留用于对照，不作为现行判据。产物：[`calibration_basis.json`](calibration_basis.json)、[`calibrate_basis.py`](calibrate_basis.py)。
+
+
 预注册见 [PREREG.md](PREREG.md)。本文件只记录**可复算**的读数与决定；
 扫描脚本 [calibrate.py](calibrate.py)，原始输出 [calibration_sweep.json](calibration_sweep.json)。
 

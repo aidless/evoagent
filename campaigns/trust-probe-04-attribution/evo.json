@@ -1,0 +1,12 @@
+{
+  "benchmark": "benchmark.json",
+  "evaluator_command": "{python} evaluator.py",
+  "proposer_command": "{python} proposer.py",
+  "timeout_seconds": 90,
+  "min_gain": 2.0,
+  "max_candidate_bytes": 65536,
+  "forbidden_tokens": ["rm -rf", "format c:", "shutdown /s"],
+  "statistical_gate": {"enabled": false},
+  "mutations": [],
+  "autonomy": {"max_rounds": 1}
+}

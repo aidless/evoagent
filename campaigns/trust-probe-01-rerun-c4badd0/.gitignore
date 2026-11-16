@@ -1,0 +1,4 @@
+*.stderr.txt
+*.stdout.txt
+__pycache__/
+.evo/
