@@ -29,10 +29,8 @@ jobs:
           PY
       - name: Compile source tree
         run: python -m compileall -q src
-      - name: Run self-evolution test suite
-        env:
-          PYTHONPATH: src
-        run: python -m unittest discover -s tests
+      - name: Run self-evolution tests and recompute the toy trace
+        run: make check
       - name: Verify signed active bundle and current file integrity
         # `.evo/` holds local evolution state, private evidence and the signing
         # key material, so it is gitignored by design (.gitignore:2) and is never

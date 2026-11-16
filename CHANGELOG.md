@@ -6,6 +6,9 @@ All notable changes to this repository are documented here. The format follows
 
 ## [Unreleased]
 
+- `make check` reruns the unittest suite and a toy 4-case evolve trace
+  (promote, reject, rollback) committed in `evidence/toy-trace.json`.
+  README states what that trace proves. Package version stays 0.1.0.
 - Governance baseline: LICENSE, security policy, code of conduct, contributor and
   support guides, issue and pull-request templates, CODEOWNERS, dependabot, and
   `.editorconfig` added. No research content changed.

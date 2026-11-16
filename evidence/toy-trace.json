@@ -1,0 +1,296 @@
+{
+  "benchmark": "examples/benchmark.json",
+  "cases": 4,
+  "consistency": {
+    "ci_badge_image": "https://github.com/aidless/evoagent/actions/workflows/audit.yml/badge.svg",
+    "ci_badge_target": "https://github.com/aidless/evoagent/actions/workflows/audit.yml",
+    "package_version": "0.1.0",
+    "pyproject_version_matches": true,
+    "readme_contains_windows_drive_path": false
+  },
+  "omitted_because_not_stable": [
+    "duration_s",
+    "latency_increase",
+    "latency_s",
+    "run_id"
+  ],
+  "package_version": "0.1.0",
+  "plateau_claim": {
+    "claimed_active_id": "f8a196f466db",
+    "claimed_in": "research/findings.md",
+    "claimed_rounds": 10,
+    "followup_round_promoted": false,
+    "id_equals_solved_toy_policy": true,
+    "json_files_with_that_id_excluding_this_trace": []
+  },
+  "proves": "safety gate, min_gain compare, atomic promote, and rollback on a 4-case toy",
+  "reasons_omit": [
+    "latency_regression"
+  ],
+  "schema": "toy-trace-v1",
+  "states": [
+    {
+      "active_id": "1edc29a02951",
+      "active_score": 0.25,
+      "baseline": {
+        "failures": [
+          "case",
+          "space",
+          "both"
+        ],
+        "passed": 1,
+        "score": 0.25,
+        "total": 4
+      },
+      "bootstrap_ci": [
+        0.25,
+        1.0
+      ],
+      "candidates": [
+        {
+          "evaluation": {
+            "failures": [
+              "space",
+              "both"
+            ],
+            "passed": 2,
+            "score": 0.5,
+            "total": 4
+          },
+          "id": "bd224c21c630",
+          "reason": "ok",
+          "safe": true
+        },
+        {
+          "evaluation": {
+            "failures": [
+              "case",
+              "both"
+            ],
+            "passed": 2,
+            "score": 0.5,
+            "total": 4
+          },
+          "id": "a1714bc1fdc7",
+          "reason": "ok",
+          "safe": true
+        },
+        {
+          "evaluation": {
+            "failures": [],
+            "passed": 4,
+            "score": 1.0,
+            "total": 4
+          },
+          "id": "f8a196f466db",
+          "reason": "ok",
+          "safe": true
+        }
+      ],
+      "intelligence": {
+        "mentions_private_gsm8k_file": true,
+        "reason_class": "FileNotFoundError",
+        "verified": false
+      },
+      "legacy_promoted": true,
+      "mcnemar_p_value": 0.25,
+      "mean_gain": 0.75,
+      "name": "shipped_config_rejects_score_gain",
+      "promoted": false,
+      "statistical_reasons": [
+        "mcnemar_not_significant"
+      ]
+    },
+    {
+      "active_id": "f8a196f466db",
+      "active_score": 1.0,
+      "authored_mutation_count": 3,
+      "baseline": {
+        "failures": [
+          "case",
+          "space",
+          "both"
+        ],
+        "passed": 1,
+        "score": 0.25,
+        "total": 4
+      },
+      "candidates": [
+        {
+          "evaluation": {
+            "failures": [
+              "space",
+              "both"
+            ],
+            "passed": 2,
+            "score": 0.5,
+            "total": 4
+          },
+          "id": "bd224c21c630",
+          "reason": "ok",
+          "safe": true
+        },
+        {
+          "evaluation": {
+            "failures": [
+              "case",
+              "both"
+            ],
+            "passed": 2,
+            "score": 0.5,
+            "total": 4
+          },
+          "id": "a1714bc1fdc7",
+          "reason": "ok",
+          "safe": true
+        },
+        {
+          "evaluation": {
+            "failures": [],
+            "passed": 4,
+            "score": 1.0,
+            "total": 4
+          },
+          "id": "f8a196f466db",
+          "reason": "ok",
+          "safe": true
+        }
+      ],
+      "legacy_promoted": true,
+      "name": "legacy_gate_promotes_authored_solution",
+      "promoted": true,
+      "promoted_candidate_equals_authored_mutation": true,
+      "statistical_reasons": null
+    },
+    {
+      "active_id": "f8a196f466db",
+      "active_score": 1.0,
+      "baseline": {
+        "failures": [],
+        "passed": 4,
+        "score": 1.0,
+        "total": 4
+      },
+      "candidates": [
+        {
+          "evaluation": {
+            "failures": [],
+            "passed": 4,
+            "score": 1.0,
+            "total": 4
+          },
+          "id": "f8a196f466db",
+          "reason": "ok",
+          "safe": true
+        },
+        {
+          "evaluation": {
+            "failures": [],
+            "passed": 4,
+            "score": 1.0,
+            "total": 4
+          },
+          "id": "f8a196f466db",
+          "reason": "ok",
+          "safe": true
+        },
+        {
+          "evaluation": {
+            "failures": [],
+            "passed": 4,
+            "score": 1.0,
+            "total": 4
+          },
+          "id": "f8a196f466db",
+          "reason": "ok",
+          "safe": true
+        }
+      ],
+      "legacy_promoted": false,
+      "name": "followup_round_no_gain",
+      "promoted": false,
+      "statistical_reasons": null,
+      "unique_candidate_ids": [
+        "f8a196f466db"
+      ]
+    },
+    {
+      "active_id": "bd224c21c630",
+      "active_score": 0.5,
+      "baseline": {
+        "failures": [
+          "case",
+          "space",
+          "both"
+        ],
+        "passed": 1,
+        "score": 0.25,
+        "total": 4
+      },
+      "candidates": [
+        {
+          "evaluation": {
+            "failures": [
+              "space",
+              "both"
+            ],
+            "passed": 2,
+            "score": 0.5,
+            "total": 4
+          },
+          "id": "bd224c21c630",
+          "reason": "ok",
+          "safe": true
+        }
+      ],
+      "legacy_promoted": true,
+      "min_gain": 0.01,
+      "name": "legacy_gate_promotes_one_case_gain",
+      "promoted": true,
+      "statistical_reasons": null
+    },
+    {
+      "candidate": {
+        "instruction": "please shutdown /s"
+      },
+      "name": "forbidden_token_caught",
+      "reason": "forbidden_token:shutdown /s",
+      "safe": false
+    },
+    {
+      "candidate": {
+        "cmd": "shutdown",
+        "flag": "/s"
+      },
+      "name": "forbidden_token_bypass_split_fields",
+      "reason": "ok",
+      "safe": true
+    },
+    {
+      "candidate": {
+        "note": "shutdown  /s"
+      },
+      "name": "forbidden_token_bypass_double_space",
+      "reason": "ok",
+      "safe": true
+    },
+    {
+      "active_equals_seed": true,
+      "name": "rollback_restores_seed",
+      "snapshots_after": 0,
+      "snapshots_before": 1
+    },
+    {
+      "active_equals_tampered_json": true,
+      "name": "rollback_installs_tampered_snapshot",
+      "restored_id": "ef4f2310b1a4"
+    },
+    {
+      "active_text": "{not json",
+      "error": "JSONDecodeError",
+      "history_files_remaining": 0,
+      "name": "rollback_corrupt_snapshot_drops_history"
+    }
+  ],
+  "what_this_does_not_prove": "real agent improvement, a 10-round plateau, or any private benchmark score"
+}

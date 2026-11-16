@@ -1,4 +1,6 @@
-﻿# P0 安全内核、持久运行时与 24 小时 Soak Test 报告
+﻿> **Author-machine note, not a `make check` result.** Paths in this file, including `E:\self-evolving-agent`, are the 2026-07-26 workstation layout, not setup instructions. The cycle counts below are not recomputed from a fresh clone. The recomputable demo is `evidence/toy-trace.json`.
+
+# P0 安全内核、持久运行时与 24 小时 Soak Test 报告
 
 - 文档版本：v1.0
 - 日期：2026-07-26

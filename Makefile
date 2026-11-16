@@ -11,7 +11,14 @@
 # 证据：把同一份树 rsync 到无冒号路径后 `python3 -m unittest discover -s tests` 是
 # `Ran 280 tests / OK (skipped=10)` rc=0。故 eval 显式 deselect 这 3 条并写明原因，
 # 其余 268 条真跑真断言；完整 CI 命令保留为 ci-eval:（本机预期红：路径含 ':')。
-.PHONY: eval ci-eval
+.PHONY: check eval ci-eval
+
+# Offline once deps are installed: unittest suite plus the toy evolve trace.
+# The trace script sets PYTHONPATH to this repo's src and does not read
+# benchmarks/raw/ or call a model. Wall-clock fields are not compared.
+check:
+	PYTHONPATH=src python3 -m unittest discover -s tests
+	python3 scripts/toy_trace.py --check evidence/toy-trace.json
 
 EVO_DESELECT = \
 	--deselect tests/test_bundle_signer.py::BundleSignerCLITests::test_request_payload_matches_canonical \
