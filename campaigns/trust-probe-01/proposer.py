@@ -22,7 +22,7 @@ from pathlib import Path
 GATEWAY = os.environ.get("MAGPIE_URL", "http://127.0.0.1:3425/v1/chat/completions")
 MODEL = os.environ.get("MAGPIE_MODEL", "workbuddy/deepseek-v4.1-flash")
 TIMEOUT = float(os.environ.get("MAGPIE_TIMEOUT", "60"))
-TEMPERATURE = 0.7
+TEMPERATURE = float(os.environ.get("MAGPIE_TEMPERATURE", "0.7"))
 MAX_TOKENS = 2400
 
 KINDS = ("tool", "prompt", "middleware", "memory", "workflow", "subagent")

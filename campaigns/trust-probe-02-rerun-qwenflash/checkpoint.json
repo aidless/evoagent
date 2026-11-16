@@ -1,0 +1,104 @@
+{
+  "completed_rounds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    10,
+    11
+  ],
+  "failed_rounds": [
+    9
+  ],
+  "rounds": [
+    {
+      "round": 0,
+      "run_id": "20261116-035749",
+      "candidates": 3,
+      "promoted": false,
+      "duration_s": 31.9
+    },
+    {
+      "round": 1,
+      "run_id": "20261116-035808",
+      "candidates": 3,
+      "promoted": false,
+      "duration_s": 17.11
+    },
+    {
+      "round": 2,
+      "run_id": "20261116-035826",
+      "candidates": 3,
+      "promoted": false,
+      "duration_s": 17.32
+    },
+    {
+      "round": 3,
+      "run_id": "20261116-035842",
+      "candidates": 3,
+      "promoted": false,
+      "duration_s": 14.51
+    },
+    {
+      "round": 4,
+      "run_id": "20261116-035903",
+      "candidates": 3,
+      "promoted": false,
+      "duration_s": 20.14
+    },
+    {
+      "round": 5,
+      "run_id": "20261116-035922",
+      "candidates": 3,
+      "promoted": false,
+      "duration_s": 18.49
+    },
+    {
+      "round": 6,
+      "run_id": "20261116-035937",
+      "candidates": 3,
+      "promoted": false,
+      "duration_s": 14.11
+    },
+    {
+      "round": 7,
+      "run_id": "20261116-040001",
+      "candidates": 3,
+      "promoted": false,
+      "duration_s": 22.44
+    },
+    {
+      "round": 8,
+      "run_id": "20261116-040022",
+      "candidates": 3,
+      "promoted": false,
+      "duration_s": 20.01
+    },
+    {
+      "round": 9,
+      "run_id": "20261116-040041",
+      "candidates": 0,
+      "promoted": false,
+      "duration_s": 17.69
+    },
+    {
+      "round": 10,
+      "run_id": "20261116-040057",
+      "candidates": 3,
+      "promoted": false,
+      "duration_s": 15.7
+    },
+    {
+      "round": 11,
+      "run_id": "20261116-040119",
+      "candidates": 3,
+      "promoted": false,
+      "duration_s": 20.48
+    }
+  ]
+}
