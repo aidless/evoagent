@@ -56,6 +56,17 @@ def append_verdicts(state_dir: Path, run_id: str,
                         row_edit[key] = edit.get(key)
                 edits.append(row_edit)
             campaign = verdict.get("campaign") or {}
+            # core.evaluate 已把每例 cost/latency_s 实测进 outcomes；这里只做汇总落盘。
+            # 不改判据、不动阈值：这些字段供下游成本层分析按需消费，缺失写 None（旧账本兼容）。
+            evaluation = record.get("evaluation")
+            if evaluation is None:
+                eval_cost = eval_latency = eval_duration = eval_cases = None
+            else:
+                outcomes = evaluation.get("outcomes") or ()
+                eval_cost = round(sum(float(o.get("cost", 0.0)) for o in outcomes), 6)
+                eval_latency = round(sum(float(o.get("latency_s", 0.0)) for o in outcomes), 6)
+                eval_duration = evaluation.get("duration_s")
+                eval_cases = len(outcomes)
             row = {
                 "run_id": run_id,
                 "candidate_id": record.get("id", ""),
@@ -67,6 +78,10 @@ def append_verdicts(state_dir: Path, run_id: str,
                 "hit_total": campaign.get("hit_total", campaign.get("total_hit", 0)),
                 "candidate_regression_rate": campaign.get("candidate_regression_rate"),
                 "edit_regression_rate": campaign.get("edit_regression_rate"),
+                "evaluation_cost": eval_cost,
+                "evaluation_latency_s": eval_latency,
+                "evaluation_duration_s": eval_duration,
+                "evaluation_case_count": eval_cases,
                 "edits": edits,
             }
             fh.write(json.dumps(row, ensure_ascii=False) + "\n")

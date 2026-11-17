@@ -109,6 +109,42 @@ class AppendReadTests(unittest.TestCase):
         self.assertEqual(e2["regression_attribution"], "none")
 
 
+    def test_eval_cost_latency_persisted(self):
+        # GREEN：core.py 实测的每例 cost/latency 汇总落盘，供成本层分析消费
+        record = {
+            "id": "cand-cost", "safe": True,
+            "evaluation": {
+                "score": 1.0, "passed": 2, "total": 2, "failures": [], "duration_s": 0.42,
+                "outcomes": [
+                    {"task_id": "t1", "passed": True, "score": 1.0, "cost": 0.10, "latency_s": 0.11},
+                    {"task_id": "t2", "passed": True, "score": 1.0, "cost": 0.20, "latency_s": 0.21},
+                ],
+            },
+            "change_verdict": {
+                "valid": True,
+                "edits": {"e1": {"edit_id": "e1", "kind": "tool", "files": ["a.py"],
+                                 "verdict": "effective_fix", "hits": ["t1"],
+                                 "prediction_precision": 1.0,
+                                 "predicted_fix": ["t1"], "predicted_regression": []}},
+                "campaign": {"prediction_precision": 1.0, "predicted_total": 1, "hit_total": 1},
+            },
+        }
+        append_verdicts(self.state, "run-cost", (record,))
+        row = read_verdicts(self.root)[0]
+        self.assertAlmostEqual(row["evaluation_cost"], 0.30)
+        self.assertAlmostEqual(row["evaluation_latency_s"], 0.32)
+        self.assertAlmostEqual(row["evaluation_duration_s"], 0.42)
+        self.assertEqual(row["evaluation_case_count"], 2)
+
+    def test_eval_cost_latency_missing_backward_compat(self):
+        # 守卫：旧记录没有 evaluation → None，不编造成本
+        append_verdicts(self.state, "run-old", (RECORD_FIX,))
+        row = read_verdicts(self.root)[0]
+        self.assertIsNone(row["evaluation_cost"])
+        self.assertIsNone(row["evaluation_latency_s"])
+        self.assertIsNone(row["evaluation_duration_s"])
+        self.assertIsNone(row["evaluation_case_count"])
+
     def test_malformed_recorded_as_invalid(self):
         # GREEN：fail-closed 的畸形 manifest 也要留痕（P4 要能看见被拦的次数）
         append_verdicts(self.state, "run-1", (RECORD_MALFORMED,))
