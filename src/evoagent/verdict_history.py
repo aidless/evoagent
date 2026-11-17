@@ -67,6 +67,22 @@ def append_verdicts(state_dir: Path, run_id: str,
                 eval_latency = round(sum(float(o.get("latency_s", 0.0)) for o in outcomes), 6)
                 eval_duration = evaluation.get("duration_s")
                 eval_cases = len(outcomes)
+            # LLM token 用量（批次级，来自 proposer 捕获的网关 usage）。
+            # token 不是钱：只落 *_tokens 原值 + batch_size，不做成本换算/摊薄。
+            # 旧账本候选无 proposal_usage -> 全 None（不编造）。
+            candidate = record.get("candidate") or {}
+            usage = candidate.get("proposal_usage") if isinstance(candidate, dict) else None
+            usage = usage if isinstance(usage, dict) else {}
+            proposal_model = usage.get("model")
+            fh_line_keys = {
+                "proposal_prompt_tokens": usage.get("prompt_tokens"),
+                "proposal_completion_tokens": usage.get("completion_tokens"),
+                "proposal_total_tokens": usage.get("total_tokens"),
+                "proposal_cached_tokens": usage.get("cached_tokens"),
+                "proposal_reasoning_tokens": usage.get("reasoning_tokens"),
+                "proposal_batch_size": usage.get("batch_size"),
+                "proposal_model": proposal_model,
+            }
             row = {
                 "run_id": run_id,
                 "candidate_id": record.get("id", ""),
@@ -84,6 +100,7 @@ def append_verdicts(state_dir: Path, run_id: str,
                 "evaluation_case_count": eval_cases,
                 "edits": edits,
             }
+            row.update(fh_line_keys)
             fh.write(json.dumps(row, ensure_ascii=False) + "\n")
             written += 1
     return written

@@ -19,6 +19,8 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+from evoagent.llm_usage import attach_usage, extract_usage
+
 GATEWAY = os.environ.get("MAGPIE_URL", "http://127.0.0.1:3425/v1/chat/completions")
 MODEL = os.environ.get("MAGPIE_MODEL", "workbuddy/deepseek-v4.1-flash")
 TIMEOUT = float(os.environ.get("MAGPIE_TIMEOUT", "60"))
@@ -53,7 +55,7 @@ def _load_case_ids() -> list[str]:
     return [str(c["id"]) for c in cases]
 
 
-def _call_llm(system: str, user: str) -> str:
+def _call_llm(system: str, user: str) -> tuple[str, dict | None]:
     body = json.dumps({
         "model": MODEL,
         "messages": [{"role": "system", "content": system},
@@ -66,7 +68,7 @@ def _call_llm(system: str, user: str) -> str:
         headers={"Content-Type": "application/json"}, method="POST")
     with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
         payload = json.loads(resp.read().decode("utf-8"))
-    return payload["choices"][0]["message"]["content"]
+    return payload["choices"][0]["message"]["content"], extract_usage(payload)
 
 
 def _extract_json(text: str):
@@ -187,12 +189,16 @@ def main() -> None:
         failures = json.loads(os.environ.get("EVO_FAILURES", "[]"))
         round_no = int(os.environ.get("EVO_ROUND", "0"))
         system, user = _build_prompt(incumbent, failures, case_ids, round_no)
-        content = _call_llm(system, user)
+        content, usage = _call_llm(system, user)
+        if usage:
+            usage["model"] = MODEL
         raw = _extract_json(content)
         if not isinstance(raw, list):
             raise ValueError("LLM output is not a JSON array")
         proposals = _sanitize(raw, set(case_ids), round_no)
-        _log(f"round={round_no} proposals={len(proposals)} model={MODEL}")
+        proposals = attach_usage(proposals, usage)
+        _log(f"round={round_no} proposals={len(proposals)} model={MODEL} "
+             f"prompt_tokens={(usage or {}).get('prompt_tokens')}")
         _emit(proposals)
     except (urllib.error.URLError, TimeoutError, OSError,
             KeyError, ValueError, json.JSONDecodeError) as exc:

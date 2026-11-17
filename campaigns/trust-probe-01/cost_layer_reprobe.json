@@ -1,0 +1,195 @@
+{
+  "rows_total": 168,
+  "missing_latency_join": 0,
+  "layers": {
+    "L1": {
+      "rows": 56,
+      "latency_range_s": [
+        0.442548,
+        0.728039
+      ],
+      "kinds": {
+        "tool": {
+          "level": "L1",
+          "mean_precision": 0.882353,
+          "n_edits": 17,
+          "reasons": []
+        },
+        "prompt": {
+          "level": "L3",
+          "mean_precision": 0.138889,
+          "n_edits": 18,
+          "reasons": [
+            "low_prediction_precision",
+            "blind_prediction"
+          ]
+        },
+        "middleware": {
+          "level": "L3",
+          "mean_precision": 0.6875,
+          "n_edits": 16,
+          "reasons": [
+            "regression_rate_high"
+          ]
+        },
+        "memory": {
+          "level": "L3",
+          "mean_precision": 0.235294,
+          "n_edits": 17,
+          "reasons": [
+            "regression_rate_high",
+            "low_prediction_precision"
+          ]
+        },
+        "workflow": {
+          "level": "L3",
+          "mean_precision": 0.731481,
+          "n_edits": 18,
+          "reasons": [
+            "regression_rate_high"
+          ]
+        },
+        "subagent": {
+          "level": "L3",
+          "mean_precision": 0.375,
+          "n_edits": 18,
+          "reasons": [
+            "regression_rate_high",
+            "low_prediction_precision"
+          ]
+        }
+      }
+    },
+    "L2": {
+      "rows": 56,
+      "latency_range_s": [
+        0.741861,
+        1.255593
+      ],
+      "kinds": {
+        "tool": {
+          "level": "L2",
+          "mean_precision": 0.807692,
+          "n_edits": 13,
+          "reasons": []
+        },
+        "prompt": {
+          "level": "L3",
+          "mean_precision": 0.0,
+          "n_edits": 11,
+          "reasons": [
+            "low_prediction_precision",
+            "blind_prediction"
+          ]
+        },
+        "middleware": {
+          "level": "L3",
+          "mean_precision": 0.587302,
+          "n_edits": 21,
+          "reasons": [
+            "regression_rate_high"
+          ]
+        },
+        "memory": {
+          "level": "L3",
+          "mean_precision": 0.214286,
+          "n_edits": 21,
+          "reasons": [
+            "regression_rate_high",
+            "low_prediction_precision"
+          ]
+        },
+        "workflow": {
+          "level": "L3",
+          "mean_precision": 0.6875,
+          "n_edits": 16,
+          "reasons": [
+            "regression_rate_high"
+          ]
+        },
+        "subagent": {
+          "level": "L3",
+          "mean_precision": 0.447917,
+          "n_edits": 16,
+          "reasons": [
+            "regression_rate_high",
+            "low_prediction_precision"
+          ]
+        }
+      }
+    },
+    "L3": {
+      "rows": 56,
+      "latency_range_s": [
+        1.256614,
+        1.584654
+      ],
+      "kinds": {
+        "tool": {
+          "level": "L1",
+          "mean_precision": 0.9,
+          "n_edits": 20,
+          "reasons": []
+        },
+        "prompt": {
+          "level": "L3",
+          "mean_precision": 0.107143,
+          "n_edits": 21,
+          "reasons": [
+            "low_prediction_precision",
+            "blind_prediction"
+          ]
+        },
+        "middleware": {
+          "level": "L3",
+          "mean_precision": 0.615385,
+          "n_edits": 13,
+          "reasons": [
+            "regression_rate_high"
+          ]
+        },
+        "memory": {
+          "level": "L3",
+          "mean_precision": 0.166667,
+          "n_edits": 12,
+          "reasons": [
+            "regression_rate_high",
+            "low_prediction_precision"
+          ]
+        },
+        "workflow": {
+          "level": "L3",
+          "mean_precision": 0.552083,
+          "n_edits": 16,
+          "reasons": [
+            "regression_rate_high"
+          ]
+        },
+        "subagent": {
+          "level": "L3",
+          "mean_precision": 0.541667,
+          "n_edits": 16,
+          "reasons": [
+            "regression_rate_high"
+          ]
+        }
+      }
+    }
+  },
+  "judgment": {
+    "verdict": "REJECT_NO_STRUCTURE",
+    "reason": "all layers share one level -> cost stratification does not explain jitter",
+    "levels": {
+      "L1": "L3",
+      "L2": "L3",
+      "L3": "L3"
+    },
+    "sizes": {
+      "L1": 18,
+      "L2": 11,
+      "L3": 21
+    },
+    "kind": "prompt"
+  },
+  "basis": "real core-measured latency_s from runs/*.json; cost=0 is bench truth"
+}
