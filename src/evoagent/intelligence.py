@@ -23,13 +23,42 @@ def ask(endpoint, model, system, question, timeout):
     with urllib.request.urlopen(req,timeout=timeout) as r: return json.load(r)['choices'][0]['message']['content'].strip()
 
 
+NUM_RE = re.compile(r'-?\d+(?:,\d{3})*(?:\.\d+)?')
+OPT_RE = re.compile(r'(?:\(|\b)([A-G])\)')
+ANSWER_MARK_RE = re.compile(r'\banswer\b\s*(?:is\s*)?[:：]?', re.I)
+
+
+def _after_answer_marker(output):
+    """显式 "Answer:" 之后的那一段；没有标记返回 None。
+
+    L-ops-897：位置型末位抓取会被输出续写翻掉——"Answer: 42" 后跟
+    "Step: 42 + 1 = 43" 时，nums[-1] 取到 43，把正确答案判成错。
+    有显式标记时以标记后首个答案为准，无标记才回退末位。
+    """
+    marks = list(ANSWER_MARK_RE.finditer(output))
+    if not marks:
+        return None
+    return output[marks[-1].end():]
+
+
 def norm(x): return re.sub(r'[^a-z0-9.\-]+','',x.lower().replace(',',''))
+
+
 def grade(suite, output, expected):
+    tail = _after_answer_marker(output)
     if suite == 'gsm8k':
-        nums = re.findall(r'-?\d+(?:,\d{3})*(?:\.\d+)?', output)
+        if tail is not None:
+            marked = NUM_RE.findall(tail)
+            if marked:
+                return norm(marked[0]) == norm(expected)
+        nums = NUM_RE.findall(output)
         return bool(nums) and norm(nums[-1]) == norm(expected)
-    options = re.findall(r'(?:\(|\b)([A-G])\)', output.upper())
     wanted = re.search(r'[A-G]', expected.upper())
+    if tail is not None:
+        marked = OPT_RE.findall(tail.upper())
+        if marked and wanted:
+            return marked[0] == wanted.group(0)
+    options = OPT_RE.findall(output.upper())
     return bool(options and wanted) and options[-1] == wanted.group(0)
 
 def main():
