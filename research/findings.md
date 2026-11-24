@@ -1,4 +1,6 @@
-﻿# 开源模型与 Agent 技术资料观察（2026-07-24）
+﻿> **Not a recomputable run log.** The ten-round plateau in the last section is prose from 2026-07-24. The active id `f8a196f466db` is the content hash of the toy policy `{"normalize_case": true, "trim_whitespace": true}`, which `make check` recomputes. No committed JSON run log contains ten rounds. Do not cite the ten-round count as a result of this repository.
+
+# 开源模型与 Agent 技术资料观察（2026-07-24）
 
 ## 范围
 

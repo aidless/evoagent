@@ -17,3 +17,5 @@ jobs:
       # workflow installed only pytest, so the suite could not import.
       - run: python -m pip install -e . pytest
       - run: python -m pytest tests -q
+      - name: Recompute the toy trace (same command as the audit badge)
+        run: make check

@@ -10,7 +10,7 @@
 
 Registry v2 共 360 任务：Development 120、Hidden Confirmation 80、Trigger Safety 60、Shadow 100；模型评测使用其中 45 个。`content_sha256` 固定任务内容，`manifest_sha256` 固定任务清单。
 
-`contamination_checked` 字段为 `false`：任务未与公开基准做过污染比对；私有数据目录（原路径 `E:\self-evolving-agent-private`）不随仓库分发。
+`contamination_checked` 字段为 `false`：任务未与公开基准做过污染比对。完整任务与答案不在本仓库（`tasks.json` 与 `sealed/answer-key.json` 是脱敏占位）。旧笔记里的工作站绝对路径不是运行说明。
 
 ## 运行（仓库根目录执行）
 
